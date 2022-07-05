@@ -30,8 +30,7 @@
             [self incorrectLoginInfo];
         } else {
             NSLog(@"User logged in successfully");
-            
-            // TODO: set segue to home page of app.
+            [self performSegueWithIdentifier:@"loginSegue" sender:nil];
         
         }
     }];
