@@ -1,0 +1,6 @@
+framework module Pods_NoteFind_NoteFindUITests {
+  umbrella header "Pods-NoteFind-NoteFindUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

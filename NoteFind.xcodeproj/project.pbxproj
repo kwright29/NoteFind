@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38D6D39260DBDEC321BD6B51 /* Pods_NoteFind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F523E3158C237F0DBCC3476 /* Pods_NoteFind.framework */; };
+		9DBD2F9B74C2992ACAD07A55 /* Pods_NoteFindTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8D12C23A426B497C87C160 /* Pods_NoteFindTests.framework */; };
+		BC47E36E0680CDACB96187C3 /* Pods_NoteFind_NoteFindUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1C5763A6F58C1F0FFEA406 /* Pods_NoteFind_NoteFindUITests.framework */; };
 		EEA455A72874C79C00261F9C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA455A62874C79C00261F9C /* AppDelegate.m */; };
 		EEA455AA2874C79C00261F9C /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA455A92874C79C00261F9C /* SceneDelegate.m */; };
 		EEA455AD2874C79C00261F9C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA455AC2874C79C00261F9C /* ViewController.m */; };
@@ -37,6 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2CE917EDDAD3C6BDDF669ABB /* Pods-NoteFind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFind.debug.xcconfig"; path = "Target Support Files/Pods-NoteFind/Pods-NoteFind.debug.xcconfig"; sourceTree = "<group>"; };
+		3DE1FE914726A8B7D6B4DF03 /* Pods-NoteFind-NoteFindUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFind-NoteFindUITests.debug.xcconfig"; path = "Target Support Files/Pods-NoteFind-NoteFindUITests/Pods-NoteFind-NoteFindUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4B8D12C23A426B497C87C160 /* Pods_NoteFindTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteFindTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F523E3158C237F0DBCC3476 /* Pods_NoteFind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteFind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E24A52780ED0E015A34FD5A /* Pods-NoteFindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFindTests.release.xcconfig"; path = "Target Support Files/Pods-NoteFindTests/Pods-NoteFindTests.release.xcconfig"; sourceTree = "<group>"; };
+		A5315C0DC2C3ADAA362944D4 /* Pods-NoteFind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFind.release.xcconfig"; path = "Target Support Files/Pods-NoteFind/Pods-NoteFind.release.xcconfig"; sourceTree = "<group>"; };
+		C49CEA8342275F8EB8661B1C /* Pods-NoteFindTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFindTests.debug.xcconfig"; path = "Target Support Files/Pods-NoteFindTests/Pods-NoteFindTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EEA455A22874C79C00261F9C /* NoteFind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteFind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEA455A52874C79C00261F9C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EEA455A62874C79C00261F9C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -54,6 +64,8 @@
 		EEA455C72874C79C00261F9C /* NoteFindUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteFindUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEA455CB2874C79C00261F9C /* NoteFindUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteFindUITests.m; sourceTree = "<group>"; };
 		EEA455CD2874C79C00261F9C /* NoteFindUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteFindUITestsLaunchTests.m; sourceTree = "<group>"; };
+		EF1C5763A6F58C1F0FFEA406 /* Pods_NoteFind_NoteFindUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteFind_NoteFindUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F70ED524EFB3FA0C1CAAE1E5 /* Pods-NoteFind-NoteFindUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFind-NoteFindUITests.release.xcconfig"; path = "Target Support Files/Pods-NoteFind-NoteFindUITests/Pods-NoteFind-NoteFindUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38D6D39260DBDEC321BD6B51 /* Pods_NoteFind.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DBD2F9B74C2992ACAD07A55 /* Pods_NoteFindTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,12 +89,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC47E36E0680CDACB96187C3 /* Pods_NoteFind_NoteFindUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		604A2B50AECA52F139379FD0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2CE917EDDAD3C6BDDF669ABB /* Pods-NoteFind.debug.xcconfig */,
+				A5315C0DC2C3ADAA362944D4 /* Pods-NoteFind.release.xcconfig */,
+				3DE1FE914726A8B7D6B4DF03 /* Pods-NoteFind-NoteFindUITests.debug.xcconfig */,
+				F70ED524EFB3FA0C1CAAE1E5 /* Pods-NoteFind-NoteFindUITests.release.xcconfig */,
+				C49CEA8342275F8EB8661B1C /* Pods-NoteFindTests.debug.xcconfig */,
+				7E24A52780ED0E015A34FD5A /* Pods-NoteFindTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C006C12D03A0C1F258D6F389 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F523E3158C237F0DBCC3476 /* Pods_NoteFind.framework */,
+				EF1C5763A6F58C1F0FFEA406 /* Pods_NoteFind_NoteFindUITests.framework */,
+				4B8D12C23A426B497C87C160 /* Pods_NoteFindTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EEA455992874C79C00261F9C = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +127,8 @@
 				EEA455C02874C79C00261F9C /* NoteFindTests */,
 				EEA455CA2874C79C00261F9C /* NoteFindUITests */,
 				EEA455A32874C79C00261F9C /* Products */,
+				604A2B50AECA52F139379FD0 /* Pods */,
+				C006C12D03A0C1F258D6F389 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,9 +184,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEA455D12874C79C00261F9C /* Build configuration list for PBXNativeTarget "NoteFind" */;
 			buildPhases = (
+				E29CBFA7B69197170BB98239 /* [CP] Check Pods Manifest.lock */,
 				EEA4559E2874C79C00261F9C /* Sources */,
 				EEA4559F2874C79C00261F9C /* Frameworks */,
 				EEA455A02874C79C00261F9C /* Resources */,
+				8AA667FBE807D897BF1DC206 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,6 +203,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEA455D42874C79C00261F9C /* Build configuration list for PBXNativeTarget "NoteFindTests" */;
 			buildPhases = (
+				4A0AB3A131C1743B60DD4C16 /* [CP] Check Pods Manifest.lock */,
 				EEA455B92874C79C00261F9C /* Sources */,
 				EEA455BA2874C79C00261F9C /* Frameworks */,
 				EEA455BB2874C79C00261F9C /* Resources */,
@@ -178,9 +222,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEA455D72874C79C00261F9C /* Build configuration list for PBXNativeTarget "NoteFindUITests" */;
 			buildPhases = (
+				6FD837B6ABC73D36E7F88539 /* [CP] Check Pods Manifest.lock */,
 				EEA455C32874C79C00261F9C /* Sources */,
 				EEA455C42874C79C00261F9C /* Frameworks */,
 				EEA455C52874C79C00261F9C /* Resources */,
+				744605F7C2D0C9C42BCE5592 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -260,6 +306,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4A0AB3A131C1743B60DD4C16 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NoteFindTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FD837B6ABC73D36E7F88539 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NoteFind-NoteFindUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		744605F7C2D0C9C42BCE5592 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NoteFind-NoteFindUITests/Pods-NoteFind-NoteFindUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NoteFind-NoteFindUITests/Pods-NoteFind-NoteFindUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NoteFind-NoteFindUITests/Pods-NoteFind-NoteFindUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AA667FBE807D897BF1DC206 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NoteFind/Pods-NoteFind-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NoteFind/Pods-NoteFind-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NoteFind/Pods-NoteFind-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E29CBFA7B69197170BB98239 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NoteFind-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EEA4559E2874C79C00261F9C /* Sources */ = {
@@ -437,6 +586,7 @@
 		};
 		EEA455D22874C79C00261F9C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE917EDDAD3C6BDDF669ABB /* Pods-NoteFind.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -464,6 +614,7 @@
 		};
 		EEA455D32874C79C00261F9C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5315C0DC2C3ADAA362944D4 /* Pods-NoteFind.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -491,6 +642,7 @@
 		};
 		EEA455D52874C79C00261F9C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C49CEA8342275F8EB8661B1C /* Pods-NoteFindTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -509,6 +661,7 @@
 		};
 		EEA455D62874C79C00261F9C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E24A52780ED0E015A34FD5A /* Pods-NoteFindTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -527,6 +680,7 @@
 		};
 		EEA455D82874C79C00261F9C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DE1FE914726A8B7D6B4DF03 /* Pods-NoteFind-NoteFindUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -543,6 +697,7 @@
 		};
 		EEA455D92874C79C00261F9C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F70ED524EFB3FA0C1CAAE1E5 /* Pods-NoteFind-NoteFindUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
