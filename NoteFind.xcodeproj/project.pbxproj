@@ -12,7 +12,6 @@
 		BC47E36E0680CDACB96187C3 /* Pods_NoteFind_NoteFindUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1C5763A6F58C1F0FFEA406 /* Pods_NoteFind_NoteFindUITests.framework */; };
 		EEA455A72874C79C00261F9C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA455A62874C79C00261F9C /* AppDelegate.m */; };
 		EEA455AA2874C79C00261F9C /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA455A92874C79C00261F9C /* SceneDelegate.m */; };
-		EEA455AD2874C79C00261F9C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA455AC2874C79C00261F9C /* ViewController.m */; };
 		EEA455B02874C79C00261F9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEA455AE2874C79C00261F9C /* Main.storyboard */; };
 		EEA455B22874C79C00261F9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEA455B12874C79C00261F9C /* Assets.xcassets */; };
 		EEA455B52874C79C00261F9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEA455B32874C79C00261F9C /* LaunchScreen.storyboard */; };
@@ -20,6 +19,8 @@
 		EEA455C22874C79C00261F9C /* NoteFindTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA455C12874C79C00261F9C /* NoteFindTests.m */; };
 		EEA455CC2874C79C00261F9C /* NoteFindUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA455CB2874C79C00261F9C /* NoteFindUITests.m */; };
 		EEA455CE2874C79C00261F9C /* NoteFindUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA455CD2874C79C00261F9C /* NoteFindUITestsLaunchTests.m */; };
+		EEA455E12874DE2300261F9C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA455E02874DE2300261F9C /* LoginViewController.m */; };
+		EEA455E42874E06F00261F9C /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA455E32874E06F00261F9C /* RegisterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +53,6 @@
 		EEA455A62874C79C00261F9C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EEA455A82874C79C00261F9C /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		EEA455A92874C79C00261F9C /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		EEA455AB2874C79C00261F9C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EEA455AC2874C79C00261F9C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EEA455AF2874C79C00261F9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EEA455B12874C79C00261F9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEA455B42874C79C00261F9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,6 +63,10 @@
 		EEA455C72874C79C00261F9C /* NoteFindUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteFindUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEA455CB2874C79C00261F9C /* NoteFindUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteFindUITests.m; sourceTree = "<group>"; };
 		EEA455CD2874C79C00261F9C /* NoteFindUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteFindUITestsLaunchTests.m; sourceTree = "<group>"; };
+		EEA455DF2874DE2300261F9C /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		EEA455E02874DE2300261F9C /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		EEA455E22874E06F00261F9C /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		EEA455E32874E06F00261F9C /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		EF1C5763A6F58C1F0FFEA406 /* Pods_NoteFind_NoteFindUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteFind_NoteFindUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F70ED524EFB3FA0C1CAAE1E5 /* Pods-NoteFind-NoteFindUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFind-NoteFindUITests.release.xcconfig"; path = "Target Support Files/Pods-NoteFind-NoteFindUITests/Pods-NoteFind-NoteFindUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,7 +109,6 @@
 				C49CEA8342275F8EB8661B1C /* Pods-NoteFindTests.debug.xcconfig */,
 				7E24A52780ED0E015A34FD5A /* Pods-NoteFindTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -145,12 +147,10 @@
 		EEA455A42874C79C00261F9C /* NoteFind */ = {
 			isa = PBXGroup;
 			children = (
-				EEA455A52874C79C00261F9C /* AppDelegate.h */,
-				EEA455A62874C79C00261F9C /* AppDelegate.m */,
-				EEA455A82874C79C00261F9C /* SceneDelegate.h */,
-				EEA455A92874C79C00261F9C /* SceneDelegate.m */,
-				EEA455AB2874C79C00261F9C /* ViewController.h */,
-				EEA455AC2874C79C00261F9C /* ViewController.m */,
+				EEA455DE2874DDD700261F9C /* Delegates */,
+				EEA455DD2874DDCC00261F9C /* Views */,
+				EEA455DC2874DDC000261F9C /* Models */,
+				EEA455DB2874DDAA00261F9C /* View Controllers */,
 				EEA455AE2874C79C00261F9C /* Main.storyboard */,
 				EEA455B12874C79C00261F9C /* Assets.xcassets */,
 				EEA455B32874C79C00261F9C /* LaunchScreen.storyboard */,
@@ -175,6 +175,42 @@
 				EEA455CD2874C79C00261F9C /* NoteFindUITestsLaunchTests.m */,
 			);
 			path = NoteFindUITests;
+			sourceTree = "<group>";
+		};
+		EEA455DB2874DDAA00261F9C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EEA455DF2874DE2300261F9C /* LoginViewController.h */,
+				EEA455E02874DE2300261F9C /* LoginViewController.m */,
+				EEA455E22874E06F00261F9C /* RegisterViewController.h */,
+				EEA455E32874E06F00261F9C /* RegisterViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		EEA455DC2874DDC000261F9C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EEA455DD2874DDCC00261F9C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EEA455DE2874DDD700261F9C /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				EEA455A52874C79C00261F9C /* AppDelegate.h */,
+				EEA455A62874C79C00261F9C /* AppDelegate.m */,
+				EEA455A82874C79C00261F9C /* SceneDelegate.h */,
+				EEA455A92874C79C00261F9C /* SceneDelegate.m */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,7 +451,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEA455AD2874C79C00261F9C /* ViewController.m in Sources */,
+				EEA455E42874E06F00261F9C /* RegisterViewController.m in Sources */,
+				EEA455E12874DE2300261F9C /* LoginViewController.m in Sources */,
 				EEA455A72874C79C00261F9C /* AppDelegate.m in Sources */,
 				EEA455B82874C79C00261F9C /* main.m in Sources */,
 				EEA455AA2874C79C00261F9C /* SceneDelegate.m in Sources */,
