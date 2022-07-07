@@ -42,14 +42,8 @@
 
 - (void)incorrectLoginInfo {
   
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"incorrect username/password"
-                                                                                   message:@"the username/password you entered is incorrect. please try again."
-                                                                            preferredStyle:(UIAlertControllerStyleAlert)];
-        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"ok"
-                                                           style:UIAlertActionStyleDefault
-                                                         handler:^(UIAlertAction * _Nonnull action) {
-                                                                 // handle response here.
-                                                         }];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"incorrect username/password" message:@"the username/password you entered is incorrect. please try again." preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) { }];
         // add the OK action to the alert controller
         [alert addAction:okAction];
         
@@ -61,14 +55,8 @@
 
 - (void)alertVoidRequiredFields {
   
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"missing field(s) required"
-                                                                                   message:@"one or more of the required fields are not complete. please enter your information and try again."
-                                                                            preferredStyle:(UIAlertControllerStyleAlert)];
-        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"ok"
-                                                           style:UIAlertActionStyleDefault
-                                                         handler:^(UIAlertAction * _Nonnull action) {
-                                                                 // handle response here.
-                                                         }];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"missing field(s) required" message:@"one or more of the required fields are not complete. please enter your information and try again." preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) { /*handle response here */ }];
         // add the OK action to the alert controller
         [alert addAction:okAction];
         

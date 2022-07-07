@@ -29,6 +29,9 @@
     return YES;
 }
 
+//- (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+//    return YES;
+//}
 
 #pragma mark - UISceneSession lifecycle
 

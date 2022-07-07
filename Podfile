@@ -9,6 +9,8 @@ target 'NoteFind' do
 pod 'Parse'
 pod 'Parse/UI'
 pod 'DateTools'
+pod 'NotionClient'
+pod 'AFNetworking'
 
 
   target 'NoteFindTests' do

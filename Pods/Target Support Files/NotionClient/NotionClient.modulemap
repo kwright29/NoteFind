@@ -1,0 +1,6 @@
+framework module NotionClient {
+  umbrella header "NotionClient-umbrella.h"
+
+  export *
+  module * { export * }
+}
