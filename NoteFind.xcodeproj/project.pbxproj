@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		38D6D39260DBDEC321BD6B51 /* Pods_NoteFind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F523E3158C237F0DBCC3476 /* Pods_NoteFind.framework */; };
-		9DBD2F9B74C2992ACAD07A55 /* Pods_NoteFindTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8D12C23A426B497C87C160 /* Pods_NoteFindTests.framework */; };
-		BC47E36E0680CDACB96187C3 /* Pods_NoteFind_NoteFindUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1C5763A6F58C1F0FFEA406 /* Pods_NoteFind_NoteFindUITests.framework */; };
+		22E4DC1EBE04DD7194609B0B /* Pods_NoteFind_NoteFindUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 910F4DAD409AE04503A054CC /* Pods_NoteFind_NoteFindUITests.framework */; };
+		3F682E59AD8103B7A30DBD2B /* Pods_NoteFind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2B106584A70E4BBA992621B /* Pods_NoteFind.framework */; };
+		A22A03E60D145B7928407E28 /* Pods_NoteFindTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23C73B2235FE0FD72A4CFB2 /* Pods_NoteFindTests.framework */; };
 		EE285DC028761B5100BC7FF0 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE285DBF28761B5100BC7FF0 /* ProfileViewController.m */; };
 		EE285DC328761B5C00BC7FF0 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE285DC228761B5C00BC7FF0 /* SearchViewController.m */; };
 		EE285DC628761B7000BC7FF0 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE285DC528761B7000BC7FF0 /* FeedViewController.m */; };
 		EE6E869B287769AD0044F65F /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6E869A287769AD0044F65F /* APIManager.m */; };
 		EE6E869D287780AD0044F65F /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE6E869C287780AD0044F65F /* keys.plist */; };
+		EE6E86A32878A1B80044F65F /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6E86A22878A1B80044F65F /* Note.m */; };
+		EE6E86A62878A76A0044F65F /* NoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6E86A52878A76A0044F65F /* NoteCell.m */; };
+		EE6E86A92878A7D00044F65F /* NewNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6E86A82878A7D00044F65F /* NewNoteViewController.m */; };
+		EE6E86AC2878AEFE0044F65F /* TagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6E86AB2878AEFE0044F65F /* TagsViewController.m */; };
+		EE6E86AF2878AF200044F65F /* TagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6E86AE2878AF200044F65F /* TagCell.m */; };
 		EEA455A72874C79C00261F9C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA455A62874C79C00261F9C /* AppDelegate.m */; };
 		EEA455AA2874C79C00261F9C /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA455A92874C79C00261F9C /* SceneDelegate.m */; };
 		EEA455B02874C79C00261F9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEA455AE2874C79C00261F9C /* Main.storyboard */; };
@@ -46,13 +51,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2CE917EDDAD3C6BDDF669ABB /* Pods-NoteFind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFind.debug.xcconfig"; path = "Target Support Files/Pods-NoteFind/Pods-NoteFind.debug.xcconfig"; sourceTree = "<group>"; };
-		3DE1FE914726A8B7D6B4DF03 /* Pods-NoteFind-NoteFindUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFind-NoteFindUITests.debug.xcconfig"; path = "Target Support Files/Pods-NoteFind-NoteFindUITests/Pods-NoteFind-NoteFindUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		4B8D12C23A426B497C87C160 /* Pods_NoteFindTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteFindTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F523E3158C237F0DBCC3476 /* Pods_NoteFind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteFind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E24A52780ED0E015A34FD5A /* Pods-NoteFindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFindTests.release.xcconfig"; path = "Target Support Files/Pods-NoteFindTests/Pods-NoteFindTests.release.xcconfig"; sourceTree = "<group>"; };
-		A5315C0DC2C3ADAA362944D4 /* Pods-NoteFind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFind.release.xcconfig"; path = "Target Support Files/Pods-NoteFind/Pods-NoteFind.release.xcconfig"; sourceTree = "<group>"; };
-		C49CEA8342275F8EB8661B1C /* Pods-NoteFindTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFindTests.debug.xcconfig"; path = "Target Support Files/Pods-NoteFindTests/Pods-NoteFindTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1D14BD2007082E5D83D496FE /* Pods-NoteFind-NoteFindUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFind-NoteFindUITests.release.xcconfig"; path = "Target Support Files/Pods-NoteFind-NoteFindUITests/Pods-NoteFind-NoteFindUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4EA8B15E620C3FF3583D0623 /* Pods-NoteFindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFindTests.release.xcconfig"; path = "Target Support Files/Pods-NoteFindTests/Pods-NoteFindTests.release.xcconfig"; sourceTree = "<group>"; };
+		56762DA24DC49F5F0CBAB6E6 /* Pods-NoteFindTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFindTests.debug.xcconfig"; path = "Target Support Files/Pods-NoteFindTests/Pods-NoteFindTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6631E7301B2BA5F36119E176 /* Pods-NoteFind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFind.debug.xcconfig"; path = "Target Support Files/Pods-NoteFind/Pods-NoteFind.debug.xcconfig"; sourceTree = "<group>"; };
+		910F4DAD409AE04503A054CC /* Pods_NoteFind_NoteFindUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteFind_NoteFindUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D41CFF7DBE38FA618F7A6DE2 /* Pods-NoteFind-NoteFindUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFind-NoteFindUITests.debug.xcconfig"; path = "Target Support Files/Pods-NoteFind-NoteFindUITests/Pods-NoteFind-NoteFindUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EE285DBE28761B5100BC7FF0 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		EE285DBF28761B5100BC7FF0 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		EE285DC128761B5C00BC7FF0 /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
@@ -62,6 +66,16 @@
 		EE6E8699287769AD0044F65F /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
 		EE6E869A287769AD0044F65F /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		EE6E869C287780AD0044F65F /* keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
+		EE6E86A12878A1B80044F65F /* Note.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		EE6E86A22878A1B80044F65F /* Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
+		EE6E86A42878A76A0044F65F /* NoteCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteCell.h; sourceTree = "<group>"; };
+		EE6E86A52878A76A0044F65F /* NoteCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteCell.m; sourceTree = "<group>"; };
+		EE6E86A72878A7D00044F65F /* NewNoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewNoteViewController.h; sourceTree = "<group>"; };
+		EE6E86A82878A7D00044F65F /* NewNoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewNoteViewController.m; sourceTree = "<group>"; };
+		EE6E86AA2878AEFE0044F65F /* TagsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagsViewController.h; sourceTree = "<group>"; };
+		EE6E86AB2878AEFE0044F65F /* TagsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagsViewController.m; sourceTree = "<group>"; };
+		EE6E86AD2878AF200044F65F /* TagCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagCell.h; sourceTree = "<group>"; };
+		EE6E86AE2878AF200044F65F /* TagCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagCell.m; sourceTree = "<group>"; };
 		EEA455A22874C79C00261F9C /* NoteFind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteFind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEA455A52874C79C00261F9C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EEA455A62874C79C00261F9C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -81,8 +95,9 @@
 		EEA455E02874DE2300261F9C /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		EEA455E22874E06F00261F9C /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		EEA455E32874E06F00261F9C /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
-		EF1C5763A6F58C1F0FFEA406 /* Pods_NoteFind_NoteFindUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteFind_NoteFindUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F70ED524EFB3FA0C1CAAE1E5 /* Pods-NoteFind-NoteFindUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFind-NoteFindUITests.release.xcconfig"; path = "Target Support Files/Pods-NoteFind-NoteFindUITests/Pods-NoteFind-NoteFindUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F23C73B2235FE0FD72A4CFB2 /* Pods_NoteFindTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteFindTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2B106584A70E4BBA992621B /* Pods_NoteFind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteFind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F37D7FE5DC035AC93D161E51 /* Pods-NoteFind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFind.release.xcconfig"; path = "Target Support Files/Pods-NoteFind/Pods-NoteFind.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38D6D39260DBDEC321BD6B51 /* Pods_NoteFind.framework in Frameworks */,
+				3F682E59AD8103B7A30DBD2B /* Pods_NoteFind.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DBD2F9B74C2992ACAD07A55 /* Pods_NoteFindTests.framework in Frameworks */,
+				A22A03E60D145B7928407E28 /* Pods_NoteFindTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC47E36E0680CDACB96187C3 /* Pods_NoteFind_NoteFindUITests.framework in Frameworks */,
+				22E4DC1EBE04DD7194609B0B /* Pods_NoteFind_NoteFindUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,24 +131,14 @@
 		604A2B50AECA52F139379FD0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2CE917EDDAD3C6BDDF669ABB /* Pods-NoteFind.debug.xcconfig */,
-				A5315C0DC2C3ADAA362944D4 /* Pods-NoteFind.release.xcconfig */,
-				3DE1FE914726A8B7D6B4DF03 /* Pods-NoteFind-NoteFindUITests.debug.xcconfig */,
-				F70ED524EFB3FA0C1CAAE1E5 /* Pods-NoteFind-NoteFindUITests.release.xcconfig */,
-				C49CEA8342275F8EB8661B1C /* Pods-NoteFindTests.debug.xcconfig */,
-				7E24A52780ED0E015A34FD5A /* Pods-NoteFindTests.release.xcconfig */,
+				6631E7301B2BA5F36119E176 /* Pods-NoteFind.debug.xcconfig */,
+				F37D7FE5DC035AC93D161E51 /* Pods-NoteFind.release.xcconfig */,
+				D41CFF7DBE38FA618F7A6DE2 /* Pods-NoteFind-NoteFindUITests.debug.xcconfig */,
+				1D14BD2007082E5D83D496FE /* Pods-NoteFind-NoteFindUITests.release.xcconfig */,
+				56762DA24DC49F5F0CBAB6E6 /* Pods-NoteFindTests.debug.xcconfig */,
+				4EA8B15E620C3FF3583D0623 /* Pods-NoteFindTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		C006C12D03A0C1F258D6F389 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5F523E3158C237F0DBCC3476 /* Pods_NoteFind.framework */,
-				EF1C5763A6F58C1F0FFEA406 /* Pods_NoteFind_NoteFindUITests.framework */,
-				4B8D12C23A426B497C87C160 /* Pods_NoteFindTests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		EE6E86982877617C0044F65F /* API */ = {
@@ -153,7 +158,7 @@
 				EEA455CA2874C79C00261F9C /* NoteFindUITests */,
 				EEA455A32874C79C00261F9C /* Products */,
 				604A2B50AECA52F139379FD0 /* Pods */,
-				C006C12D03A0C1F258D6F389 /* Frameworks */,
+				FC069882ECB16929915AC8C4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -215,6 +220,10 @@
 				EE285DC228761B5C00BC7FF0 /* SearchViewController.m */,
 				EE285DC428761B7000BC7FF0 /* FeedViewController.h */,
 				EE285DC528761B7000BC7FF0 /* FeedViewController.m */,
+				EE6E86A72878A7D00044F65F /* NewNoteViewController.h */,
+				EE6E86A82878A7D00044F65F /* NewNoteViewController.m */,
+				EE6E86AA2878AEFE0044F65F /* TagsViewController.h */,
+				EE6E86AB2878AEFE0044F65F /* TagsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -222,6 +231,8 @@
 		EEA455DC2874DDC000261F9C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EE6E86A12878A1B80044F65F /* Note.h */,
+				EE6E86A22878A1B80044F65F /* Note.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -229,6 +240,10 @@
 		EEA455DD2874DDCC00261F9C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EE6E86A42878A76A0044F65F /* NoteCell.h */,
+				EE6E86A52878A76A0044F65F /* NoteCell.m */,
+				EE6E86AD2878AF200044F65F /* TagCell.h */,
+				EE6E86AE2878AF200044F65F /* TagCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -244,6 +259,16 @@
 			path = Delegates;
 			sourceTree = "<group>";
 		};
+		FC069882ECB16929915AC8C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F2B106584A70E4BBA992621B /* Pods_NoteFind.framework */,
+				910F4DAD409AE04503A054CC /* Pods_NoteFind_NoteFindUITests.framework */,
+				F23C73B2235FE0FD72A4CFB2 /* Pods_NoteFindTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -251,11 +276,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEA455D12874C79C00261F9C /* Build configuration list for PBXNativeTarget "NoteFind" */;
 			buildPhases = (
-				E29CBFA7B69197170BB98239 /* [CP] Check Pods Manifest.lock */,
+				CB06530E7FBAD097B0888858 /* [CP] Check Pods Manifest.lock */,
 				EEA4559E2874C79C00261F9C /* Sources */,
 				EEA4559F2874C79C00261F9C /* Frameworks */,
 				EEA455A02874C79C00261F9C /* Resources */,
-				8AA667FBE807D897BF1DC206 /* [CP] Embed Pods Frameworks */,
+				1FC12517804C9423885F5DE9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -270,7 +295,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEA455D42874C79C00261F9C /* Build configuration list for PBXNativeTarget "NoteFindTests" */;
 			buildPhases = (
-				4A0AB3A131C1743B60DD4C16 /* [CP] Check Pods Manifest.lock */,
+				2A423EA09E32AC959558F9E2 /* [CP] Check Pods Manifest.lock */,
 				EEA455B92874C79C00261F9C /* Sources */,
 				EEA455BA2874C79C00261F9C /* Frameworks */,
 				EEA455BB2874C79C00261F9C /* Resources */,
@@ -289,11 +314,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEA455D72874C79C00261F9C /* Build configuration list for PBXNativeTarget "NoteFindUITests" */;
 			buildPhases = (
-				6FD837B6ABC73D36E7F88539 /* [CP] Check Pods Manifest.lock */,
+				B4A9B0AF924827EDCD69962F /* [CP] Check Pods Manifest.lock */,
 				EEA455C32874C79C00261F9C /* Sources */,
 				EEA455C42874C79C00261F9C /* Frameworks */,
 				EEA455C52874C79C00261F9C /* Resources */,
-				744605F7C2D0C9C42BCE5592 /* [CP] Embed Pods Frameworks */,
+				227D2B53EBC2F3B07F61F631 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -376,7 +401,41 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4A0AB3A131C1743B60DD4C16 /* [CP] Check Pods Manifest.lock */ = {
+		1FC12517804C9423885F5DE9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NoteFind/Pods-NoteFind-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NoteFind/Pods-NoteFind-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NoteFind/Pods-NoteFind-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		227D2B53EBC2F3B07F61F631 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NoteFind-NoteFindUITests/Pods-NoteFind-NoteFindUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NoteFind-NoteFindUITests/Pods-NoteFind-NoteFindUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NoteFind-NoteFindUITests/Pods-NoteFind-NoteFindUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2A423EA09E32AC959558F9E2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -398,7 +457,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6FD837B6ABC73D36E7F88539 /* [CP] Check Pods Manifest.lock */ = {
+		B4A9B0AF924827EDCD69962F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -420,41 +479,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		744605F7C2D0C9C42BCE5592 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NoteFind-NoteFindUITests/Pods-NoteFind-NoteFindUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NoteFind-NoteFindUITests/Pods-NoteFind-NoteFindUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NoteFind-NoteFindUITests/Pods-NoteFind-NoteFindUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8AA667FBE807D897BF1DC206 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NoteFind/Pods-NoteFind-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NoteFind/Pods-NoteFind-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NoteFind/Pods-NoteFind-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E29CBFA7B69197170BB98239 /* [CP] Check Pods Manifest.lock */ = {
+		CB06530E7FBAD097B0888858 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -483,11 +508,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE6E86AF2878AF200044F65F /* TagCell.m in Sources */,
 				EEA455E42874E06F00261F9C /* RegisterViewController.m in Sources */,
 				EEA455E12874DE2300261F9C /* LoginViewController.m in Sources */,
 				EE6E869B287769AD0044F65F /* APIManager.m in Sources */,
 				EE285DC628761B7000BC7FF0 /* FeedViewController.m in Sources */,
+				EE6E86AC2878AEFE0044F65F /* TagsViewController.m in Sources */,
 				EEA455A72874C79C00261F9C /* AppDelegate.m in Sources */,
+				EE6E86A92878A7D00044F65F /* NewNoteViewController.m in Sources */,
+				EE6E86A32878A1B80044F65F /* Note.m in Sources */,
+				EE6E86A62878A76A0044F65F /* NoteCell.m in Sources */,
 				EEA455B82874C79C00261F9C /* main.m in Sources */,
 				EE285DC028761B5100BC7FF0 /* ProfileViewController.m in Sources */,
 				EEA455AA2874C79C00261F9C /* SceneDelegate.m in Sources */,
@@ -659,7 +689,7 @@
 		};
 		EEA455D22874C79C00261F9C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2CE917EDDAD3C6BDDF669ABB /* Pods-NoteFind.debug.xcconfig */;
+			baseConfigurationReference = 6631E7301B2BA5F36119E176 /* Pods-NoteFind.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -687,7 +717,7 @@
 		};
 		EEA455D32874C79C00261F9C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A5315C0DC2C3ADAA362944D4 /* Pods-NoteFind.release.xcconfig */;
+			baseConfigurationReference = F37D7FE5DC035AC93D161E51 /* Pods-NoteFind.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -715,7 +745,7 @@
 		};
 		EEA455D52874C79C00261F9C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C49CEA8342275F8EB8661B1C /* Pods-NoteFindTests.debug.xcconfig */;
+			baseConfigurationReference = 56762DA24DC49F5F0CBAB6E6 /* Pods-NoteFindTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -734,7 +764,7 @@
 		};
 		EEA455D62874C79C00261F9C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E24A52780ED0E015A34FD5A /* Pods-NoteFindTests.release.xcconfig */;
+			baseConfigurationReference = 4EA8B15E620C3FF3583D0623 /* Pods-NoteFindTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -753,7 +783,7 @@
 		};
 		EEA455D82874C79C00261F9C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3DE1FE914726A8B7D6B4DF03 /* Pods-NoteFind-NoteFindUITests.debug.xcconfig */;
+			baseConfigurationReference = D41CFF7DBE38FA618F7A6DE2 /* Pods-NoteFind-NoteFindUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -770,7 +800,7 @@
 		};
 		EEA455D92874C79C00261F9C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F70ED524EFB3FA0C1CAAE1E5 /* Pods-NoteFind-NoteFindUITests.release.xcconfig */;
+			baseConfigurationReference = 1D14BD2007082E5D83D496FE /* Pods-NoteFind-NoteFindUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
