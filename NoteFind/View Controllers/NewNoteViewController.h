@@ -10,11 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol TagDelegate
 
-- (void)addTags:(Tags *)tag;
-
-@end
 
 @interface NewNoteViewController : UIViewController
 

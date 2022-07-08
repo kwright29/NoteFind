@@ -19,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 
+
 @end
 
 @implementation TagsViewController
@@ -85,5 +86,10 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)addTags:(nonnull Tags *)tag {
+    <#code#>
+}
+
 
 @end

@@ -8,11 +8,10 @@
 #import "NewNoteViewController.h"
 #import "TagsViewController.h"
 #import "Note.h"
+#import "TagCell.h"
 
-@interface NewNoteViewController ()  <TagsViewControllerDelegate>
+@interface NewNoteViewController ()  <TagDelegate>
 @property (strong, nonatomic) NSMutableArray *tags;
-
-
 
 @end
 
@@ -31,13 +30,27 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-
-    TagsViewController *tagVC = [segue destinationViewController];
-    tagVC.delegate = self;
+    
+    [self performSegueWithIdentifier:@"tagSegue" sender:nil];
+    TagCell *cell = [[TagCell alloc] init];
+    cell.delegate = self;
+    
+    
 }
 
 
 
 
+
+- (void)addTags:(nonnull Tags *)tag {
+    [self.tags insertObject:tag.title atIndex:0];
+    NSLog(@"%@ variable added", self.tags);
+}
+
+- (void)removeTags:(Tags *)tag {
+    [self.tags removeObject:tag.title];
+    NSLog(@"%@ variable removed", self.tags);
+
+}
 
 @end

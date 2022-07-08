@@ -11,11 +11,21 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol TagDelegate
+
+- (void)addTags:(Tags *)tag;
+- (void)removeTags:(Tags *)tag;
+
+@end
+
+
 @interface TagCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UILabel *tagTitle;
 @property (strong, nonatomic) IBOutlet UIButton *checkbox;
 
 @property (strong, nonatomic) Tags *tags;
+@property (nonatomic, weak) id <TagDelegate> delegate;
+
 
 
 - (void) setTag;
