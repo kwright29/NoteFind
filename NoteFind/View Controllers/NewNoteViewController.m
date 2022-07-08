@@ -31,14 +31,13 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+
     TagsViewController *tagVC = [segue destinationViewController];
     tagVC.delegate = self;
 }
 
 
-- (void)addTagsToPost:(NSString *)tag {
-    [self.tags insertObject:tag atIndex:0];
-}
+
 
 
 @end

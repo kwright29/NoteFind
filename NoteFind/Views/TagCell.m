@@ -27,17 +27,22 @@
     // Configure the view for the selected state
 }
 
+- (void)setTag {
+    self.checked = NO;
+    self.tagTitle.text = self.tags.title;
+}
+
 - (IBAction)didTapTag:(id)sender {
-    
+
     if (!self.checked) {
         self.checked = YES;
-        [self.tagButton setImage:[UIImage imageNamed:@"checkmark"] forState:UIControlStateNormal];
-        
+        [self.checkbox setSelected:YES];
+
     } else {
         self.checked = NO;
-        [self.tagButton setImage:nil forState:UIControlStateNormal];
+        [self.checkbox setSelected:NO];
     }
-    
+
 }
 
 

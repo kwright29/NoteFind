@@ -6,12 +6,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Tags.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol NoteDelegate
+@protocol TagDelegate
 
-- (void)didShareNote;
+- (void)addTags:(Tags *)tag;
 
 @end
 

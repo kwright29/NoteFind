@@ -6,19 +6,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Tags.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol TagsViewControllerDelegate
-
-- (void)addTagsToPost:(NSString *)tag;
-
-@end
 
 
 @interface TagsViewController : UIViewController
 
-@property (nonatomic, weak) id <TagsViewControllerDelegate> delegate;
+
 
 
 @end

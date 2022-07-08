@@ -7,12 +7,15 @@
 
 #import "TagsViewController.h"
 #import "TagCell.h"
+#import "Tags.h"
+#import <Parse/Parse.h>
+#import "NewNoteViewController.h"
 
 
 
-@interface TagsViewController () <UITableViewDataSource>
+@interface TagsViewController () <UITableViewDataSource, UITableViewDelegate, TagDelegate>
 
-@property NSMutableArray *allTags;
+@property (strong, nonatomic) NSMutableArray *allTags;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 
@@ -24,17 +27,44 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.tableView.dataSource = self;
-    self.allTags = [[NSMutableArray alloc] initWithObjects:@"calculus", @"discrete math", @"english", @"psychology", @"biology", @"chemistry", @"physics", @"computer science", @"writing", @"history", nil];
+    self.tableView.delegate = self;
+//    self.allTags = [[NSMutableArray alloc] init];
+    [self getTags];
+//    [self.tableView reloadData];
    
     
 }
-- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+
+
+- (void) getTags {
+    PFQuery *tagQuery = [Tags query];
+    [tagQuery orderByAscending:@"title"];
+    [tagQuery includeKey:@"title"];
+    tagQuery.limit = 20;
+    
+    [tagQuery findObjectsInBackgroundWithBlock:^(NSArray<Tags *> * _Nullable tags, NSError * _Nullable error) {
+        if (tags) {
+            // do something with the data fetched
+            self.allTags = (NSMutableArray *)tags;
+            
+        }
+        else {
+            // handle error
+            NSLog(@"Problem retrieving tags: %@", error.localizedDescription);
+        }
+        [self.tableView reloadData];
+    }];
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
 
     TagCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"TagCell" forIndexPath:indexPath];
-    NSString *tagTitle = self.allTags[indexPath.row];
-    
-    [cell.tagButton setTitle:tagTitle forState:UIControlStateNormal];
+    Tags *tag = self.allTags[indexPath.row];
+    cell.tags = tag;
+    [cell setTag];
+  
     
     return cell;
 
@@ -43,6 +73,7 @@
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.allTags.count;
 }
+
 
 
 /*

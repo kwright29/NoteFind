@@ -6,12 +6,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Tags.h"
+#import "Parse/ParseUIConstants.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TagCell : UITableViewCell
-@property (strong, nonatomic) IBOutlet UIButton *tagButton;
+@property (strong, nonatomic) IBOutlet UILabel *tagTitle;
+@property (strong, nonatomic) IBOutlet UIButton *checkbox;
 
+@property (strong, nonatomic) Tags *tags;
+
+
+- (void) setTag;
 
 @end
 

@@ -8,7 +8,7 @@
 #import "FeedViewController.h"
 #import "NewNoteViewController.h"
 
-@interface FeedViewController () <UITableViewDataSource, UITableViewDelegate, NoteDelegate>
+@interface FeedViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *notes;
 

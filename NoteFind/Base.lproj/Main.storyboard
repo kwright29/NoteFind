@@ -281,9 +281,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XLR-3v-wSX">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XLR-3v-wSX">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TagCell" rowHeight="48" id="BsJ-iu-1Zc" customClass="TagCell">
@@ -293,25 +292,63 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLi-OX-rsR">
-                                                    <rect key="frame" x="20" y="11" width="374" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3Q-ea-JyH">
+                                                    <rect key="frame" x="20" y="16" width="222" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="0Zu-aX-xSY"/>
+                                                        <constraint firstAttribute="width" constant="222" id="dyK-Pb-k3U"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6w-cG-v7k">
+                                                    <rect key="frame" x="332" y="9" width="30" height="30"/>
+                                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="5sl-cA-itf"/>
+                                                        <constraint firstAttribute="height" constant="30" id="PIN-uU-Ee1"/>
+                                                    </constraints>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="selected" image="checkmark" catalog="system"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
-                                                        <action selector="didTapTag:" destination="BsJ-iu-1Zc" eventType="touchUpInside" id="FgY-vV-ODw"/>
+                                                        <action selector="didTapTag:" destination="BsJ-iu-1Zc" eventType="touchUpInside" id="03e-hV-BqS"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="V3Q-ea-JyH" firstAttribute="top" secondItem="cRN-wh-D2c" secondAttribute="topMargin" constant="5" id="7nr-cH-gQO"/>
+                                                <constraint firstItem="V3Q-ea-JyH" firstAttribute="leading" secondItem="cRN-wh-D2c" secondAttribute="leadingMargin" id="8Ag-WT-HPq"/>
+                                                <constraint firstItem="b6w-cG-v7k" firstAttribute="top" secondItem="cRN-wh-D2c" secondAttribute="top" constant="9" id="8DH-F4-pAR"/>
+                                                <constraint firstAttribute="bottom" secondItem="b6w-cG-v7k" secondAttribute="bottom" constant="9" id="9EH-1k-tej"/>
+                                                <constraint firstAttribute="trailing" secondItem="b6w-cG-v7k" secondAttribute="trailing" constant="52" id="Gkf-Ty-qvv"/>
+                                                <constraint firstItem="V3Q-ea-JyH" firstAttribute="bottom" secondItem="cRN-wh-D2c" secondAttribute="bottomMargin" id="a8k-if-Sa9"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="TagCell"/>
+                                        <connections>
+                                            <outlet property="checkbox" destination="b6w-cG-v7k" id="riV-hP-X76"/>
+                                            <outlet property="tagTitle" destination="V3Q-ea-JyH" id="1wT-nF-WRj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fEf-kH-Gik"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XLR-3v-wSX" firstAttribute="top" secondItem="xga-mp-aYU" secondAttribute="top" id="0lK-GV-shd"/>
+                            <constraint firstItem="XLR-3v-wSX" firstAttribute="leading" secondItem="fEf-kH-Gik" secondAttribute="leading" id="aK4-uN-cWi"/>
+                            <constraint firstItem="XLR-3v-wSX" firstAttribute="trailing" secondItem="fEf-kH-Gik" secondAttribute="trailing" id="uY3-qZ-mlS"/>
+                            <constraint firstItem="XLR-3v-wSX" firstAttribute="bottom" secondItem="fEf-kH-Gik" secondAttribute="bottom" id="xKL-gs-NBu"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="aKo-WC-TPv"/>
                     <connections>
                         <outlet property="tableView" destination="XLR-3v-wSX" id="gu9-qQ-Qdp"/>
                     </connections>
@@ -603,12 +640,16 @@
         <segue reference="ghy-Lc-j7c"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus.square" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
