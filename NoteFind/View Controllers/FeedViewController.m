@@ -44,7 +44,8 @@
 }
 
 - (void)didShareNote {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    
 }
 - (IBAction)newPost:(id)sender {
     [self performSegueWithIdentifier:@"newPost" sender:nil];

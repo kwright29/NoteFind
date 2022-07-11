@@ -10,10 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol TransferDelegate
+
+- (void) addTags:(NSMutableArray *)filteredTags;
+
+@end
 
 @interface TagsViewController : UIViewController
 
-
+@property (nonatomic, weak) id <TransferDelegate> delegate;
 
 @end
 

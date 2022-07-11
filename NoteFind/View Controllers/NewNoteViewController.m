@@ -10,7 +10,7 @@
 #import "Note.h"
 #import "TagCell.h"
 
-@interface NewNoteViewController ()  <TagDelegate>
+@interface NewNoteViewController ()  <TransferDelegate>
 @property (strong, nonatomic) NSMutableArray *tags;
 
 @end
@@ -31,26 +31,19 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    [self performSegueWithIdentifier:@"tagSegue" sender:nil];
-    TagCell *cell = [[TagCell alloc] init];
-    cell.delegate = self;
+    // Check the segue
+    if ([[segue identifier] isEqualToString:@"tagSegue"]) {
+        TagsViewController *tagsVC = [segue destinationViewController];
+        tagsVC.delegate = self;
+    }
+
     
-    
 }
 
-
-
-
-
-- (void)addTags:(nonnull Tags *)tag {
-    [self.tags insertObject:tag.title atIndex:0];
-    NSLog(@"%@ variable added", self.tags);
+- (void)addTags:(nonnull NSMutableArray *)filteredTags {
+    self.tags = filteredTags;
+    NSLog(@"tags added: %@", self.tags);
 }
 
-- (void)removeTags:(Tags *)tag {
-    [self.tags removeObject:tag.title];
-    NSLog(@"%@ variable removed", self.tags);
-
-}
 
 @end

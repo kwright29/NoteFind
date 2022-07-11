@@ -17,6 +17,7 @@
 
 @property (strong, nonatomic) NSMutableArray *allTags;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSMutableArray *noteTags;
 
 
 
@@ -29,7 +30,7 @@
     // Do any additional setup after loading the view.
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-//    self.allTags = [[NSMutableArray alloc] init];
+    self.noteTags = [[NSMutableArray alloc] init];
     [self getTags];
 //    [self.tableView reloadData];
    
@@ -64,6 +65,7 @@
     TagCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"TagCell" forIndexPath:indexPath];
     Tags *tag = self.allTags[indexPath.row];
     cell.tags = tag;
+    cell.delegate = self;
     [cell setTag];
   
     
@@ -87,9 +89,21 @@
 }
 */
 
-- (void)addTags:(nonnull Tags *)tag {
-    <#code#>
+- (void)addTags:(NSString *)tagTitle {
+    [self.noteTags insertObject:tagTitle atIndex:0];
+    NSLog(@"%@ variable added", self.noteTags);
 }
+
+- (void)removeTags:(NSString *)tagTitle {
+    [self.noteTags removeObject:tagTitle];
+    NSLog(@"%@ variable removed", self.noteTags);
+
+}
+- (IBAction)didTapDone:(id)sender {
+    [self.delegate addTags:self.noteTags];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 
 @end

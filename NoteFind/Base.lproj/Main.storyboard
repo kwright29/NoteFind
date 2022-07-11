@@ -256,7 +256,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vE-fm-TrZ">
-                                <rect key="frame" x="52" y="247" width="102" height="31"/>
+                                <rect key="frame" x="52" y="262" width="102" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="add tags"/>
@@ -353,7 +353,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aKo-WC-TPv">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="mMF-rJ-fMU"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="mMF-rJ-fMU">
+                            <connections>
+                                <action selector="didTapDone:" destination="Z3H-dD-R9L" id="awb-rP-JWb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="XLR-3v-wSX" id="gu9-qQ-Qdp"/>
