@@ -13,6 +13,7 @@
 		EE285DC028761B5100BC7FF0 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE285DBF28761B5100BC7FF0 /* ProfileViewController.m */; };
 		EE285DC328761B5C00BC7FF0 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE285DC228761B5C00BC7FF0 /* SearchViewController.m */; };
 		EE285DC628761B7000BC7FF0 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE285DC528761B7000BC7FF0 /* FeedViewController.m */; };
+		EE6E4BC7287CEF3200FC068D /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6E4BC6287CEF3200FC068D /* Book.m */; };
 		EE6E869B287769AD0044F65F /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6E869A287769AD0044F65F /* APIManager.m */; };
 		EE6E869D287780AD0044F65F /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE6E869C287780AD0044F65F /* keys.plist */; };
 		EE6E86A32878A1B80044F65F /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6E86A22878A1B80044F65F /* Note.m */; };
@@ -32,6 +33,8 @@
 		EEA455CE2874C79C00261F9C /* NoteFindUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA455CD2874C79C00261F9C /* NoteFindUITestsLaunchTests.m */; };
 		EEA455E12874DE2300261F9C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA455E02874DE2300261F9C /* LoginViewController.m */; };
 		EEA455E42874E06F00261F9C /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA455E32874E06F00261F9C /* RegisterViewController.m */; };
+		EEEAC5B1287DF57D00A8659B /* TextbookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEEAC5B0287DF57D00A8659B /* TextbookViewController.m */; };
+		EEEAC5B4287DF6C600A8659B /* BookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EEEAC5B3287DF6C600A8659B /* BookCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,8 @@
 		EE285DC228761B5C00BC7FF0 /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		EE285DC428761B7000BC7FF0 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
 		EE285DC528761B7000BC7FF0 /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		EE6E4BC5287CEF3200FC068D /* Book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		EE6E4BC6287CEF3200FC068D /* Book.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 		EE6E8699287769AD0044F65F /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
 		EE6E869A287769AD0044F65F /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		EE6E869C287780AD0044F65F /* keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
@@ -98,6 +103,10 @@
 		EEA455E02874DE2300261F9C /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		EEA455E22874E06F00261F9C /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		EEA455E32874E06F00261F9C /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		EEEAC5AF287DF57D00A8659B /* TextbookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextbookViewController.h; sourceTree = "<group>"; };
+		EEEAC5B0287DF57D00A8659B /* TextbookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextbookViewController.m; sourceTree = "<group>"; };
+		EEEAC5B2287DF6C600A8659B /* BookCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookCell.h; sourceTree = "<group>"; };
+		EEEAC5B3287DF6C600A8659B /* BookCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookCell.m; sourceTree = "<group>"; };
 		F23C73B2235FE0FD72A4CFB2 /* Pods_NoteFindTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteFindTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B106584A70E4BBA992621B /* Pods_NoteFind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteFind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F37D7FE5DC035AC93D161E51 /* Pods-NoteFind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFind.release.xcconfig"; path = "Target Support Files/Pods-NoteFind/Pods-NoteFind.release.xcconfig"; sourceTree = "<group>"; };
@@ -227,6 +236,8 @@
 				EE6E86A82878A7D00044F65F /* NewNoteViewController.m */,
 				EE6E86AA2878AEFE0044F65F /* TagsViewController.h */,
 				EE6E86AB2878AEFE0044F65F /* TagsViewController.m */,
+				EEEAC5AF287DF57D00A8659B /* TextbookViewController.h */,
+				EEEAC5B0287DF57D00A8659B /* TextbookViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -238,6 +249,8 @@
 				EE6E86A22878A1B80044F65F /* Note.m */,
 				EE6E86B02878D7ED0044F65F /* Tags.h */,
 				EE6E86B12878D7ED0044F65F /* Tags.m */,
+				EE6E4BC5287CEF3200FC068D /* Book.h */,
+				EE6E4BC6287CEF3200FC068D /* Book.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -249,6 +262,8 @@
 				EE6E86A52878A76A0044F65F /* NoteCell.m */,
 				EE6E86AD2878AF200044F65F /* TagCell.h */,
 				EE6E86AE2878AF200044F65F /* TagCell.m */,
+				EEEAC5B2287DF6C600A8659B /* BookCell.h */,
+				EEEAC5B3287DF6C600A8659B /* BookCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -517,14 +532,17 @@
 				EEA455E42874E06F00261F9C /* RegisterViewController.m in Sources */,
 				EEA455E12874DE2300261F9C /* LoginViewController.m in Sources */,
 				EE6E869B287769AD0044F65F /* APIManager.m in Sources */,
+				EEEAC5B4287DF6C600A8659B /* BookCell.m in Sources */,
 				EE285DC628761B7000BC7FF0 /* FeedViewController.m in Sources */,
 				EE6E86B22878D7ED0044F65F /* Tags.m in Sources */,
+				EEEAC5B1287DF57D00A8659B /* TextbookViewController.m in Sources */,
 				EE6E86AC2878AEFE0044F65F /* TagsViewController.m in Sources */,
 				EEA455A72874C79C00261F9C /* AppDelegate.m in Sources */,
 				EE6E86A92878A7D00044F65F /* NewNoteViewController.m in Sources */,
 				EE6E86A32878A1B80044F65F /* Note.m in Sources */,
 				EE6E86A62878A76A0044F65F /* NoteCell.m in Sources */,
 				EEA455B82874C79C00261F9C /* main.m in Sources */,
+				EE6E4BC7287CEF3200FC068D /* Book.m in Sources */,
 				EE285DC028761B5100BC7FF0 /* ProfileViewController.m in Sources */,
 				EEA455AA2874C79C00261F9C /* SceneDelegate.m in Sources */,
 				EE285DC328761B5C00BC7FF0 /* SearchViewController.m in Sources */,

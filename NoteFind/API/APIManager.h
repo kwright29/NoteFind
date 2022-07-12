@@ -8,11 +8,14 @@
 #import <Foundation/Foundation.h>
 #import <NotionClient/Notion.h>
 
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface APIManager : NSObject
 
 @property (strong, nonatomic) NotionClient *client;
+- (void)getTextbooks:(void(^)(NSArray *books, NSError *error))completion;
+- (id)init;
 
 @end
 

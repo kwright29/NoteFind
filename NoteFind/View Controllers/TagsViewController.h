@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TagsViewController : UIViewController
 
-@property (nonatomic, weak) id <TransferDelegate> delegate;
+@property (nonatomic, weak) id <TransferDelegate> transferDelegate;
 
 @end
 

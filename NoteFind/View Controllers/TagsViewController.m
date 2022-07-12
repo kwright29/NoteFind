@@ -100,7 +100,7 @@
 
 }
 - (IBAction)didTapDone:(id)sender {
-    [self.delegate addTags:self.noteTags];
+    [self.transferDelegate addTags:self.noteTags];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

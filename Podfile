@@ -11,6 +11,7 @@ pod 'Parse/UI'
 pod 'DateTools'
 pod 'NotionClient'
 pod 'AppAuth'
+pod 'AFNetworking'
 
 
   target 'NoteFindTests' do

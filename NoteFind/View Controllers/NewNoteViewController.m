@@ -33,8 +33,9 @@
     
     // Check the segue
     if ([[segue identifier] isEqualToString:@"tagSegue"]) {
-        TagsViewController *tagsVC = [segue destinationViewController];
-        tagsVC.delegate = self;
+        UINavigationController *navController = [segue destinationViewController];
+        TagsViewController *tagsVC = (TagsViewController *)navController.topViewController;
+        tagsVC.transferDelegate = self;
     }
 
     
