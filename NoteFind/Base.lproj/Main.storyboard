@@ -305,25 +305,39 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="155"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ul-yb-lsB">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5ul-yb-lsB">
                                                     <rect key="frame" x="14" y="14" width="108" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="108" id="gtx-2x-GHf"/>
+                                                        <constraint firstAttribute="height" constant="128" id="qUI-fT-YgG"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7s-Fp-41y">
-                                                    <rect key="frame" x="130" y="14" width="264" height="66"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7s-Fp-41y">
+                                                    <rect key="frame" x="130" y="14" width="264" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Authors:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxE-ai-gls">
-                                                    <rect key="frame" x="130" y="94" width="51" height="16"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Authors:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxE-ai-gls">
+                                                    <rect key="frame" x="130" y="42.5" width="264" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="R7s-Fp-41y" firstAttribute="leading" secondItem="5ul-yb-lsB" secondAttribute="trailing" constant="8" symbolic="YES" id="4VI-g3-x0W"/>
+                                                <constraint firstItem="5ul-yb-lsB" firstAttribute="leading" secondItem="T8L-b8-5sE" secondAttribute="leading" constant="14" id="Mj6-Go-okR"/>
+                                                <constraint firstItem="KxE-ai-gls" firstAttribute="leading" secondItem="R7s-Fp-41y" secondAttribute="leading" id="ZcX-Pq-09u"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="R7s-Fp-41y" secondAttribute="trailing" id="dxU-5F-9u5"/>
+                                                <constraint firstItem="R7s-Fp-41y" firstAttribute="top" secondItem="T8L-b8-5sE" secondAttribute="topMargin" constant="3" id="fTH-j3-UeK"/>
+                                                <constraint firstItem="KxE-ai-gls" firstAttribute="top" secondItem="R7s-Fp-41y" secondAttribute="bottom" constant="8" id="fs7-GY-1gQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="5ul-yb-lsB" secondAttribute="bottom" constant="13" id="icV-ML-ule"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="KxE-ai-gls" secondAttribute="trailing" id="tRV-X2-oGM"/>
+                                                <constraint firstItem="R7s-Fp-41y" firstAttribute="top" secondItem="5ul-yb-lsB" secondAttribute="top" id="v1L-Sd-531"/>
+                                                <constraint firstItem="5ul-yb-lsB" firstAttribute="top" secondItem="T8L-b8-5sE" secondAttribute="top" constant="14" id="wAc-bk-sNt"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="BookCell"/>
                                         <connections>
@@ -775,6 +789,9 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

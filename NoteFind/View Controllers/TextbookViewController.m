@@ -9,7 +9,7 @@
 #import "APIManager.h"
 #import "BookCell.h"
 
-@interface TextbookViewController () <UITableViewDataSource>
+@interface TextbookViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *allBooks;
 
@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     self.allBooks = [NSMutableArray array];
     [self loadBooks];
    
@@ -32,10 +33,12 @@
         if (books) {
             NSLog(@"Successfully loaded books");
             self.allBooks = (NSMutableArray *)books;
+            
         }
         else {
             NSLog(@"Failure getting books");
         }
+        [self.tableView reloadData];
     }];
 }
 
@@ -52,7 +55,8 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     BookCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"BookCell" forIndexPath:indexPath];
     
-    cell.book = self.allBooks[indexPath.row];
+    Book *book = self.allBooks[indexPath.row];
+    [cell setBook:book];
     
     return cell;
 }

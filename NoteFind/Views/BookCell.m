@@ -31,7 +31,12 @@
 
     self.bookAuthors.text = authorsList;
     
-    [self.coverImageView setImageWithURL:self.book.bookCoverURL];
+    self.coverImageView.image = nil;
+    if (self.book.bookCoverURL != nil) {
+        [self.coverImageView setImageWithURL:self.book.bookCoverURL];
+    }
+    
+    
 }
 
 @end
