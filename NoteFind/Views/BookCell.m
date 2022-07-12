@@ -8,6 +8,12 @@
 #import "BookCell.h"
 #import "UIImageView+AFNetworking.h"
 
+@interface BookCell ()
+
+@property (nonatomic) BOOL checked;
+
+@end
+
 @implementation BookCell
 
 - (void)awakeFromNib {
@@ -23,7 +29,7 @@
 
 - (void)setBook:(Book *)book {
     _book = book;
-    
+    self.checked = NO;
     self.bookTitle.text = self.book.title;
     
     NSArray *authors = self.book.authors;
@@ -36,7 +42,17 @@
         [self.coverImageView setImageWithURL:self.book.bookCoverURL];
     }
     
-    
+}
+- (IBAction)didTapBook:(id)sender {
+    if (self.checked) {
+        self.checked = NO;
+        [self.checkbox setSelected:NO];
+        [self.delegate removeBook:self.bookTitle.text];
+    } else {
+        self.checked = YES;
+        [self.checkbox setSelected:YES];
+        [self.delegate addBook:self.bookTitle.text];
+    }
 }
 
 @end

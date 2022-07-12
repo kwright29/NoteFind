@@ -9,9 +9,12 @@
 #import "TagsViewController.h"
 #import "Note.h"
 #import "TagCell.h"
+#import "TransferDelegate.h"
+#import "TextbookViewController.h"
 
 @interface NewNoteViewController ()  <TransferDelegate>
 @property (strong, nonatomic) NSMutableArray *tags;
+@property (strong, nonatomic) NSMutableArray *books;
 
 @end
 
@@ -37,6 +40,11 @@
         TagsViewController *tagsVC = (TagsViewController *)navController.topViewController;
         tagsVC.transferDelegate = self;
     }
+    if ([[segue identifier] isEqualToString:@"textbookSegue"]) {
+        TextbookViewController *txtbkVC = [segue destinationViewController];
+        txtbkVC.transferDelegate = self;
+        
+    }
 
     
 }
@@ -44,6 +52,11 @@
 - (void)addTags:(nonnull NSMutableArray *)filteredTags {
     self.tags = filteredTags;
     NSLog(@"tags added: %@", self.tags);
+}
+
+- (void)addBooks:(nonnull NSMutableArray *)selectedBooks {
+    self.books = selectedBooks;
+    NSLog(@"books added: %@", self.tags);
 }
 
 

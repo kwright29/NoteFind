@@ -107,6 +107,7 @@
 		EEEAC5B0287DF57D00A8659B /* TextbookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextbookViewController.m; sourceTree = "<group>"; };
 		EEEAC5B2287DF6C600A8659B /* BookCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookCell.h; sourceTree = "<group>"; };
 		EEEAC5B3287DF6C600A8659B /* BookCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookCell.m; sourceTree = "<group>"; };
+		EEEAC5B5287E315600A8659B /* TransferDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransferDelegate.h; sourceTree = "<group>"; };
 		F23C73B2235FE0FD72A4CFB2 /* Pods_NoteFindTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteFindTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B106584A70E4BBA992621B /* Pods_NoteFind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteFind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F37D7FE5DC035AC93D161E51 /* Pods-NoteFind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFind.release.xcconfig"; path = "Target Support Files/Pods-NoteFind/Pods-NoteFind.release.xcconfig"; sourceTree = "<group>"; };
@@ -275,6 +276,7 @@
 				EEA455A62874C79C00261F9C /* AppDelegate.m */,
 				EEA455A82874C79C00261F9C /* SceneDelegate.h */,
 				EEA455A92874C79C00261F9C /* SceneDelegate.m */,
+				EEEAC5B5287E315600A8659B /* TransferDelegate.h */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";

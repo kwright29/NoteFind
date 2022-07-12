@@ -7,14 +7,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Tags.h"
+#import "TransferDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol TransferDelegate
 
-- (void) addTags:(NSMutableArray *)filteredTags;
-
-@end
 
 @interface TagsViewController : UIViewController
 

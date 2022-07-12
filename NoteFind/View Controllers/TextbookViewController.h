@@ -6,10 +6,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TransferDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TextbookViewController : UIViewController
+
+@property (nonatomic, weak) id <TransferDelegate> transferDelegate;
 
 @end
 
