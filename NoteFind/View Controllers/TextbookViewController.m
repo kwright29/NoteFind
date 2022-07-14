@@ -73,11 +73,15 @@
 - (void)addBook:(nonnull NSString *)bookTitle {
     [self.associatedTextbooks insertObject:bookTitle atIndex:0];
     NSLog(@"textbook added!");
+    [self.transferDelegate addBooks:self.associatedTextbooks];
+    NSLog(@"delegate called");
 }
 
 - (void)removeBook:(nonnull NSString *)bookTitle {
     [self.associatedTextbooks removeObject:bookTitle];
     NSLog(@"textbook removed");
+    [self.transferDelegate addBooks:self.associatedTextbooks];
+    NSLog(@"delegate called");
 }
 
 

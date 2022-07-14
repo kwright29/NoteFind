@@ -11,10 +11,15 @@
 #import "TagCell.h"
 #import "TransferDelegate.h"
 #import "TextbookViewController.h"
+#import <MobileCoreServices/MobileCoreServices.h>
 
-@interface NewNoteViewController ()  <TransferDelegate>
+
+@interface NewNoteViewController ()  <TransferDelegate, UIDocumentPickerDelegate>
 @property (strong, nonatomic) NSMutableArray *tags;
 @property (strong, nonatomic) NSMutableArray *books;
+@property (strong, nonatomic) NSURL *selectedFileURL;
+@property (strong, nonatomic) IBOutlet UIButton *addNoteButton;
+@property (strong, nonatomic) UIMenu *importMenu;
 
 @end
 
@@ -22,10 +27,39 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.addNoteButton.showsMenuAsPrimaryAction = YES;
+    [self setImportMenu:self.importMenu];
     // Do any additional setup after loading the view.
 
 }
-
+- (void)setImportMenu:(UIMenu *)importMenu {
+    //setting options for menu
+    NSMutableArray *options = [[NSMutableArray alloc] init];
+    [options addObject:[UIAction actionWithTitle:@"import from files" image:nil identifier:nil handler:^(__kindof UIAction * _Nonnull action) {
+        
+        UTType *const UTTypePDF;
+        UIDocumentPickerViewController *documentPicker = [[UIDocumentPickerViewController alloc] initForOpeningContentTypes:@[UTTypePDF]];
+        documentPicker.delegate = self;
+        documentPicker.allowsMultipleSelection = NO;
+        [self presentViewController:documentPicker animated:YES completion:nil];
+        
+    }]];
+    
+    [options addObject:[UIAction actionWithTitle:@"take picture w/ camera" image:nil identifier:nil handler:^(__kindof UIAction * _Nonnull action) {
+        NSLog(@"button was tapped successfully!");
+    }]];
+    [options addObject:[UIAction actionWithTitle:@"import from gallery" image:nil identifier:nil handler:^(__kindof UIAction * _Nonnull action) {
+    
+    }]];
+    [options addObject:[UIAction actionWithTitle:@"import from notion" image:nil identifier:nil handler:^(__kindof UIAction * _Nonnull action) {
+    
+    }]];
+    
+    importMenu = [UIMenu menuWithChildren:options];
+    
+    //setting menu to button
+    self.addNoteButton.menu = importMenu;
+}
 
 #pragma mark - Navigation
 
@@ -59,5 +93,20 @@
     NSLog(@"books added: %@", self.tags);
 }
 
+- (IBAction)importNote:(id)sender {
+
+    
+    
+    
+  
+}
+
+
+- (void)documentPicker:(UIDocumentPickerViewController *)controller didPickDocumentsAtURLs:(NSArray<NSURL *> *)urls {
+    
+    self.selectedFileURL = urls.firstObject;
+    NSLog(@"%@", self.selectedFileURL);
+    
+}
 
 @end
