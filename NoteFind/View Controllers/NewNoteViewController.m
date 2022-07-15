@@ -14,12 +14,13 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 
 
-@interface NewNoteViewController ()  <TransferDelegate, UIDocumentPickerDelegate>
+@interface NewNoteViewController ()  <TransferDelegate, UIDocumentPickerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (strong, nonatomic) NSMutableArray *tags;
 @property (strong, nonatomic) NSMutableArray *books;
 @property (strong, nonatomic) NSURL *selectedFileURL;
 @property (strong, nonatomic) IBOutlet UIButton *addNoteButton;
 @property (strong, nonatomic) UIMenu *importMenu;
+@property (strong, nonatomic) IBOutlet UIImageView *noteImageView;
 
 @end
 
@@ -47,9 +48,10 @@
     
     [options addObject:[UIAction actionWithTitle:@"take picture w/ camera" image:nil identifier:nil handler:^(__kindof UIAction * _Nonnull action) {
         NSLog(@"button was tapped successfully!");
+        [self showCamera];
     }]];
     [options addObject:[UIAction actionWithTitle:@"import from gallery" image:nil identifier:nil handler:^(__kindof UIAction * _Nonnull action) {
-    
+        [self showGallery];
     }]];
     [options addObject:[UIAction actionWithTitle:@"import from notion" image:nil identifier:nil handler:^(__kindof UIAction * _Nonnull action) {
     
@@ -93,14 +95,40 @@
     NSLog(@"books added: %@", self.tags);
 }
 
-- (IBAction)importNote:(id)sender {
-
+- (void)showCamera {
+    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+    imagePickerVC.delegate = self;
     
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }
+    else {
+        NSLog(@"Camera 🚫 available so we will use photo library instead");
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
     
-    
-  
+    [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
 
+- (void)showGallery {
+    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+    imagePickerVC.delegate = self;
+    imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentViewController:imagePickerVC animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    // Get the image captured by the UIImagePickerController
+    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+    
+    // Do something with the images (based on your use case)
+    self.noteImageView.image = originalImage;
+    
+    // Dismiss UIImagePickerController to go back to your original view controller
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)documentPicker:(UIDocumentPickerViewController *)controller didPickDocumentsAtURLs:(NSArray<NSURL *> *)urls {
     
