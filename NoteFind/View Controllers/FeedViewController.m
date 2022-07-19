@@ -6,10 +6,7 @@
 //
 
 #import "FeedViewController.h"
-#import "NewNoteViewController.h"
-#import "Parse/Parse.h"
-#import "SceneDelegate.h"
-#import "LoginViewController.h"
+
 
 @interface FeedViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -21,7 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.tableView.dataSource = self;
+    [self getNotes];
 }
 
 
@@ -35,12 +33,28 @@
 }
  */
 
-- (IBAction)didTapAdd:(id)sender {
+- (void) getNotes {
+    PFQuery *noteQuery = [Note query];
+    [noteQuery orderByDescending:@"createdAt"];
+    [noteQuery includeKey:@"author"];
+    
+    [noteQuery findObjectsInBackgroundWithBlock:^(NSArray<Note *> *notes, NSError *error) {
+        if (notes) {
+            self.notes = (NSMutableArray *)notes;
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"problem retrieving notes");
+        }
+    }];
 }
 
-//- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-//
-//}
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    NoteCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"NoteCell" forIndexPath:indexPath];
+    
+    cell.note = self.notes[indexPath.row];
+    
+    return cell;
+}
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.notes.count;

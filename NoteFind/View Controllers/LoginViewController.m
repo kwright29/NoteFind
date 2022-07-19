@@ -7,6 +7,7 @@
 
 #import "LoginViewController.h"
 #import "Parse/Parse.h"
+#import "SceneDelegate.h"
 
 @interface LoginViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -65,6 +66,7 @@
         }];
 
 }
+
 
 /*
 #pragma mark - Navigation

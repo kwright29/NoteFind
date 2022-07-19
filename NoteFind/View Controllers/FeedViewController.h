@@ -6,6 +6,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NewNoteViewController.h"
+#import "Parse/Parse.h"
+#import "SceneDelegate.h"
+#import "LoginViewController.h"
+#import "Note.h"
+#import "NoteCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

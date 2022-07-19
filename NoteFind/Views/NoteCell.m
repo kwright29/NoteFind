@@ -19,6 +19,17 @@
 
     // Configure the view for the selected state
 }
+
+- (void)setNote:(Note *)note {
+    _note = note;
+    self.postTitle.text = self.note.title;
+    self.postCaption.text = self.note.noteDescription;
+    self.postUsername.text = self.note.author.username;
+    self.postNote.file = self.note.note;
+    [self.postNote loadInBackground];
+    
+    
+}
 - (IBAction)didTapAdd:(id)sender {
    
 }

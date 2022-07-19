@@ -6,13 +6,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Note.h"
+#import <Parse/Parse.h>
+#import <Parse/ParseUIConstants.h>
+#import "Parse/PFImageView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NoteCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UILabel *postUsername;
-@property (strong, nonatomic) IBOutlet UIImageView *postNote;
+@property (strong, nonatomic) IBOutlet PFImageView *postNote;
 @property (strong, nonatomic) IBOutlet UILabel *postCaption;
+@property (strong, nonatomic) IBOutlet UILabel *postTitle;
+@property (strong, nonatomic) Note *note;
 
 @end
 
