@@ -10,6 +10,8 @@
 @implementation Book
 
 - (id)initWithDictionary:(NSDictionary *)dictionary {
+    //getting unique ID
+    self.identifier = dictionary[@"id"];
     NSDictionary *volumeInfo = dictionary[@"volumeInfo"];
     
     self.title = volumeInfo[@"title"];
@@ -32,5 +34,7 @@
     
     return books;
 }
+
+
 
 @end

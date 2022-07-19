@@ -70,15 +70,15 @@
 
 
 
-- (void)addBook:(nonnull NSString *)bookTitle {
-    [self.associatedTextbooks insertObject:bookTitle atIndex:0];
+- (void)addBook:(nonnull NSString *)bookID {
+    [self.associatedTextbooks insertObject:bookID atIndex:0];
     NSLog(@"textbook added!");
     [self.transferDelegate addBooks:self.associatedTextbooks];
     NSLog(@"delegate called");
 }
 
-- (void)removeBook:(nonnull NSString *)bookTitle {
-    [self.associatedTextbooks removeObject:bookTitle];
+- (void)removeBook:(nonnull NSString *)bookID {
+    [self.associatedTextbooks removeObject:bookID];
     NSLog(@"textbook removed");
     [self.transferDelegate addBooks:self.associatedTextbooks];
     NSLog(@"delegate called");
