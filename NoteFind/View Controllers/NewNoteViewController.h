@@ -7,9 +7,16 @@
 
 #import <UIKit/UIKit.h>
 #import "Tags.h"
+#import "TagsViewController.h"
+#import "Note.h"
+#import "TagCell.h"
+#import "TransferDelegate.h"
+#import "TextbookViewController.h"
+#import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
+#import "ImportDelegate.h"
+#import "CameraImport.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
 
 
 @interface NewNoteViewController : UIViewController

@@ -6,21 +6,16 @@
 //
 
 #import "NewNoteViewController.h"
-#import "TagsViewController.h"
-#import "Note.h"
-#import "TagCell.h"
-#import "TransferDelegate.h"
-#import "TextbookViewController.h"
-#import <MobileCoreServices/MobileCoreServices.h>
 
-
-@interface NewNoteViewController ()  <TransferDelegate, UIDocumentPickerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface NewNoteViewController ()  <TransferDelegate, UIDocumentPickerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ImportDelegate>
 @property (strong, nonatomic) NSMutableArray *tags;
 @property (strong, nonatomic) NSMutableArray *books;
 @property (strong, nonatomic) NSURL *selectedFileURL;
 @property (strong, nonatomic) IBOutlet UIButton *addNoteButton;
 @property (strong, nonatomic) UIMenu *importMenu;
 @property (strong, nonatomic) IBOutlet UIImageView *noteImageView;
+@property (strong, nonatomic) IBOutlet UITextField *titleTextField;
+@property (strong, nonatomic) IBOutlet UITextField *descriptionTextField;
 
 @end
 
@@ -38,8 +33,8 @@
     NSMutableArray *options = [[NSMutableArray alloc] init];
     [options addObject:[UIAction actionWithTitle:@"import from files" image:nil identifier:nil handler:^(__kindof UIAction * _Nonnull action) {
         
-        UTType *const UTTypePDF;
-        UIDocumentPickerViewController *documentPicker = [[UIDocumentPickerViewController alloc] initForOpeningContentTypes:@[UTTypePDF]];
+        NSArray<UTType *> *types = @[UTTypeText];
+        UIDocumentPickerViewController *documentPicker = [[UIDocumentPickerViewController alloc] initForOpeningContentTypes:types];
         documentPicker.delegate = self;
         documentPicker.allowsMultipleSelection = NO;
         [self presentViewController:documentPicker animated:YES completion:nil];
@@ -48,8 +43,10 @@
     
     [options addObject:[UIAction actionWithTitle:@"take picture w/ camera" image:nil identifier:nil handler:^(__kindof UIAction * _Nonnull action) {
         NSLog(@"button was tapped successfully!");
-        [self showCamera];
+        CameraImport *cameraImport = [[CameraImport alloc]init];
+        [cameraImport showCamera:self];
     }]];
+    
     [options addObject:[UIAction actionWithTitle:@"import from gallery" image:nil identifier:nil handler:^(__kindof UIAction * _Nonnull action) {
         [self showGallery];
     }]];
@@ -95,20 +92,7 @@
     NSLog(@"books added: %@", self.tags);
 }
 
-- (void)showCamera {
-    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
-    imagePickerVC.delegate = self;
-    
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
-    }
-    else {
-        NSLog(@"Camera 🚫 available so we will use photo library instead");
-        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    }
-    
-    [self presentViewController:imagePickerVC animated:YES completion:nil];
-}
+
 
 - (void)showGallery {
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
@@ -120,14 +104,7 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
-    // Get the image captured by the UIImagePickerController
-    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
-    
-    // Do something with the images (based on your use case)
-    self.noteImageView.image = originalImage;
-    
-    // Dismiss UIImagePickerController to go back to your original view controller
-    [self dismissViewControllerAnimated:YES completion:nil];
+   
 }
 
 - (void)documentPicker:(UIDocumentPickerViewController *)controller didPickDocumentsAtURLs:(NSArray<NSURL *> *)urls {
@@ -136,5 +113,25 @@
     NSLog(@"%@", self.selectedFileURL);
     
 }
+
+- (void)getImageFromCamera:(nonnull UIImage *)img {
+    self.noteImageView.image = img;
+}
+
+- (IBAction)didTapPost:(id)sender {
+    
+    [Note postUserNote:_noteImageView.image withDescription:self.descriptionTextField.text withTitle:self.titleTextField.text withTags:self.tags withBooks:self.books withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            NSLog(@"note successfully posted!");
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+       
+    
+    }];
+
+}
+
+
+
 
 @end

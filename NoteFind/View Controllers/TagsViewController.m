@@ -89,13 +89,13 @@
 }
 */
 
-- (void)addTags:(NSString *)tagTitle {
-    [self.noteTags insertObject:tagTitle atIndex:0];
+- (void)addTags:(NSString *)tagID {
+    [self.noteTags insertObject:tagID atIndex:0];
     NSLog(@"%@ variable added", self.noteTags);
 }
 
-- (void)removeTags:(NSString *)tagTitle {
-    [self.noteTags removeObject:tagTitle];
+- (void)removeTags:(NSString *)tagID {
+    [self.noteTags removeObject:tagID];
     NSLog(@"%@ variable removed", self.noteTags);
 
 }

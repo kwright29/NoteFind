@@ -37,12 +37,12 @@
     if (!self.checked) {
         self.checked = YES;
         [self.checkbox setSelected:YES];
-        [self.delegate addTags:self.tagTitle.text];
+        [self.delegate addTags:self.tags.objectId];
 
     } else {
         self.checked = NO;
         [self.checkbox setSelected:NO];
-        [self.delegate removeTags:self.tagTitle.text];
+        [self.delegate removeTags:self.tags.objectId];
     }
 
 }
