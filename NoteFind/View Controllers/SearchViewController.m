@@ -9,6 +9,7 @@
 
 @interface SearchViewController ()
 
+@property (nonatomic, strong) NSArray *allTags;
 
 @end
 
@@ -16,7 +17,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.allTags = [[NSMutableArray alloc] init];
+    [self getTags];
+}
+
+- (void) getTags {
+    PFQuery *tagQuery = [Tags query];
+    [tagQuery orderByAscending:@"title"];
+    [tagQuery includeKey:@"title"];
+    NSMutableArray *tagTitles = [[NSMutableArray alloc]init];
+    
+    [tagQuery findObjectsInBackgroundWithBlock:^(NSArray<Tags *> *tags, NSError *error) {
+        if (tags) {
+            // adding title to allTags for table view
+            for (Tags *tag in tags) {
+                NSString *title = tag.title;
+                [tagTitles addObject:title];
+            }
+            self.allTags = (NSArray *)tagTitles;
+        } else {
+            // TODO: handle error
+        }
+    }];
+    
+    
 }
 
 /*

@@ -6,6 +6,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import "Tags.h"
+
+
 
 NS_ASSUME_NONNULL_BEGIN
 
