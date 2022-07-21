@@ -667,7 +667,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fJD-ea-Cht">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="fJD-ea-Cht">
                                 <rect key="frame" x="0.0" y="88.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fJD-ea-Cht" id="WNq-DP-SSM">
@@ -684,11 +684,12 @@
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="xeA-jm-iQe"/>
                     <connections>
                         <outlet property="searchBar" destination="wdd-Gl-kTl" id="suu-Ta-QWJ"/>
+                        <outlet property="tableView" destination="6Fi-lm-pZq" id="it6-Jb-iqw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7p1-tV-4GD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1230" y="1302"/>
+            <point key="canvasLocation" x="1228.985507246377" y="1301.7857142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4ZB-MS-f0S">

@@ -8,17 +8,18 @@
 #import "SearchViewController.h"
 
 @interface SearchViewController ()
-
 @property (nonatomic, strong) NSArray *allTags;
-
 @end
 
 @implementation SearchViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     self.allTags = [[NSMutableArray alloc] init];
     [self getTags];
+    
 }
 
 - (void) getTags {
@@ -38,10 +39,25 @@
         } else {
             // TODO: handle error
         }
+        [self.tableView reloadData];
     }];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
+    cell.textLabel.text = self.allTags[indexPath.row];
+    [cell.imageView setImage:[UIImage imageNamed:@"tag.fill"]];
+    
+    return cell;
     
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return self.allTags.count;
+}
+
 
 /*
 #pragma mark - Navigation
