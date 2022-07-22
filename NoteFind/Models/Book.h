@@ -13,11 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Book : NSObject
 
-@property (strong, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *title;
 @property (strong, nonatomic) NSURL *bookCoverURL;
-@property (strong, nonatomic) NSString *synposis;
+@property (copy, nonatomic) NSString *synposis;
 @property (strong, nonatomic) NSArray *authors;
-@property (strong, nonatomic) NSString *identifier;
+@property (copy, nonatomic) NSString *identifier;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 + (NSMutableArray *)booksWithDictionaries:(NSArray *)dictionaries;

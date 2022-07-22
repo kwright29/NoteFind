@@ -10,6 +10,7 @@
 #import "Tags.h"
 #import <Parse/Parse.h>
 #import "NewNoteViewController.h"
+#import "ErrorAlerts.h"
 
 
 
@@ -46,12 +47,10 @@
     
     [tagQuery findObjectsInBackgroundWithBlock:^(NSArray<Tags *> * _Nullable tags, NSError * _Nullable error) {
         if (tags) {
-            // do something with the data fetched
             self.allTags = (NSMutableArray *)tags;
-            
         }
         else {
-            // handle error
+            [ErrorAlerts retrieveTagsFailure:self];
             NSLog(@"Problem retrieving tags: %@", error.localizedDescription);
         }
         [self.tableView reloadData];
@@ -89,14 +88,13 @@
 }
 */
 
-- (void)addTags:(NSString *)tagID {
-    [self.noteTags insertObject:tagID atIndex:0];
-    NSLog(@"%@ variable added", self.noteTags);
+- (void)addTags:(Tags *)tag {
+    [self.noteTags insertObject:tag atIndex:0];
+    
 }
 
-- (void)removeTags:(NSString *)tagID {
-    [self.noteTags removeObject:tagID];
-    NSLog(@"%@ variable removed", self.noteTags);
+- (void)removeTags:(Tags *)tag {
+    [self.noteTags removeObject:tag];
 
 }
 - (IBAction)didTapDone:(id)sender {

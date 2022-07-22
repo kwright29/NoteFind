@@ -13,6 +13,11 @@
 		EE285DC028761B5100BC7FF0 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE285DBF28761B5100BC7FF0 /* ProfileViewController.m */; };
 		EE285DC328761B5C00BC7FF0 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE285DC228761B5C00BC7FF0 /* SearchViewController.m */; };
 		EE285DC628761B7000BC7FF0 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE285DC528761B7000BC7FF0 /* FeedViewController.m */; };
+<<<<<<< Updated upstream
+=======
+		EE3CD928288B1C6E00557839 /* ErrorAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3CD927288B1C6E00557839 /* ErrorAlerts.m */; };
+		EE4FB1B0288224EB00B3429B /* CameraImport.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4FB1AF288224EB00B3429B /* CameraImport.m */; };
+>>>>>>> Stashed changes
 		EE6E4BC7287CEF3200FC068D /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6E4BC6287CEF3200FC068D /* Book.m */; };
 		EE6E869B287769AD0044F65F /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6E869A287769AD0044F65F /* APIManager.m */; };
 		EE6E869D287780AD0044F65F /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE6E869C287780AD0044F65F /* keys.plist */; };
@@ -67,6 +72,14 @@
 		EE285DC228761B5C00BC7FF0 /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		EE285DC428761B7000BC7FF0 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
 		EE285DC528761B7000BC7FF0 /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+<<<<<<< Updated upstream
+=======
+		EE3CD926288B1C6E00557839 /* ErrorAlerts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorAlerts.h; sourceTree = "<group>"; };
+		EE3CD927288B1C6E00557839 /* ErrorAlerts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ErrorAlerts.m; sourceTree = "<group>"; };
+		EE4FB1A628821AF600B3429B /* ImportDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImportDelegate.h; sourceTree = "<group>"; };
+		EE4FB1AE288224EB00B3429B /* CameraImport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraImport.h; sourceTree = "<group>"; };
+		EE4FB1AF288224EB00B3429B /* CameraImport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraImport.m; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 		EE6E4BC5287CEF3200FC068D /* Book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
 		EE6E4BC6287CEF3200FC068D /* Book.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 		EE6E8699287769AD0044F65F /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
@@ -154,6 +167,27 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+<<<<<<< Updated upstream
+=======
+		EE3CD922288B1BE400557839 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				EE3CD926288B1C6E00557839 /* ErrorAlerts.h */,
+				EE3CD927288B1C6E00557839 /* ErrorAlerts.m */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
+		EE4FB19C2882152900B3429B /* Import-Files */ = {
+			isa = PBXGroup;
+			children = (
+				EE4FB1AE288224EB00B3429B /* CameraImport.h */,
+				EE4FB1AF288224EB00B3429B /* CameraImport.m */,
+			);
+			path = "Import-Files";
+			sourceTree = "<group>";
+		};
+>>>>>>> Stashed changes
 		EE6E86982877617C0044F65F /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +222,11 @@
 		EEA455A42874C79C00261F9C /* NoteFind */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< Updated upstream
+=======
+				EE3CD922288B1BE400557839 /* Alerts */,
+				EE4FB19C2882152900B3429B /* Import-Files */,
+>>>>>>> Stashed changes
 				EE6E86982877617C0044F65F /* API */,
 				EEA455DE2874DDD700261F9C /* Delegates */,
 				EEA455DD2874DDCC00261F9C /* Views */,
@@ -538,6 +577,7 @@
 				EE285DC628761B7000BC7FF0 /* FeedViewController.m in Sources */,
 				EE6E86B22878D7ED0044F65F /* Tags.m in Sources */,
 				EEEAC5B1287DF57D00A8659B /* TextbookViewController.m in Sources */,
+				EE3CD928288B1C6E00557839 /* ErrorAlerts.m in Sources */,
 				EE6E86AC2878AEFE0044F65F /* TagsViewController.m in Sources */,
 				EEA455A72874C79C00261F9C /* AppDelegate.m in Sources */,
 				EE6E86A92878A7D00044F65F /* NewNoteViewController.m in Sources */,

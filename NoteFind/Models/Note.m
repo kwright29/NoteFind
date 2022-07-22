@@ -41,7 +41,14 @@
     newNote.title = title;
 
     
-    [newNote saveInBackgroundWithBlock: completion];
+    [newNote saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            [self addNoteToTags:newNote];
+        }
+    }];
+   
+    
+    
 }
 
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {
@@ -78,5 +85,14 @@
     return newImage;
 }
 
++ (void)addNoteToTags:(Note *)note {
+    
+    NSArray *noteTags = note.tags;
+
+    for (Tags *tag in noteTags) {
+        [tag addObject:note.objectId forKey:@"taggedNotes"];
+        [tag saveInBackground];
+    }
+}
 
 @end

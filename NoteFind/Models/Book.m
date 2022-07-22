@@ -11,6 +11,7 @@
 
 - (id)initWithDictionary:(NSDictionary *)dictionary {
     //getting unique ID
+    NSAssert([dictionary objectForKey:@"id"] == nil, @"No such key in dictionary");
     self.identifier = dictionary[@"id"];
     NSDictionary *volumeInfo = dictionary[@"volumeInfo"];
     
