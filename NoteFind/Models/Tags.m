@@ -9,9 +9,13 @@
 
 @implementation Tags
 @dynamic title;
+@dynamic taggedNotes;
 
 + (nonnull NSString *)parseClassName {
     return @"Tags";
 }
+
+
+
 
 @end

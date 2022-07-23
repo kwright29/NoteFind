@@ -10,9 +10,11 @@
 		22E4DC1EBE04DD7194609B0B /* Pods_NoteFind_NoteFindUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 910F4DAD409AE04503A054CC /* Pods_NoteFind_NoteFindUITests.framework */; };
 		3F682E59AD8103B7A30DBD2B /* Pods_NoteFind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2B106584A70E4BBA992621B /* Pods_NoteFind.framework */; };
 		A22A03E60D145B7928407E28 /* Pods_NoteFindTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23C73B2235FE0FD72A4CFB2 /* Pods_NoteFindTests.framework */; };
+		EE1CD28F288B6E1D00E64F2A /* CameraImport.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1CD28E288B6E1D00E64F2A /* CameraImport.m */; };
 		EE285DC028761B5100BC7FF0 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE285DBF28761B5100BC7FF0 /* ProfileViewController.m */; };
 		EE285DC328761B5C00BC7FF0 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE285DC228761B5C00BC7FF0 /* SearchViewController.m */; };
 		EE285DC628761B7000BC7FF0 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE285DC528761B7000BC7FF0 /* FeedViewController.m */; };
+		EE3CD928288B1C6E00557839 /* ErrorAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3CD927288B1C6E00557839 /* ErrorAlerts.m */; };
 		EE6E4BC7287CEF3200FC068D /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6E4BC6287CEF3200FC068D /* Book.m */; };
 		EE6E869B287769AD0044F65F /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6E869A287769AD0044F65F /* APIManager.m */; };
 		EE6E869D287780AD0044F65F /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE6E869C287780AD0044F65F /* keys.plist */; };
@@ -61,12 +63,16 @@
 		6631E7301B2BA5F36119E176 /* Pods-NoteFind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFind.debug.xcconfig"; path = "Target Support Files/Pods-NoteFind/Pods-NoteFind.debug.xcconfig"; sourceTree = "<group>"; };
 		910F4DAD409AE04503A054CC /* Pods_NoteFind_NoteFindUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteFind_NoteFindUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41CFF7DBE38FA618F7A6DE2 /* Pods-NoteFind-NoteFindUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFind-NoteFindUITests.debug.xcconfig"; path = "Target Support Files/Pods-NoteFind-NoteFindUITests/Pods-NoteFind-NoteFindUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EE1CD28D288B6E1D00E64F2A /* CameraImport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraImport.h; sourceTree = "<group>"; };
+		EE1CD28E288B6E1D00E64F2A /* CameraImport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraImport.m; sourceTree = "<group>"; };
 		EE285DBE28761B5100BC7FF0 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		EE285DBF28761B5100BC7FF0 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		EE285DC128761B5C00BC7FF0 /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		EE285DC228761B5C00BC7FF0 /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		EE285DC428761B7000BC7FF0 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
 		EE285DC528761B7000BC7FF0 /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		EE3CD926288B1C6E00557839 /* ErrorAlerts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorAlerts.h; sourceTree = "<group>"; };
+		EE3CD927288B1C6E00557839 /* ErrorAlerts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ErrorAlerts.m; sourceTree = "<group>"; };
 		EE6E4BC5287CEF3200FC068D /* Book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
 		EE6E4BC6287CEF3200FC068D /* Book.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 		EE6E8699287769AD0044F65F /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
@@ -103,6 +109,7 @@
 		EEA455E02874DE2300261F9C /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		EEA455E22874E06F00261F9C /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		EEA455E32874E06F00261F9C /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		EEBC2106288B6C1D00D203A2 /* ImportDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImportDelegate.h; sourceTree = "<group>"; };
 		EEEAC5AF287DF57D00A8659B /* TextbookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextbookViewController.h; sourceTree = "<group>"; };
 		EEEAC5B0287DF57D00A8659B /* TextbookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextbookViewController.m; sourceTree = "<group>"; };
 		EEEAC5B2287DF6C600A8659B /* BookCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookCell.h; sourceTree = "<group>"; };
@@ -154,6 +161,24 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		EE3CD922288B1BE400557839 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				EE3CD926288B1C6E00557839 /* ErrorAlerts.h */,
+				EE3CD927288B1C6E00557839 /* ErrorAlerts.m */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
+		EE4FB19C2882152900B3429B /* Import-Files */ = {
+			isa = PBXGroup;
+			children = (
+				EE1CD28D288B6E1D00E64F2A /* CameraImport.h */,
+				EE1CD28E288B6E1D00E64F2A /* CameraImport.m */,
+			);
+			path = "Import-Files";
+			sourceTree = "<group>";
+		};
 		EE6E86982877617C0044F65F /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +213,8 @@
 		EEA455A42874C79C00261F9C /* NoteFind */ = {
 			isa = PBXGroup;
 			children = (
+				EE3CD922288B1BE400557839 /* Alerts */,
+				EE4FB19C2882152900B3429B /* Import-Files */,
 				EE6E86982877617C0044F65F /* API */,
 				EEA455DE2874DDD700261F9C /* Delegates */,
 				EEA455DD2874DDCC00261F9C /* Views */,
@@ -272,6 +299,7 @@
 		EEA455DE2874DDD700261F9C /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
+				EEBC2106288B6C1D00D203A2 /* ImportDelegate.h */,
 				EEA455A52874C79C00261F9C /* AppDelegate.h */,
 				EEA455A62874C79C00261F9C /* AppDelegate.m */,
 				EEA455A82874C79C00261F9C /* SceneDelegate.h */,
@@ -535,9 +563,11 @@
 				EEA455E12874DE2300261F9C /* LoginViewController.m in Sources */,
 				EE6E869B287769AD0044F65F /* APIManager.m in Sources */,
 				EEEAC5B4287DF6C600A8659B /* BookCell.m in Sources */,
+				EE1CD28F288B6E1D00E64F2A /* CameraImport.m in Sources */,
 				EE285DC628761B7000BC7FF0 /* FeedViewController.m in Sources */,
 				EE6E86B22878D7ED0044F65F /* Tags.m in Sources */,
 				EEEAC5B1287DF57D00A8659B /* TextbookViewController.m in Sources */,
+				EE3CD928288B1C6E00557839 /* ErrorAlerts.m in Sources */,
 				EE6E86AC2878AEFE0044F65F /* TagsViewController.m in Sources */,
 				EEA455A72874C79C00261F9C /* AppDelegate.m in Sources */,
 				EE6E86A92878A7D00044F65F /* NewNoteViewController.m in Sources */,

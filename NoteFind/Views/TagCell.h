@@ -13,8 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol TagDelegate
 
-- (void)addTags:(NSString *)tagTitle;
-- (void)removeTags:(NSString *)tagTitle;
+- (void)addTags:(Tags *)tag;
+- (void)removeTags:(Tags *)tag;
 
 @end
 

@@ -6,7 +6,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Tags.h"
 #import "TransferDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN

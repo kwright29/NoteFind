@@ -9,31 +9,46 @@
 
 @implementation Note
 
-@dynamic noteID;
 @dynamic userID;
+
 @dynamic note;
 @dynamic author;
 @dynamic tags;
-@dynamic textbook;
+@dynamic textbooks;
 @dynamic addCount;
-@dynamic caption;
+@dynamic noteDescription;
 @dynamic uploaded;
+@dynamic title;
 
 
 + (nonnull NSString *)parseClassName {
     return @"Note";
 }
 
-+ (void) postUserNote: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion {
++ (void) postUserNote: (UIImage * _Nullable)image withDescription: (NSString * _Nullable)description withTitle: (NSString * _Nullable)title withTags: (NSMutableArray *)tags withBooks: (NSMutableArray *)textbooks withCompletion: (PFBooleanResultBlock  _Nullable)completion {
     
-    Note *newPost = [Note new];
-    newPost.note = [self getPFFileFromImage:image];
-    newPost.author = [PFUser currentUser];
-    newPost.caption = caption;
-    newPost.addCount = @(0);
+    Note *newNote = [Note new];
+    
+    //backend data
+    newNote.userID = newNote.author.objectId;
+    newNote.tags = tags;
+    newNote.textbooks = textbooks;
+    
+    newNote.note = [self getPFFileFromImage:image];
+    newNote.author = [PFUser currentUser];
+    newNote.noteDescription = description;
+    newNote.addCount = @(0);
+    newNote.title = title;
 
     
-    [newPost saveInBackgroundWithBlock: completion];
+    [newNote saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            [self addNoteToTags:newNote];
+        }
+    }];
+   
+    
+    
 }
 
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {
@@ -70,5 +85,14 @@
     return newImage;
 }
 
++ (void)addNoteToTags:(Note *)note {
+    
+    NSArray *noteTags = note.tags;
+
+    for (Tags *tag in noteTags) {
+        [tag addObject:note.objectId forKey:@"taggedNotes"];
+        [tag saveInBackground];
+    }
+}
 
 @end
