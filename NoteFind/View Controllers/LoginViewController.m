@@ -6,13 +6,11 @@
 //
 
 #import "LoginViewController.h"
-<<<<<<< Updated upstream
 #import "Parse/Parse.h"
-=======
 #import "ErrorAlerts.h"
 #import <Parse/Parse.h>
 #import "SceneDelegate.h"
->>>>>>> Stashed changes
+
 
 @interface LoginViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *usernameTextField;

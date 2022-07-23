@@ -7,18 +7,16 @@
 
 #import "FeedViewController.h"
 #import "NewNoteViewController.h"
-<<<<<<< Updated upstream
 #import "Parse/Parse.h"
 #import "SceneDelegate.h"
 #import "LoginViewController.h"
-=======
 #import <Parse/Parse.h>
 #import "SceneDelegate.h"
 #import "LoginViewController.h"
 #import "Note.h"
 #import "NoteCell.h"
 #import "ErrorAlerts.h"
->>>>>>> Stashed changes
+
 
 @interface FeedViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -44,9 +42,8 @@
 }
  */
 
-<<<<<<< Updated upstream
-- (IBAction)didTapAdd:(id)sender {
-=======
+
+
 - (void) getNotes {
     PFQuery *noteQuery = [Note query];
     [noteQuery orderByDescending:@"createdAt"];
@@ -60,7 +57,7 @@
             [ErrorAlerts retrieveNotesFailure:self];
         }
     }];
->>>>>>> Stashed changes
+
 }
 
 //- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {

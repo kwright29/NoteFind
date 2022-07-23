@@ -14,7 +14,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CameraImport : NSObject 
+@interface CameraImport : NSObject
 
 @property (nonatomic, weak) id <ImportDelegate> delegate;
 

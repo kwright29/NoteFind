@@ -13,10 +13,9 @@
 #import "TransferDelegate.h"
 #import "TextbookViewController.h"
 #import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
-#import "ImportDelegate.h"
 #import "CameraImport.h"
 #import "ErrorAlerts.h"
-
+#import "ImportDelegate.h"
 
 @interface NewNoteViewController ()  <TransferDelegate, UIDocumentPickerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ImportDelegate>
 @property (strong, nonatomic) NSMutableArray<Tags *> *tags;
