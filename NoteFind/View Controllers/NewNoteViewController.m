@@ -26,7 +26,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *noteImageView;
 @property (strong, nonatomic) IBOutlet UITextField *titleTextField;
 @property (strong, nonatomic) IBOutlet UITextField *descriptionTextField;
-@property (nonatomic) CameraImport *cameraImporter;
+@property (nonatomic, strong) CameraImport *cameraImporter;
+@property (strong, nonatomic) Note *latestNote;
 
 
 @end
@@ -115,12 +116,14 @@
     [Note postUserNote:_noteImageView.image withDescription:self.descriptionTextField.text withTitle:self.titleTextField.text withTags:self.tags withBooks:self.books withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
             [self dismissViewControllerAnimated:YES completion:nil];
+            [Note addNewNoteToTags];
         } else {
             [ErrorAlerts errorPostingNote:self];
         }
     }];
 
 }
+
 
 
 

@@ -28,8 +28,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSNumber *addCount;
 @property (nonatomic) BOOL uploaded;
 
-+ (void) postUserNote: (UIImage * _Nullable)image withDescription: (NSString * _Nullable)description withTitle: (NSString * _Nullable)title withTags: (NSMutableArray *)tags withBooks: (NSMutableArray *)textbooks withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 
+
++ (void) postUserNote: (UIImage * _Nullable)image withDescription: (NSString * _Nullable)description withTitle: (NSString * _Nullable)title withTags: (NSMutableArray *)tags withBooks: (NSMutableArray *)textbooks withCompletion: (PFBooleanResultBlock  _Nullable)completion;
++ (void)addNewNoteToTags;
 @end
 
 NS_ASSUME_NONNULL_END

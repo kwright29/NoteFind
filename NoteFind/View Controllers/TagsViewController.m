@@ -16,9 +16,9 @@
 
 @interface TagsViewController () <UITableViewDataSource, UITableViewDelegate, TagDelegate>
 
-@property (strong, nonatomic) NSMutableArray *allTags;
+@property (strong, nonatomic) NSMutableArray<Tags *> *allTags;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSMutableArray *noteTags;
+@property (strong, nonatomic) NSMutableArray<Tags *> *noteTags;
 
 
 
@@ -51,7 +51,7 @@
         }
         else {
             [ErrorAlerts retrieveTagsFailure:self];
-            NSLog(@"Problem retrieving tags: %@", error.localizedDescription);
+           
         }
         [self.tableView reloadData];
     }];
@@ -90,6 +90,7 @@
 
 - (void)addTags:(Tags *)tag {
     [self.noteTags insertObject:tag atIndex:0];
+
     
 }
 

@@ -41,11 +41,7 @@
     newNote.title = title;
 
     
-    [newNote saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        if (succeeded) {
-            [self addNoteToTags:newNote];
-        }
-    }];
+    [newNote saveInBackgroundWithBlock:completion];
    
     
     
@@ -85,14 +81,25 @@
     return newImage;
 }
 
-+ (void)addNoteToTags:(Note *)note {
-    
-    NSArray *noteTags = note.tags;
 
-    for (Tags *tag in noteTags) {
-        [tag addObject:note.objectId forKey:@"taggedNotes"];
-        [tag saveInBackground];
-    }
++ (void)addNewNoteToTags {
+    PFQuery *noteQuery = [Note query];
+    [noteQuery orderByDescending:@"createdAt"];
+    noteQuery.limit = 1;
+    __block Note *latestNote = nil;
+    
+    [noteQuery findObjectsInBackgroundWithBlock:^(NSArray<Note *> *notes, NSError *error) {
+        if (notes) {
+            latestNote = notes[0];
+            NSArray *noteTags = latestNote.tags;
+            
+            for (Tags *tag in noteTags) {
+                [tag addObject:latestNote.objectId forKey:@"taggedNotes"];
+                [tag saveInBackground];
+            }
+        }
+    }];
 }
+
 
 @end
