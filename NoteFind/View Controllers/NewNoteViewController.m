@@ -38,6 +38,7 @@
     [super viewDidLoad];
     self.addNoteButton.showsMenuAsPrimaryAction = YES;
     self.cameraImporter = [[CameraImport alloc]init];
+    self.tags = [[NSMutableArray alloc]init];
     self.cameraImporter.delegate = self;
     [self setImportMenu:self.importMenu];
     // Do any additional setup after loading the view.
@@ -81,9 +82,10 @@
     
     // Check the segue
     if ([[segue identifier] isEqualToString:@"tagSegue"]) {
-        UINavigationController *navController = [segue destinationViewController];
-        TagsViewController *tagsVC = (TagsViewController *)navController.topViewController;
+        TagsViewController *tagsVC = [segue destinationViewController];
         tagsVC.transferDelegate = self;
+        tagsVC.noteTags = self.tags;
+        
     }
     if ([[segue identifier] isEqualToString:@"textbookSegue"]) {
         TextbookViewController *txtbkVC = [segue destinationViewController];

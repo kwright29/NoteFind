@@ -7,7 +7,7 @@
 
 #import "TagsViewController.h"
 #import "TagCell.h"
-#import "Tags.h"
+
 #import <Parse/Parse.h>
 #import "NewNoteViewController.h"
 #import "ErrorAlerts.h"
@@ -18,7 +18,7 @@
 
 @property (strong, nonatomic) NSMutableArray<Tags *> *allTags;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSMutableArray<Tags *> *noteTags;
+
 
 
 
@@ -31,7 +31,6 @@
     // Do any additional setup after loading the view.
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    self.noteTags = [[NSMutableArray alloc] init];
     [self getTags];
 //    [self.tableView reloadData];
    
@@ -65,7 +64,14 @@
     Tags *tag = self.allTags[indexPath.row];
     cell.tags = tag;
     cell.delegate = self;
+    cell.indexPath = indexPath;
     [cell setTag];
+    
+    if ([self.noteTags containsObject:tag]) {
+        [cell.checkbox setSelected:YES];
+    } else {
+        [cell.checkbox setSelected:NO];
+    }
   
     
     return cell;
@@ -88,21 +94,18 @@
 }
 */
 
-- (void)addTags:(Tags *)tag {
-    [self.noteTags insertObject:tag atIndex:0];
 
+- (void)didTapTag:(nonnull NSIndexPath *)indexPath {
+    Tags *tag = self.allTags[indexPath.row];
     
-}
-
-- (void)removeTags:(Tags *)tag {
-    [self.noteTags removeObject:tag];
-
-}
-- (IBAction)didTapDone:(id)sender {
+    if([self.noteTags containsObject:tag]) {
+        [self.noteTags removeObject:tag];
+    } else {
+        [self.noteTags addObject:tag];
+    }
     [self.transferDelegate addTags:self.noteTags];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
-
 
 
 @end
