@@ -6,10 +6,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Tags.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
 
 
 @interface NewNoteViewController : UIViewController

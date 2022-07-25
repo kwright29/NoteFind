@@ -6,10 +6,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import "Tags.h"
+
+
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SearchViewController : UIViewController
+@interface SearchViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
 

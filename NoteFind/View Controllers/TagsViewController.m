@@ -7,17 +7,18 @@
 
 #import "TagsViewController.h"
 #import "TagCell.h"
-#import "Tags.h"
+
 #import <Parse/Parse.h>
 #import "NewNoteViewController.h"
+#import "ErrorAlerts.h"
 
 
 
 @interface TagsViewController () <UITableViewDataSource, UITableViewDelegate, TagDelegate>
 
-@property (strong, nonatomic) NSMutableArray *allTags;
+@property (strong, nonatomic) NSMutableArray<Tags *> *allTags;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSMutableArray *noteTags;
+
 
 
 
@@ -30,7 +31,6 @@
     // Do any additional setup after loading the view.
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    self.noteTags = [[NSMutableArray alloc] init];
     [self getTags];
 //    [self.tableView reloadData];
    
@@ -46,13 +46,11 @@
     
     [tagQuery findObjectsInBackgroundWithBlock:^(NSArray<Tags *> * _Nullable tags, NSError * _Nullable error) {
         if (tags) {
-            // do something with the data fetched
             self.allTags = (NSMutableArray *)tags;
-            
         }
         else {
-            // handle error
-            NSLog(@"Problem retrieving tags: %@", error.localizedDescription);
+            [ErrorAlerts retrieveTagsFailure:self];
+           
         }
         [self.tableView reloadData];
     }];
@@ -66,7 +64,14 @@
     Tags *tag = self.allTags[indexPath.row];
     cell.tags = tag;
     cell.delegate = self;
+    cell.indexPath = indexPath;
     [cell setTag];
+    
+    if ([self.noteTags containsObject:tag]) {
+        [cell.checkbox setSelected:YES];
+    } else {
+        [cell.checkbox setSelected:NO];
+    }
   
     
     return cell;
@@ -89,21 +94,18 @@
 }
 */
 
-- (void)addTags:(NSString *)tagTitle {
-    [self.noteTags insertObject:tagTitle atIndex:0];
-    NSLog(@"%@ variable added", self.noteTags);
-}
 
-- (void)removeTags:(NSString *)tagTitle {
-    [self.noteTags removeObject:tagTitle];
-    NSLog(@"%@ variable removed", self.noteTags);
-
-}
-- (IBAction)didTapDone:(id)sender {
+- (void)didTapTag:(nonnull NSIndexPath *)indexPath {
+    Tags *tag = self.allTags[indexPath.row];
+    
+    if([self.noteTags containsObject:tag]) {
+        [self.noteTags removeObject:tag];
+    } else {
+        [self.noteTags addObject:tag];
+    }
     [self.transferDelegate addTags:self.noteTags];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
-
 
 
 @end

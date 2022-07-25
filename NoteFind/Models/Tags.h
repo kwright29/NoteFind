@@ -7,11 +7,14 @@
 
 #import <Parse/Parse.h>
 #import "PFObject.h"
+#import "Note.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Tags : PFObject <PFSubclassing>
-@property (nonatomic, strong) NSString *title;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, strong) NSMutableArray<NSString *> *taggedNotes;
+
 
 @end
 
