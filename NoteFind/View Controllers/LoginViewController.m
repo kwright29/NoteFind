@@ -11,7 +11,6 @@
 #import <Parse/Parse.h>
 #import "SceneDelegate.h"
 
-
 @interface LoginViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
@@ -59,6 +58,7 @@
         }];
 
 }
+
 
 
 

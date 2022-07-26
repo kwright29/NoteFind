@@ -14,6 +14,7 @@
 		EE285DC028761B5100BC7FF0 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE285DBF28761B5100BC7FF0 /* ProfileViewController.m */; };
 		EE285DC328761B5C00BC7FF0 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE285DC228761B5C00BC7FF0 /* SearchViewController.m */; };
 		EE285DC628761B7000BC7FF0 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE285DC528761B7000BC7FF0 /* FeedViewController.m */; };
+		EE4FB1B0288224EB00B3429B /* CameraImport.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4FB1AF288224EB00B3429B /* CameraImport.m */; };
 		EE3CD928288B1C6E00557839 /* ErrorAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3CD927288B1C6E00557839 /* ErrorAlerts.m */; };
 		EE6E4BC7287CEF3200FC068D /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6E4BC6287CEF3200FC068D /* Book.m */; };
 		EE6E869B287769AD0044F65F /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6E869A287769AD0044F65F /* APIManager.m */; };
@@ -71,6 +72,9 @@
 		EE285DC228761B5C00BC7FF0 /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		EE285DC428761B7000BC7FF0 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
 		EE285DC528761B7000BC7FF0 /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		EE4FB1A628821AF600B3429B /* ImportDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImportDelegate.h; sourceTree = "<group>"; };
+		EE4FB1AE288224EB00B3429B /* CameraImport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraImport.h; sourceTree = "<group>"; };
+		EE4FB1AF288224EB00B3429B /* CameraImport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraImport.m; sourceTree = "<group>"; };
 		EE3CD926288B1C6E00557839 /* ErrorAlerts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorAlerts.h; sourceTree = "<group>"; };
 		EE3CD927288B1C6E00557839 /* ErrorAlerts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ErrorAlerts.m; sourceTree = "<group>"; };
 		EE6E4BC5287CEF3200FC068D /* Book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
@@ -305,6 +309,7 @@
 				EEA455A82874C79C00261F9C /* SceneDelegate.h */,
 				EEA455A92874C79C00261F9C /* SceneDelegate.m */,
 				EEEAC5B5287E315600A8659B /* TransferDelegate.h */,
+				EE4FB1A628821AF600B3429B /* ImportDelegate.h */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -562,6 +567,7 @@
 				EEA455E42874E06F00261F9C /* RegisterViewController.m in Sources */,
 				EEA455E12874DE2300261F9C /* LoginViewController.m in Sources */,
 				EE6E869B287769AD0044F65F /* APIManager.m in Sources */,
+				EE4FB1B0288224EB00B3429B /* CameraImport.m in Sources */,
 				EEEAC5B4287DF6C600A8659B /* BookCell.m in Sources */,
 				EE1CD28F288B6E1D00E64F2A /* CameraImport.m in Sources */,
 				EE285DC628761B7000BC7FF0 /* FeedViewController.m in Sources */,

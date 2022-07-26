@@ -36,6 +36,4 @@
     return books;
 }
 
-
-
 @end
