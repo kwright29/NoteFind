@@ -23,6 +23,7 @@
 		EE6E86AC2878AEFE0044F65F /* TagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6E86AB2878AEFE0044F65F /* TagsViewController.m */; };
 		EE6E86AF2878AF200044F65F /* TagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6E86AE2878AF200044F65F /* TagCell.m */; };
 		EE6E86B22878D7ED0044F65F /* Tags.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6E86B12878D7ED0044F65F /* Tags.m */; };
+		EE6F5120288F541400079382 /* SearchDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6F511F288F541400079382 /* SearchDetailsTableViewController.m */; };
 		EEA455A72874C79C00261F9C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA455A62874C79C00261F9C /* AppDelegate.m */; };
 		EEA455AA2874C79C00261F9C /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA455A92874C79C00261F9C /* SceneDelegate.m */; };
 		EEA455B02874C79C00261F9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEA455AE2874C79C00261F9C /* Main.storyboard */; };
@@ -88,6 +89,8 @@
 		EE6E86AE2878AF200044F65F /* TagCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagCell.m; sourceTree = "<group>"; };
 		EE6E86B02878D7ED0044F65F /* Tags.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tags.h; sourceTree = "<group>"; };
 		EE6E86B12878D7ED0044F65F /* Tags.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tags.m; sourceTree = "<group>"; };
+		EE6F511E288F541400079382 /* SearchDetailsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchDetailsTableViewController.h; sourceTree = "<group>"; };
+		EE6F511F288F541400079382 /* SearchDetailsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchDetailsTableViewController.m; sourceTree = "<group>"; };
 		EEA455A22874C79C00261F9C /* NoteFind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteFind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEA455A52874C79C00261F9C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EEA455A62874C79C00261F9C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -253,6 +256,8 @@
 				EE6E86AB2878AEFE0044F65F /* TagsViewController.m */,
 				EEEAC5AF287DF57D00A8659B /* TextbookViewController.h */,
 				EEEAC5B0287DF57D00A8659B /* TextbookViewController.m */,
+				EE6F511E288F541400079382 /* SearchDetailsTableViewController.h */,
+				EE6F511F288F541400079382 /* SearchDetailsTableViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -557,6 +562,7 @@
 				EE6E86AC2878AEFE0044F65F /* TagsViewController.m in Sources */,
 				EEA455A72874C79C00261F9C /* AppDelegate.m in Sources */,
 				EE6E86A92878A7D00044F65F /* NewNoteViewController.m in Sources */,
+				EE6F5120288F541400079382 /* SearchDetailsTableViewController.m in Sources */,
 				EE6E86A32878A1B80044F65F /* Note.m in Sources */,
 				EE6E86A62878A76A0044F65F /* NoteCell.m in Sources */,
 				EEA455B82874C79C00261F9C /* main.m in Sources */,
