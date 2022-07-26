@@ -10,7 +10,6 @@
 @implementation Note
 
 @dynamic userID;
-
 @dynamic note;
 @dynamic author;
 @dynamic tags;

@@ -22,16 +22,11 @@
 
 - (void)setNote:(Note *)note {
     _note = note;
-    self.postTitle.text = self.note.title;
-    self.postCaption.text = self.note.noteDescription;
-    self.postUsername.text = self.note.author.username;
-    self.postNote.file = self.note.note;
-    [self.postNote loadInBackground];
-    
-    
-}
-- (IBAction)didTapAdd:(id)sender {
-   
+    _postTitle.text = _note.title;
+    _postCaption.text = _note.noteDescription;
+    self.postUsername.text = _note.author.username;
+    _postNote.file = _note.note;
+    [_postNote loadInBackground];
 }
 
 @end

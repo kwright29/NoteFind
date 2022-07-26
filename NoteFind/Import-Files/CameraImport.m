@@ -11,7 +11,7 @@
 @interface CameraImport () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, weak) UIImage *image;
-@property (nonatomic) NewNoteViewController *theVC;
+@property (nonatomic) NewNoteViewController *noteVC;
 
 
 @end
