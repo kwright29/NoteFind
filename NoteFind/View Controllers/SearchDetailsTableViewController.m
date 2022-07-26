@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) NSArray *notesWithTag;
 @property (strong, nonatomic) NSMutableArray<Note *> *taggedNoteObjects;
+@property (nonatomic) NSUInteger noteCounter;
 
 @end
 
@@ -23,6 +24,7 @@
     [super viewDidLoad];
     self.taggedNoteObjects = [[NSMutableArray alloc] init];
     self.notesWithTag = [[NSArray alloc] initWithArray:self.selectedTag.taggedNotes];
+    self.noteCounter = self.notesWithTag.count;
     [self getAllNotes];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -39,15 +41,17 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.notesWithTag.count;
+    return self.taggedNoteObjects.count;
 }
 
 - (void)getNoteFromID:(NSString *)noteID{
     PFQuery *query = [Note query];
+    [query includeKey:@"author"];
     [query getObjectInBackgroundWithId:noteID block:^(PFObject *theNote, NSError *error) {
         if (theNote) {
             Note *note = (Note *)theNote;
             [self.taggedNoteObjects addObject:note];
+            [self.tableView reloadData];
             
         }
     }];
@@ -57,7 +61,6 @@
     for (NSString *noteID in self.notesWithTag) {
         [self getNoteFromID:noteID];
     }
-    [self.tableView reloadData];
 }
 
 
@@ -65,6 +68,8 @@
     NoteCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NoteCell" forIndexPath:indexPath];
     
     cell.note = self.taggedNoteObjects[indexPath.row];
+    
+    [cell setNote:cell.note];
     
     return cell;
 }

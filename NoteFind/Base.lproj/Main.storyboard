@@ -703,13 +703,64 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCell" rowHeight="440" id="gNB-R3-hxD" customClass="NoteCell">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="440"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCell" rowHeight="700" id="gNB-R3-hxD" customClass="NoteCell">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="700"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gNB-R3-hxD" id="UAe-xO-L9x">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="440"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="700"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pdD-12-urM" customClass="PFImageView">
+                                            <rect key="frame" x="20" y="40" width="363" height="420"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="363" id="RdE-MN-u00"/>
+                                                <constraint firstAttribute="height" constant="420" id="jmj-cm-I6v"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hT-y7-Ng5">
+                                            <rect key="frame" x="20" y="474" width="363" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6SM-Zb-Bzn">
+                                            <rect key="frame" x="20" y="554.5" width="363" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bq4-Cm-tAE">
+                                            <rect key="frame" x="20" y="11" width="52" height="27"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="4hT-y7-Ng5" firstAttribute="leading" secondItem="6SM-Zb-Bzn" secondAttribute="leading" id="0em-0V-GL4"/>
+                                        <constraint firstItem="4hT-y7-Ng5" firstAttribute="trailing" secondItem="6SM-Zb-Bzn" secondAttribute="trailing" id="7dc-Tm-cBi"/>
+                                        <constraint firstItem="Bq4-Cm-tAE" firstAttribute="top" secondItem="UAe-xO-L9x" secondAttribute="topMargin" id="8Vv-My-jHd"/>
+                                        <constraint firstItem="pdD-12-urM" firstAttribute="trailing" secondItem="4hT-y7-Ng5" secondAttribute="trailing" id="Cf1-bf-BWs"/>
+                                        <constraint firstItem="pdD-12-urM" firstAttribute="top" secondItem="Bq4-Cm-tAE" secondAttribute="bottom" constant="2" id="Hl2-mG-N6E"/>
+                                        <constraint firstItem="6SM-Zb-Bzn" firstAttribute="top" secondItem="4hT-y7-Ng5" secondAttribute="bottom" constant="59.5" id="Ijv-fh-2Vg"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Bq4-Cm-tAE" secondAttribute="trailing" constant="20" id="KbR-lH-r3q"/>
+                                        <constraint firstAttribute="bottomMargin" relation="lessThanOrEqual" secondItem="pdD-12-urM" secondAttribute="bottom" constant="229" id="Lx4-pZ-ZSH"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="pdD-12-urM" secondAttribute="trailing" constant="11" id="O5j-xx-mij"/>
+                                        <constraint firstItem="pdD-12-urM" firstAttribute="leading" secondItem="UAe-xO-L9x" secondAttribute="leadingMargin" id="Vdo-h4-Wn1"/>
+                                        <constraint firstItem="Bq4-Cm-tAE" firstAttribute="leading" secondItem="pdD-12-urM" secondAttribute="leading" id="qjD-pp-Lka"/>
+                                        <constraint firstItem="Bq4-Cm-tAE" firstAttribute="leading" secondItem="UAe-xO-L9x" secondAttribute="leadingMargin" id="qtU-2g-fAt"/>
+                                        <constraint firstItem="pdD-12-urM" firstAttribute="top" secondItem="Bq4-Cm-tAE" secondAttribute="bottom" constant="2" id="tQj-OF-L5n"/>
+                                        <constraint firstItem="pdD-12-urM" firstAttribute="leading" secondItem="4hT-y7-Ng5" secondAttribute="leading" id="tRF-gf-4iO"/>
+                                        <constraint firstItem="4hT-y7-Ng5" firstAttribute="top" secondItem="pdD-12-urM" secondAttribute="bottom" constant="14" id="zQm-Nz-6aj"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration" identifier="NoteCell"/>
+                                <connections>
+                                    <outlet property="postCaption" destination="6SM-Zb-Bzn" id="S40-jh-lgU"/>
+                                    <outlet property="postNote" destination="pdD-12-urM" id="2GY-zw-w9g"/>
+                                    <outlet property="postTitle" destination="Bq4-Cm-tAE" id="KZp-jG-yj4"/>
+                                    <outlet property="postUsername" destination="4hT-y7-Ng5" id="jrv-2S-3K5"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
