@@ -6,8 +6,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Tags.h"
 #import "TransferDelegate.h"
+#import "Tags.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TagsViewController : UIViewController
 
 @property (nonatomic, weak) id <TransferDelegate> transferDelegate;
+@property (strong, nonatomic) NSMutableArray<Tags *> *noteTags;
 
 @end
 

@@ -40,7 +40,10 @@
     newNote.title = title;
 
     
-    [newNote saveInBackgroundWithBlock: completion];
+    [newNote saveInBackgroundWithBlock:completion];
+   
+    
+    
 }
 
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {
@@ -75,6 +78,26 @@
     UIGraphicsEndImageContext();
     
     return newImage;
+}
+
+
++ (void)addNewNoteToTags {
+    PFQuery *noteQuery = [Note query];
+    [noteQuery orderByDescending:@"createdAt"];
+    noteQuery.limit = 1;
+    __block Note *latestNote = nil;
+    
+    [noteQuery findObjectsInBackgroundWithBlock:^(NSArray<Note *> *notes, NSError *error) {
+        if (notes) {
+            latestNote = notes[0];
+            NSArray *noteTags = latestNote.tags;
+            
+            for (Tags *tag in noteTags) {
+                [tag addObject:latestNote.objectId forKey:@"taggedNotes"];
+                [tag saveInBackground];
+            }
+        }
+    }];
 }
 
 

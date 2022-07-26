@@ -6,6 +6,17 @@
 //
 
 #import "FeedViewController.h"
+#import "NewNoteViewController.h"
+#import "Parse/Parse.h"
+#import "SceneDelegate.h"
+#import "LoginViewController.h"
+#import <Parse/Parse.h>
+#import "SceneDelegate.h"
+#import "LoginViewController.h"
+#import "Note.h"
+#import "NoteCell.h"
+#import "ErrorAlerts.h"
+
 
 
 @interface FeedViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -43,9 +54,10 @@
             self.notes = (NSMutableArray *)notes;
             [self.tableView reloadData];
         } else {
-            NSLog(@"problem retrieving notes");
+            [ErrorAlerts retrieveNotesFailure:self];
         }
     }];
+
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
@@ -71,11 +83,15 @@
 - (IBAction)didTapLogout:(id)sender {
     SceneDelegate *sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
-        // PFUser.current() will now be nil
+        if (error) {
+            [ErrorAlerts logoutFailure:self];
+        } else {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            LoginViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
+            sceneDelegate.window.rootViewController = loginVC;
+        }
     }];
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    LoginViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
-    sceneDelegate.window.rootViewController = loginVC;
+
 }
 
 @end

@@ -8,6 +8,7 @@
 #import "TextbookViewController.h"
 #import "APIManager.h"
 #import "BookCell.h"
+#import "ErrorAlerts.h"
 
 @interface TextbookViewController () <UITableViewDataSource, UITableViewDelegate, TextbookDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -33,12 +34,10 @@
     APIManager *manager = [APIManager new];
     [manager getTextbooks:^(NSArray * _Nonnull books, NSError * _Nonnull error) {
         if (books) {
-            NSLog(@"Successfully loaded books");
             self.allBooks = (NSMutableArray *)books;
-            
         }
         else {
-            NSLog(@"Failure getting books");
+            [ErrorAlerts retrieveBooksFailure:self];
         }
         [self.tableView reloadData];
     }];
@@ -72,16 +71,12 @@
 
 - (void)addBook:(nonnull NSString *)bookID {
     [self.associatedTextbooks insertObject:bookID atIndex:0];
-    NSLog(@"textbook added!");
     [self.transferDelegate addBooks:self.associatedTextbooks];
-    NSLog(@"delegate called");
 }
 
 - (void)removeBook:(nonnull NSString *)bookID {
     [self.associatedTextbooks removeObject:bookID];
-    NSLog(@"textbook removed");
     [self.transferDelegate addBooks:self.associatedTextbooks];
-    NSLog(@"delegate called");
 }
 
 
