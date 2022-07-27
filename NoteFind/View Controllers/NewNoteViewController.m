@@ -30,6 +30,7 @@
 @property (strong, nonatomic) Note *latestNote;
 
 
+
 @end
 
 @implementation NewNoteViewController

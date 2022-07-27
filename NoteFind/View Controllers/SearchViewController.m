@@ -6,10 +6,13 @@
 //
 
 #import "SearchViewController.h"
+#import "SearchDetailsTableViewController.h"
 
 @interface SearchViewController ()
-@property (nonatomic, strong) NSArray *allTags;
-@property (nonatomic, strong) NSMutableArray *displayTags;
+
+@property (nonatomic, strong) NSArray *allTagTitles;
+@property (nonatomic, strong) NSMutableArray *displayTagTitles;
+@property (nonatomic, strong) NSMutableArray<Tags *> *allTags;
 @property (nonatomic) BOOL isFiltered;
 @end
 
@@ -21,6 +24,8 @@
     self.tableView.delegate = self;
     self.searchBar.delegate = self;
     self.isFiltered = NO;
+    self.allTagTitles = [[NSMutableArray alloc] init];
+
     self.allTags = [[NSMutableArray alloc] init];
     [self getTags];
     
@@ -40,8 +45,11 @@
             for (Tags *tag in tags) {
                 NSString *title = tag.title;
                 [tagTitles addObject:title];
+
+                [self.allTags addObject:tag];
             }
-            self.allTags = (NSArray *)tagTitles;
+            self.allTagTitles = (NSArray *)tagTitles;
+
            
         } else {
             // TODO: handle error
@@ -54,11 +62,13 @@
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
         
     if (self.isFiltered) {
-        cell.textLabel.text = self.displayTags[indexPath.row];
+
+        cell.textLabel.text = self.displayTagTitles[indexPath.row];
     }
     
     else {
-        cell.textLabel.text = self.allTags[indexPath.row];
+        cell.textLabel.text = self.allTagTitles[indexPath.row];
+
 
     }
     
@@ -68,10 +78,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (self.isFiltered) {
-        return self.displayTags.count;
+
+        return self.displayTagTitles.count;
     }
     
-    return self.allTags.count;
+    return self.allTagTitles.count;
+
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
@@ -79,11 +91,13 @@
         self.isFiltered = NO;
     } else {
         self.isFiltered = YES;
-        self.displayTags = [[NSMutableArray alloc]init];
-        for (NSString *tag in self.allTags) {
+
+        self.displayTagTitles = [[NSMutableArray alloc]init];
+        for (NSString *tag in self.allTagTitles) {
             NSRange range = [tag rangeOfString:searchText options:NSCaseInsensitiveSearch];
             if (range.location != NSNotFound) {
-                [self.displayTags addObject:tag];
+                [self.displayTagTitles addObject:tag];
+
             }
         }
     }
@@ -92,13 +106,17 @@
 }
 
 
-/*
+
 #pragma mark - Navigation
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    Tags *tagToPass = self.allTags[indexPath.row];
+    SearchDetailsTableViewController *searchDetailsVC = [segue destinationViewController];
+    searchDetailsVC.selectedTag = tagToPass;
+    
 }
-*/
+ 
+ 
 
 @end
