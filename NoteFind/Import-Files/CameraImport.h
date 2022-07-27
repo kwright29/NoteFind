@@ -14,11 +14,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CameraImport : NSObject 
+
+@interface CameraImport : NSObject
+
 
 @property (nonatomic, weak) id <ImportDelegate> delegate;
 
 - (void)showCamera:(NewNoteViewController *)vc;
+
+- (void)showGallery:(NewNoteViewController *)vc;
+
 
 @end
 

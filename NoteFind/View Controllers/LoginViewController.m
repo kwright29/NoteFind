@@ -7,6 +7,8 @@
 
 #import "LoginViewController.h"
 #import "Parse/Parse.h"
+#import "ErrorAlerts.h"
+#import <Parse/Parse.h>
 #import "SceneDelegate.h"
 
 @interface LoginViewController ()
@@ -27,18 +29,21 @@
     
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
         if (error != nil) {
-            NSLog(@"User log in failed: %@", error.localizedDescription);
-            [self incorrectLoginInfo];
+            if ([username isEqual:@""] || [password isEqual:@""]) {
+                [ErrorAlerts alertVoidRequiredFields:self];
+            } else {
+                [ErrorAlerts loginFailure:self];
+            }
+            
         } else {
-            NSLog(@"User logged in successfully");
             [self performSegueWithIdentifier:@"loginSegue" sender:nil];
         
         }
     }];
     
-    if ([username isEqual:@""] || [password isEqual:@""]) {
-        [self alertVoidRequiredFields];
-    }}
+    
+    
+}
 
 
 - (void)incorrectLoginInfo {
@@ -54,18 +59,7 @@
 
 }
 
-- (void)alertVoidRequiredFields {
-  
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"missing field(s) required" message:@"one or more of the required fields are not complete. please enter your information and try again." preferredStyle:(UIAlertControllerStyleAlert)];
-        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) { /*handle response here */ }];
-        // add the OK action to the alert controller
-        [alert addAction:okAction];
-        
-        [self presentViewController:alert animated:YES completion:^{
-            // optional code for what happens after the alert controller has finished presenting
-        }];
 
-}
 
 
 /*

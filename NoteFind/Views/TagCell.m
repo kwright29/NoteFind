@@ -28,23 +28,11 @@
 }
 
 - (void)setTag {
-    self.checked = NO;
     self.tagTitle.text = self.tags.title;
 }
 
 - (IBAction)didTapTag:(id)sender {
-
-    if (!self.checked) {
-        self.checked = YES;
-        [self.checkbox setSelected:YES];
-        [self.delegate addTags:self.tags.objectId];
-
-    } else {
-        self.checked = NO;
-        [self.checkbox setSelected:NO];
-        [self.delegate removeTags:self.tags.objectId];
-    }
-
+    [self.delegate didTapTag:self.indexPath];
 }
 
 

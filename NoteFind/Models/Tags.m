@@ -15,13 +15,4 @@
     return @"Tags";
 }
 
-
-+ (void)addNoteToTags:(Note *)note {
-    NSArray *noteTags = note.tags;
-    
-    for (Tags *tag in noteTags) {
-        [tag.taggedNotes addObject:note.objectId];
-    }
-}
-
 @end
