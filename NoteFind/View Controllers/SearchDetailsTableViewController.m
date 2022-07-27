@@ -24,7 +24,7 @@
     [super viewDidLoad];
     self.taggedNoteObjects = [[NSMutableArray alloc] init];
     self.notesWithTag = [[NSArray alloc] initWithArray:self.selectedTag.taggedNotes];
-    self.noteCounter = self.notesWithTag.count;
+    self.noteCounter = 0;
     [self getAllNotes];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -51,7 +51,12 @@
         if (theNote) {
             Note *note = (Note *)theNote;
             [self.taggedNoteObjects addObject:note];
-            [self.tableView reloadData];
+            self.noteCounter += 1;
+            
+            if (self.noteCounter == self.notesWithTag.count) {
+                [self.tableView reloadData];
+            }
+     
             
         }
     }];
