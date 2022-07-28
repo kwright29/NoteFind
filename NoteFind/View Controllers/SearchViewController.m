@@ -61,14 +61,6 @@ InfiniteScrollActivityView *loadingMoreView;
     [self loadTags:self.textToSearch];
 }
 
-//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (indexPath.row + 1 == [self.displayTags count]) {
-//        // TODO: create load more data method
-//        self.setsLoaded += 1;
-//        [self loadTags:self.textToSearch];
-//        [self.tableView reloadData];
-//    }
-//}
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (!isMoreDataLoading) {
         int scrollViewContentHeight = self.tableView.contentSize.height;
