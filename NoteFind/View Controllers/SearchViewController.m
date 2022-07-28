@@ -12,6 +12,7 @@
 #import "Tags.h"
 
 @interface SearchViewController () <UIScrollViewDelegate>
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray<Tags *> *displayTags;
 @property (assign, nonatomic) BOOL isMoreDataLoading;
 @property (assign, nonatomic) int setsLoaded;

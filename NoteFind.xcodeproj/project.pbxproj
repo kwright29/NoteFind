@@ -473,7 +473,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		1FC12517804C9423885F5DE9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -486,7 +486,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NoteFind/Pods-NoteFind-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		227D2B53EBC2F3B07F61F631 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
