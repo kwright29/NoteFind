@@ -5,14 +5,13 @@
 //  Created by Khloe Wright on 7/6/22.
 //
 
+#import "ErrorAlerts.h"
 #import "SearchViewController.h"
 #import "SearchDetailsTableViewController.h"
-#import "ErrorAlerts.h"
+#import "Tags.h"
 
 @interface SearchViewController ()
-
-@property (nonatomic, strong) NSMutableArray *displayTagTitles;
-@property (nonatomic, strong) NSMutableArray<Tags *> *allTags;
+@property (nonatomic, strong) NSMutableArray<Tags *> *displayTags;
 
 @end
 
@@ -28,39 +27,32 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-        
-    cell.textLabel.text = self.displayTagTitles[indexPath.row];
-    
+    Tags *tag = self.displayTags[indexPath.row];
+    cell.textLabel.text = tag.title;
     return cell;
     
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return self.displayTagTitles.count;
+    return self.displayTags.count;
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     //removing white space
-    searchText = [searchText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    searchText = [searchText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     PFQuery *tagQuery = [Tags query];
     [tagQuery whereKey:@"title" matchesRegex:searchText modifiers:@"i"];
     [tagQuery orderByAscending:@"title"];
-    self.displayTagTitles = [[NSMutableArray alloc] init];
-    self.allTags = [[NSMutableArray alloc] init];
+    self.displayTags = [[NSMutableArray alloc] init];
     [tagQuery findObjectsInBackgroundWithBlock:^(NSArray<Tags *>*tags , NSError *error) {
-        if (tags) {
-            for (Tags *tag in tags) {
-                if (![self.displayTagTitles containsObject:tag.title]) {
-                    [self.displayTagTitles addObject:tag.title];
-                    [self.allTags addObject:tag];
-                }
-            }
-            [self.tableView reloadData];
-        }
-        else {
+        if (error) {
             [ErrorAlerts retrieveTagsFailure:self];
         }
+        for (Tags *tag in tags) {
+            [self.displayTags addObject:tag];
+        }
+        [self.tableView reloadData];
+        
     }];
 }
 
@@ -70,7 +62,7 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-    Tags *tagToPass = self.allTags[indexPath.row];
+    Tags *tagToPass = self.displayTags[indexPath.row];
     SearchDetailsTableViewController *searchDetailsVC = [segue destinationViewController];
     searchDetailsVC.selectedTag = tagToPass;
     
