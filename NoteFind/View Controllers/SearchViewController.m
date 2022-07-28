@@ -6,22 +6,39 @@
 //
 
 #import "ErrorAlerts.h"
+#import "InfiniteScrollActivityView.h"
 #import "SearchViewController.h"
 #import "SearchDetailsTableViewController.h"
 #import "Tags.h"
 
-@interface SearchViewController ()
+@interface SearchViewController () <UIScrollViewDelegate>
 @property (nonatomic, strong) NSMutableArray<Tags *> *displayTags;
-
+@property (assign, nonatomic) BOOL isMoreDataLoading;
+@property (assign, nonatomic) int setsLoaded;
+@property (nonatomic, copy) NSString *textToSearch;
 @end
 
 @implementation SearchViewController
+
+bool isMoreDataLoading = false;
+InfiniteScrollActivityView *loadingMoreView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.searchBar.delegate = self;
+    self.setsLoaded = 0;
+    
+    // Set up Infinite Scroll loading indicator
+    CGRect frame = CGRectMake(0, self.tableView.contentSize.height, self.tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
+    loadingMoreView = [[InfiniteScrollActivityView alloc] initWithFrame:frame];
+    loadingMoreView.hidden = true;
+    [self.tableView addSubview:loadingMoreView];
+    
+    UIEdgeInsets insets = self.tableView.contentInset;
+    insets.bottom += InfiniteScrollActivityView.defaultHeight;
+    self.tableView.contentInset = insets;
 }
 
 
@@ -39,19 +56,60 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     //removing white space
-    searchText = [searchText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    self.textToSearch = [searchText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    self.setsLoaded = 0;
+    [self loadTags:self.textToSearch];
+}
+
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if (indexPath.row + 1 == [self.displayTags count]) {
+//        // TODO: create load more data method
+//        self.setsLoaded += 1;
+//        [self loadTags:self.textToSearch];
+//        [self.tableView reloadData];
+//    }
+//}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (!isMoreDataLoading) {
+        int scrollViewContentHeight = self.tableView.contentSize.height;
+        int scrollOffsetThreshold = scrollViewContentHeight - self.tableView.bounds.size.height;
+
+        if (scrollView.contentOffset.y > scrollOffsetThreshold && self.tableView.isDragging) {
+            isMoreDataLoading = true;
+            self.setsLoaded += 1;
+            
+            // Update position of loadingMoreView, and start loading indicator
+            CGRect frame = CGRectMake(0, self.tableView.contentSize.height, self.tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
+            loadingMoreView.frame = frame;
+            [loadingMoreView startAnimating];
+            
+            [self loadTags:self.textToSearch];
+        }
+    }
+}
+
+- (void)loadTags:(NSString *)searchText {
     PFQuery *tagQuery = [Tags query];
+    int displayLimit = 20;
+    tagQuery.limit = displayLimit;
+    tagQuery.skip = self.setsLoaded * displayLimit;
     [tagQuery whereKey:@"title" matchesRegex:searchText modifiers:@"i"];
     [tagQuery orderByAscending:@"title"];
     self.displayTags = [[NSMutableArray alloc] init];
     [tagQuery findObjectsInBackgroundWithBlock:^(NSArray<Tags *>*tags , NSError *error) {
         if (error) {
             [ErrorAlerts retrieveTagsFailure:self];
+        } else {
+            isMoreDataLoading = false;
+            
+            [loadingMoreView stopAnimating];
+            
+            for (Tags *tag in tags) {
+                [self.displayTags addObject:tag];
+            }
+            
+            [self.tableView reloadData];
         }
-        for (Tags *tag in tags) {
-            [self.displayTags addObject:tag];
-        }
-        [self.tableView reloadData];
         
     }];
 }
