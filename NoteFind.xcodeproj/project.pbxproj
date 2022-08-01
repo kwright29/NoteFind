@@ -227,6 +227,7 @@
 		EEA455A42874C79C00261F9C /* NoteFind */ = {
 			isa = PBXGroup;
 			children = (
+				EEFBBC0528985384003388C3 /* OfflineData */,
 				EE3CD922288B1BE400557839 /* Alerts */,
 				EE4FB19C2882152900B3429B /* Import-Files */,
 				EE6E86982877617C0044F65F /* API */,
@@ -240,7 +241,6 @@
 				EEA455B62874C79C00261F9C /* Info.plist */,
 				EEA455B72874C79C00261F9C /* main.m */,
 				EE6E869C287780AD0044F65F /* keys.plist */,
-				EEFBBC022894A139003388C3 /* OfflineData.xcdatamodeld */,
 			);
 			path = NoteFind;
 			sourceTree = "<group>";
@@ -325,6 +325,14 @@
 				EE4FB1A628821AF600B3429B /* ImportDelegate.h */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		EEFBBC0528985384003388C3 /* OfflineData */ = {
+			isa = PBXGroup;
+			children = (
+				EEFBBC022894A139003388C3 /* OfflineData.xcdatamodeld */,
+			);
+			path = OfflineData;
 			sourceTree = "<group>";
 		};
 		FC069882ECB16929915AC8C4 /* Frameworks */ = {

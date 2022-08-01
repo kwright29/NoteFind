@@ -6,11 +6,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <CoreData/CoreData.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-//@property (nonatomic, strong, nullable) id<OIDExternalUserAgentSession> currentAuthorizationFlow;
+@property (nonatomic, strong) NSPersistentContainer *persistentContainer;
+
+- (void)saveContext;
 
 @end
 

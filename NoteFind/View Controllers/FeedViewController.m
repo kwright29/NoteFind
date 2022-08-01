@@ -31,6 +31,7 @@
     [super viewDidLoad];
     self.tableView.dataSource = self;
     [self getNotes];
+    NSAssert(self.container == nil, @"this view needs a persistent container");
 }
 
 
