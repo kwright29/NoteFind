@@ -5,6 +5,7 @@
 //  Created by Khloe Wright on 7/6/22.
 //
 
+#import "AppDelegate.h"
 #import "FeedViewController.h"
 #import "NewNoteViewController.h"
 #import "Parse/Parse.h"
@@ -31,7 +32,7 @@
     [super viewDidLoad];
     self.tableView.dataSource = self;
     [self getNotes];
-    NSAssert(self.container == nil, @"this view needs a persistent container");
+    
 }
 
 
@@ -99,5 +100,6 @@
 - (void)showErrorMessage {
     [ErrorAlerts errorDownloading:self];
 }
+
 
 @end

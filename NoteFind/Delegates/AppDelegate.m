@@ -6,6 +6,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ErrorAlerts.h"
 #import "FeedViewController.h"
 #import <Parse/Parse.h>
 #import "SceneDelegate.h"
@@ -26,7 +27,6 @@
         }];
 
         [Parse initializeWithConfiguration:config];
-
 
     return YES;
 }
@@ -85,12 +85,27 @@
 - (void)saveContext {
     NSManagedObjectContext *context = self.persistentContainer.viewContext;
     NSError *error = nil;
+    UIViewController *vc = [self getCurrentVC];
+    
     if ([context hasChanges] && ![context save:&error]) {
         // Replace this implementation with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, error.userInfo);
-        abort();
+        [ErrorAlerts errorDownloading:vc];
+    }
+    else {
+        [ErrorAlerts successDownloading:vc];
+    
     }
 }
 
+- (UIViewController *)getCurrentVC {
+    //getting current window to present alert
+    NSSet<UIScene *> * sceneArr = [[UIApplication sharedApplication] connectedScenes];
+    UIScene * scene = [[sceneArr allObjects] firstObject];
+    NSObject * sceneDelegate = (NSObject *)scene.delegate;
+    UIWindow *currentKeyWindow = [sceneDelegate valueForKey: @"window"];
+    UIViewController *vc = currentKeyWindow.rootViewController;
+    
+    return vc;
+}
 @end
