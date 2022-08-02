@@ -108,4 +108,15 @@
         
     }];
 }
+
++ (void)errorDownloading:(UIViewController *)vc {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"error downloading note" message:@"there was a problem trying download your note. please try again" preferredStyle:(UIAlertControllerStyleAlert)];
+
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) { /*handle response here */ }];
+    [alert addAction:okAction];
+    
+    [vc presentViewController:alert animated:YES completion:^{
+        
+    }];
+}
 @end

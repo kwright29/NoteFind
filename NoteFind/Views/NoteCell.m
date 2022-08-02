@@ -43,14 +43,21 @@
 }
 - (IBAction)didTapDownload:(id)sender {
     NSManagedObject *newOfflineNote = [NSEntityDescription insertNewObjectForEntityForName:@"OfflineNote" inManagedObjectContext:context];
+    NSData *fileData = [_postNote.file getData];
+    if (fileData == nil) {
+        [self.delegate showErrorMessage];
+    } else {
+        [newOfflineNote setValue:_postUsername.text forKey:@"username"];
+        [newOfflineNote setValue:_postTitle.text forKey:@"title"];
+        [newOfflineNote setValue:_postCaption.text forKey:@"caption"];
+        [newOfflineNote setValue:fileData forKey:@"noteFileData"];
+        [newOfflineNote setValue:_postNote.file.name forKey:@"noteFileName"];
+        [appDelegate saveContext];
+        
+    }
+ 
     
-    [newOfflineNote setValue:_postUsername.text forKey:@"username"];
-    [newOfflineNote setValue:_postTitle.text forKey:@"title"];
-    [newOfflineNote setValue:_postCaption.text forKey:@"caption"];
-    [newOfflineNote setValue:_postNote.file forKey:@"note"];
-    
-    [appDelegate saveContext];
-    
+ 
     // TODO: add addCount
     
     // TODO: fetch data

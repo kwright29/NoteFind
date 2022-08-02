@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)retrieveTagsFailure:(UIViewController *)vc;
 + (void)retrieveBooksFailure:(UIViewController *)vc;
 + (void)errorPostingNote:(NewNoteViewController *)newNoteVC;
++ (void)errorDownloading:(UIViewController *)vc;
 @end
 
 NS_ASSUME_NONNULL_END

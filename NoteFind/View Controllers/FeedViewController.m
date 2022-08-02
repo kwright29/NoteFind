@@ -19,7 +19,7 @@
 
 
 
-@interface FeedViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface FeedViewController () <UITableViewDataSource, UITableViewDelegate, DataFailureDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *notes;
 
@@ -64,6 +64,7 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     NoteCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"NoteCell" forIndexPath:indexPath];
     
+    cell.delegate = self;
     cell.note = self.notes[indexPath.row];
     
     return cell;
@@ -93,6 +94,10 @@
         }
     }];
 
+}
+
+- (void)showErrorMessage {
+    [ErrorAlerts errorDownloading:self];
 }
 
 @end
