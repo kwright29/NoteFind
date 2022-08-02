@@ -8,6 +8,7 @@
 #import "AppDelegate.h"
 #import "FeedViewController.h"
 #import <Parse/Parse.h>
+#import "PFFileObjectValueTransformer.h"
 #import "SceneDelegate.h"
 
 @interface AppDelegate ()
@@ -16,6 +17,15 @@
 
 @implementation AppDelegate
 
+
+- (instancetype)init {
+    if (self == [super init]) {
+        PFFileObjectValueTransformer *transformer = [[PFFileObjectValueTransformer alloc] init];
+        [NSValueTransformer setValueTransformer:transformer forName:@"PFFileObjectValueTransformer"];
+    }
+    
+    return self;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.

@@ -47,7 +47,7 @@
     [newOfflineNote setValue:_postUsername.text forKey:@"username"];
     [newOfflineNote setValue:_postTitle.text forKey:@"title"];
     [newOfflineNote setValue:_postCaption.text forKey:@"caption"];
-//    [newOfflineNote setValue:_postNote.file forKey:@"note"];
+    [newOfflineNote setValue:_postNote.file forKey:@"note"];
     
     [appDelegate saveContext];
     

@@ -39,6 +39,9 @@
 		EEEAC5B1287DF57D00A8659B /* TextbookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEEAC5B0287DF57D00A8659B /* TextbookViewController.m */; };
 		EEEAC5B4287DF6C600A8659B /* BookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EEEAC5B3287DF6C600A8659B /* BookCell.m */; };
 		EEFBBC042894A139003388C3 /* OfflineData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EEFBBC022894A139003388C3 /* OfflineData.xcdatamodeld */; };
+		EEFBBC13289874B4003388C3 /* OfflineNote+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = EEFBBC11289874B4003388C3 /* OfflineNote+CoreDataClass.m */; };
+		EEFBBC14289874B4003388C3 /* OfflineNote+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = EEFBBC12289874B4003388C3 /* OfflineNote+CoreDataProperties.m */; };
+		EEFBBC17289878A0003388C3 /* PFFileObjectValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = EEFBBC16289878A0003388C3 /* PFFileObjectValueTransformer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +124,12 @@
 		EEEAC5B3287DF6C600A8659B /* BookCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookCell.m; sourceTree = "<group>"; };
 		EEEAC5B5287E315600A8659B /* TransferDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransferDelegate.h; sourceTree = "<group>"; };
 		EEFBBC032894A139003388C3 /* OfflineData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OfflineData.xcdatamodel; sourceTree = "<group>"; };
+		EEFBBC0F289874B4003388C3 /* OfflineNote+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OfflineNote+CoreDataProperties.h"; sourceTree = SOURCE_ROOT; };
+		EEFBBC10289874B4003388C3 /* OfflineNote+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OfflineNote+CoreDataClass.h"; sourceTree = SOURCE_ROOT; };
+		EEFBBC11289874B4003388C3 /* OfflineNote+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "OfflineNote+CoreDataClass.m"; sourceTree = SOURCE_ROOT; };
+		EEFBBC12289874B4003388C3 /* OfflineNote+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "OfflineNote+CoreDataProperties.m"; sourceTree = SOURCE_ROOT; };
+		EEFBBC15289878A0003388C3 /* PFFileObjectValueTransformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFFileObjectValueTransformer.h; sourceTree = "<group>"; };
+		EEFBBC16289878A0003388C3 /* PFFileObjectValueTransformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFFileObjectValueTransformer.m; sourceTree = "<group>"; };
 		F23C73B2235FE0FD72A4CFB2 /* Pods_NoteFindTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteFindTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B106584A70E4BBA992621B /* Pods_NoteFind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteFind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F37D7FE5DC035AC93D161E51 /* Pods-NoteFind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFind.release.xcconfig"; path = "Target Support Files/Pods-NoteFind/Pods-NoteFind.release.xcconfig"; sourceTree = "<group>"; };
@@ -330,7 +339,13 @@
 		EEFBBC0528985384003388C3 /* OfflineData */ = {
 			isa = PBXGroup;
 			children = (
+				EEFBBC0F289874B4003388C3 /* OfflineNote+CoreDataProperties.h */,
+				EEFBBC12289874B4003388C3 /* OfflineNote+CoreDataProperties.m */,
+				EEFBBC10289874B4003388C3 /* OfflineNote+CoreDataClass.h */,
+				EEFBBC11289874B4003388C3 /* OfflineNote+CoreDataClass.m */,
 				EEFBBC022894A139003388C3 /* OfflineData.xcdatamodeld */,
+				EEFBBC15289878A0003388C3 /* PFFileObjectValueTransformer.h */,
+				EEFBBC16289878A0003388C3 /* PFFileObjectValueTransformer.m */,
 			);
 			path = OfflineData;
 			sourceTree = "<group>";
@@ -594,9 +609,11 @@
 				EEFBBC042894A139003388C3 /* OfflineData.xcdatamodeld in Sources */,
 				EE6E86B22878D7ED0044F65F /* Tags.m in Sources */,
 				EEEAC5B1287DF57D00A8659B /* TextbookViewController.m in Sources */,
+				EEFBBC17289878A0003388C3 /* PFFileObjectValueTransformer.m in Sources */,
 				EE3CD928288B1C6E00557839 /* ErrorAlerts.m in Sources */,
 				EE6E86AC2878AEFE0044F65F /* TagsViewController.m in Sources */,
 				EEA455A72874C79C00261F9C /* AppDelegate.m in Sources */,
+				EEFBBC13289874B4003388C3 /* OfflineNote+CoreDataClass.m in Sources */,
 				EE6E86A92878A7D00044F65F /* NewNoteViewController.m in Sources */,
 				EE6F5120288F541400079382 /* SearchDetailsTableViewController.m in Sources */,
 				EE6E86A32878A1B80044F65F /* Note.m in Sources */,
@@ -605,6 +622,7 @@
 				EE6E4BC7287CEF3200FC068D /* Book.m in Sources */,
 				EE285DC028761B5100BC7FF0 /* ProfileViewController.m in Sources */,
 				EEA455AA2874C79C00261F9C /* SceneDelegate.m in Sources */,
+				EEFBBC14289874B4003388C3 /* OfflineNote+CoreDataProperties.m in Sources */,
 				EE285DC328761B5C00BC7FF0 /* SearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

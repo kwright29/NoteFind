@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+# platform :ios, '15.5'
 
 target 'NoteFind' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -8,10 +8,9 @@ target 'NoteFind' do
   # Pods for NoteFind
 pod 'Parse'
 pod 'Parse/UI'
-pod 'DateTools'
-pod 'NotionClient'
-pod 'AppAuth'
 pod 'AFNetworking'
+pod 'Parse+NSCoding', '~> 0.1.4'
+
 
 
   target 'NoteFindTests' do
