@@ -23,6 +23,7 @@
 
 bool isMoreDataLoading = false;
 InfiniteScrollActivityView *loadingMoreView;
+static int kTagsSearchDisplayLimit = 20;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -83,9 +84,8 @@ InfiniteScrollActivityView *loadingMoreView;
 
 - (void)loadTags:(NSString *)searchText {
     PFQuery *tagQuery = [Tags query];
-    int displayLimit = 20;
-    tagQuery.limit = displayLimit;
-    tagQuery.skip = self.setsLoaded * displayLimit;
+    tagQuery.limit = kTagsSearchDisplayLimit;
+    tagQuery.skip = self.setsLoaded * kTagsSearchDisplayLimit;
     [tagQuery whereKey:@"title" matchesRegex:searchText modifiers:@"i"];
     [tagQuery orderByAscending:@"title"];
     self.displayTags = [[NSMutableArray alloc] init];

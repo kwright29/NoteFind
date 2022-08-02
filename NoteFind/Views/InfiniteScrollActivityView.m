@@ -10,15 +10,15 @@
 @implementation InfiniteScrollActivityView
 
 UIActivityIndicatorView* activityIndicatorView;
-static CGFloat _defaultHeight = 60.0;
+static CGFloat kInfiniteScrollActivityViewDefaultHeight = 60.0;
 
 + (CGFloat)defaultHeight{
-    return _defaultHeight;
+    return kInfiniteScrollActivityViewDefaultHeight;
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
-    if(self){
+    if (self){
         [self setupActivityIndicator];
     }
     return self;
