@@ -514,11 +514,27 @@
                                 <color key="textColor" systemColor="systemGray2Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="roP-EK-P8d">
+                                <rect key="frame" x="12" y="208" width="382" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="382" id="1up-ec-Vg9"/>
+                                    <constraint firstAttribute="height" constant="30" id="b7b-hR-7FO"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="All Notes"/>
+                                    <segment title="Downloaded Notes"/>
+                                </segments>
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <connections>
+                                    <action selector="segmentChangeValue:" destination="zxf-Rg-IY6" eventType="valueChanged" id="iXk-rh-lnF"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="I8v-a0-Kbv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="I8v-a0-Kbv" firstAttribute="trailing" secondItem="CfZ-MS-1Y0" secondAttribute="trailing" constant="20" id="2xW-rS-Mdg"/>
+                            <constraint firstItem="roP-EK-P8d" firstAttribute="leading" secondItem="nwF-9i-eOe" secondAttribute="leading" constant="12" id="Rse-Ui-cZi"/>
                             <constraint firstItem="y7l-X8-9QQ" firstAttribute="top" secondItem="xSL-f0-LRH" secondAttribute="bottom" constant="2.5" id="STc-hJ-8hh"/>
                             <constraint firstItem="Ur4-dG-Iz5" firstAttribute="top" secondItem="CfZ-MS-1Y0" secondAttribute="bottom" constant="4" id="VEa-PJ-NYa"/>
                             <constraint firstItem="ZHf-Ej-RLs" firstAttribute="top" secondItem="I8v-a0-Kbv" secondAttribute="top" constant="18.5" id="Vp8-li-51G"/>
@@ -526,16 +542,19 @@
                             <constraint firstItem="I8v-a0-Kbv" firstAttribute="trailing" secondItem="Ur4-dG-Iz5" secondAttribute="trailing" constant="20" id="ZpH-Pu-dOI"/>
                             <constraint firstItem="xSL-f0-LRH" firstAttribute="leading" secondItem="ZHf-Ej-RLs" secondAttribute="trailing" constant="8" symbolic="YES" id="amW-GV-z0K"/>
                             <constraint firstItem="Ur4-dG-Iz5" firstAttribute="centerX" secondItem="CfZ-MS-1Y0" secondAttribute="centerX" id="bFr-gX-dRg"/>
+                            <constraint firstAttribute="trailing" secondItem="roP-EK-P8d" secondAttribute="trailing" constant="20" id="ciS-Dj-uxk"/>
                             <constraint firstItem="y7l-X8-9QQ" firstAttribute="leading" secondItem="xSL-f0-LRH" secondAttribute="leading" id="cpI-As-6XI"/>
                             <constraint firstItem="ZHf-Ej-RLs" firstAttribute="leading" secondItem="I8v-a0-Kbv" secondAttribute="leading" constant="12" id="d6H-xg-DzB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xSL-f0-LRH" secondAttribute="trailing" id="gIh-Re-smb"/>
                             <constraint firstItem="I8v-a0-Kbv" firstAttribute="trailing" secondItem="y7l-X8-9QQ" secondAttribute="trailing" constant="20" id="hTl-lB-Eel"/>
                             <constraint firstItem="CfZ-MS-1Y0" firstAttribute="leading" secondItem="y7l-X8-9QQ" secondAttribute="leading" id="n3z-hP-8qR"/>
                             <constraint firstItem="xSL-f0-LRH" firstAttribute="top" secondItem="ZHf-Ej-RLs" secondAttribute="top" id="pBf-DS-1fZ"/>
+                            <constraint firstItem="roP-EK-P8d" firstAttribute="top" secondItem="ZHf-Ej-RLs" secondAttribute="bottom" constant="19.5" id="yQ6-l6-8JU"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="Xer-bU-kOx"/>
                     <connections>
+                        <outlet property="filterSegmentCtrl" destination="roP-EK-P8d" id="cpK-RK-Ngv"/>
                         <outlet property="userFullName" destination="xSL-f0-LRH" id="HSB-XH-NYr"/>
                         <outlet property="userMajor" destination="Ur4-dG-Iz5" id="HCr-HU-vX7"/>
                         <outlet property="userProfilePic" destination="ZHf-Ej-RLs" id="DcL-do-HNy"/>
@@ -865,7 +884,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="U4o-9B-Hs0"/>
+        <segue reference="ghy-Lc-j7c"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="checkmark" catalog="system" width="128" height="114"/>

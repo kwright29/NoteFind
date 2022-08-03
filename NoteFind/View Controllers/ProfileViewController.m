@@ -14,6 +14,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *username;
 @property (strong, nonatomic) IBOutlet UILabel *userSchool;
 @property (strong, nonatomic) IBOutlet UILabel *userMajor;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *filterSegmentCtrl;
 
 @end
 
@@ -31,8 +32,7 @@
     self.username.text = [NSString stringWithFormat:@"@%@",currentUser[@"username"]];
     self.userSchool.text = currentUser[@"school"];
     self.userMajor.text = currentUser[@"major"];
-    
-    
+        
 }
  
 
