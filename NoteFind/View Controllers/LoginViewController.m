@@ -30,9 +30,9 @@
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
         if (error != nil) {
             if ([username isEqual:@""] || [password isEqual:@""]) {
-                [ErrorAlerts alertVoidRequiredFields:self];
+                [ErrorAlerts showAlertWithTitle:@"missing field(s) required" withMessage:@"one or more of the required fields are not complete. please enter your information and try again." withVC:self];
             } else {
-                [ErrorAlerts loginFailure:self];
+                [ErrorAlerts showAlertWithTitle:@"login failed" withMessage:@"your email or password was entered incorrectly. please try again" withVC:self];
             }
             
         } else {
@@ -42,21 +42,6 @@
     }];
     
     
-    
-}
-
-
-- (void)incorrectLoginInfo {
-  
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"incorrect username/password" message:@"the username/password you entered is incorrect. please try again." preferredStyle:(UIAlertControllerStyleAlert)];
-        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) { }];
-        // add the OK action to the alert controller
-        [alert addAction:okAction];
-        
-        [self presentViewController:alert animated:YES completion:^{
-            // optional code for what happens after the alert controller has finished presenting
-        }];
-
 }
 
 

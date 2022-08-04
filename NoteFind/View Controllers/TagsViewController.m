@@ -49,7 +49,7 @@
             self.allTags = (NSMutableArray *)tags;
         }
         else {
-            [ErrorAlerts retrieveTagsFailure:self];
+            [ErrorAlerts showAlertWithTitle:@"couldn't load tags" withMessage:@"failure loading tags. please refresh and try again." withVC:self];
            
         }
         [self.tableView reloadData];

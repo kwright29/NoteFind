@@ -37,7 +37,7 @@
             self.allBooks = (NSMutableArray *)books;
         }
         else {
-            [ErrorAlerts retrieveBooksFailure:self];
+            [ErrorAlerts showAlertWithTitle:@"couldn't load books" withMessage:@"failure loading books. please refresh and try again." withVC:self];
         }
         [self.tableView reloadData];
     }];

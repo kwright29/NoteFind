@@ -121,7 +121,7 @@
             [self dismissViewControllerAnimated:YES completion:nil];
             [Note addNewNoteToTags];
         } else {
-            [ErrorAlerts errorPostingNote:self];
+            [ErrorAlerts showAlertWithTitle:@"error posting note" withMessage:@"there was a problem trying to post your note to the feed. please try again." withVC:self];
         }
     }];
 

@@ -62,7 +62,7 @@
             [_persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *storeDescription, NSError *error) {
                 if (error != nil) {
                     UIViewController *vc = [self getCurrentVC];
-                    [ErrorAlerts errorDownloading:vc];
+                    [ErrorAlerts showAlertWithTitle:@"problem loading local data" withMessage:@"there was a problem retrieving your datastore. please exit and try again." withVC:vc];
                 }
             }];
         }
@@ -79,10 +79,10 @@
     UIViewController *vc = [self getCurrentVC];
     
     if ([context hasChanges] && ![context save:&error]) {
-        [ErrorAlerts errorDownloading:vc];
+        [ErrorAlerts showAlertWithTitle:@"error downloading note" withMessage:@"there was a problem trying download your note. please try again" withVC:vc];
     }
     else {
-        [ErrorAlerts successDownloading:vc];
+        [ErrorAlerts showAlertWithTitle:@"success!" withMessage:@"this note was successfully downloaded! check your profile for all of your downloaded notes." withVC:vc];
     
     }
 }
