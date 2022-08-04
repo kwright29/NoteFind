@@ -119,4 +119,15 @@
         
     }];
 }
+
++ (void)successDownloading:(UIViewController *)vc {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"success!" message:@"this note was successfully downloaded! check your profile for all of your downloaded notes." preferredStyle:(UIAlertControllerStyleAlert)];
+
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) { /*handle response here */ }];
+    [alert addAction:okAction];
+    
+    [vc presentViewController:alert animated:YES completion:^{
+        
+    }];
+}
 @end

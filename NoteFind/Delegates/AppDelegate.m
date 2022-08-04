@@ -6,9 +6,12 @@
 //
 
 #import "AppDelegate.h"
+#import "ErrorAlerts.h"
 #import "FeedViewController.h"
-#import <Parse/Parse.h>
 #import "SceneDelegate.h"
+
+#import <CoreData/CoreData.h>
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
@@ -26,7 +29,6 @@
         }];
 
         [Parse initializeWithConfiguration:config];
-
 
     return YES;
 }
@@ -59,19 +61,8 @@
             _persistentContainer = [[NSPersistentContainer alloc] initWithName:@"OfflineData"];
             [_persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *storeDescription, NSError *error) {
                 if (error != nil) {
-                    // Replace this implementation with code to handle the error appropriately.
-                    // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                    
-                    /*
-                     Typical reasons for an error here include:
-                     * The parent directory does not exist, cannot be created, or disallows writing.
-                     * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                     * The device is out of space.
-                     * The store could not be migrated to the current model version.
-                     Check the error message to determine what the actual problem was.
-                    */
-                    NSLog(@"Unresolved error %@, %@", error, error.userInfo);
-                    abort();
+                    UIViewController *vc = [self getCurrentVC];
+                    [ErrorAlerts errorDownloading:vc];
                 }
             }];
         }
@@ -85,12 +76,25 @@
 - (void)saveContext {
     NSManagedObjectContext *context = self.persistentContainer.viewContext;
     NSError *error = nil;
+    UIViewController *vc = [self getCurrentVC];
+    
     if ([context hasChanges] && ![context save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, error.userInfo);
-        abort();
+        [ErrorAlerts errorDownloading:vc];
+    }
+    else {
+        [ErrorAlerts successDownloading:vc];
+    
     }
 }
 
+- (UIViewController *)getCurrentVC {
+    //getting current window to present alert
+    NSSet<UIScene *> * sceneArr = [[UIApplication sharedApplication] connectedScenes];
+    UIScene * scene = [[sceneArr allObjects] firstObject];
+    NSObject * sceneDelegate = (NSObject *)scene.delegate;
+    UIWindow *currentKeyWindow = [sceneDelegate valueForKey: @"window"];
+    UIViewController *vc = currentKeyWindow.rootViewController;
+    
+    return vc;
+}
 @end
