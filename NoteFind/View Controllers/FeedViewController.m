@@ -5,6 +5,7 @@
 //  Created by Khloe Wright on 7/6/22.
 //
 
+#import "AppDelegate.h"
 #import "FeedViewController.h"
 #import "NewNoteViewController.h"
 #import "Parse/Parse.h"
@@ -19,7 +20,7 @@
 
 
 
-@interface FeedViewController () <UITableViewDataSource, UITableViewDelegate, DataFailureDelegate>
+@interface FeedViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *notes;
 
@@ -31,7 +32,7 @@
     [super viewDidLoad];
     self.tableView.dataSource = self;
     [self getNotes];
-    NSAssert(self.container == nil, @"this view needs a persistent container");
+    
 }
 
 
@@ -63,8 +64,6 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     NoteCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"NoteCell" forIndexPath:indexPath];
-    
-    cell.delegate = self;
     cell.note = self.notes[indexPath.row];
     
     return cell;
@@ -74,10 +73,6 @@
     return self.notes.count;
 }
 
-- (void)didShareNote {
-    
-    
-}
 - (IBAction)newPost:(id)sender {
     [self performSegueWithIdentifier:@"newPost" sender:nil];
 }
@@ -96,8 +91,5 @@
 
 }
 
-- (void)showErrorMessage {
-    [ErrorAlerts errorDownloading:self];
-}
 
 @end

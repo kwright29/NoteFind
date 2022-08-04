@@ -12,9 +12,6 @@
 #import "Parse/PFImageView.h"
 
 NS_ASSUME_NONNULL_BEGIN
-@protocol DataFailureDelegate
-- (void)showErrorMessage;
-@end
 
 @interface NoteCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UILabel *postUsername;
@@ -22,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) IBOutlet UILabel *postCaption;
 @property (strong, nonatomic) IBOutlet UILabel *postTitle;
 @property (strong, nonatomic) Note *note;
-@property (nonatomic, weak) id <DataFailureDelegate> delegate;
+
 
 @end
 

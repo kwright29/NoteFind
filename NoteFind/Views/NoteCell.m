@@ -6,23 +6,13 @@
 //
 
 #import "AppDelegate.h"
-#import <CoreData/CoreData.h>
+#import "OfflineDataManager.h"
 #import "NoteCell.h"
-
-
-@interface NoteCell () {
-    AppDelegate *appDelegate;
-    NSManagedObjectContext *context;
-}
-@end
 
 @implementation NoteCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
-    appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-    context = appDelegate.persistentContainer.viewContext;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -41,30 +31,11 @@
     
     // TODO: add addCount
 }
+
 - (IBAction)didTapDownload:(id)sender {
-    NSManagedObject *newOfflineNote = [NSEntityDescription insertNewObjectForEntityForName:@"OfflineNote" inManagedObjectContext:context];
-    NSData *fileData = [_postNote.file getData];
-    if (fileData == nil) {
-        [self.delegate showErrorMessage];
-    } else {
-        [newOfflineNote setValue:_postUsername.text forKey:@"username"];
-        [newOfflineNote setValue:_postTitle.text forKey:@"title"];
-        [newOfflineNote setValue:_postCaption.text forKey:@"caption"];
-        [newOfflineNote setValue:fileData forKey:@"noteFileData"];
-        [newOfflineNote setValue:_postNote.file.name forKey:@"noteFileName"];
-        [appDelegate saveContext];
-        
-    }
- 
     
- 
-    // TODO: add addCount
-    
-    // TODO: fetch data
-    
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"OfflineNote"];
-    NSArray *results = [context executeFetchRequest:request error:nil];
-    NSLog(@"results: %@", results);
+    OfflineDataManager *dataManager = [[OfflineDataManager alloc] init];
+    [dataManager downloadNote:_note];
 }
 
 @end
