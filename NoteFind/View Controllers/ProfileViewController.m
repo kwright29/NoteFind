@@ -5,16 +5,22 @@
 //  Created by Khloe Wright on 7/6/22.
 //
 
-#import <Parse/Parse.h>
+#import "ErrorAlerts.h"
+#import "Note.h"
 #import "ProfileViewController.h"
 
-@interface ProfileViewController ()
+#import <Parse/Parse.h>
+
+@interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (strong, nonatomic) IBOutlet UIImageView *userProfilePic;
 @property (strong, nonatomic) IBOutlet UILabel *userFullName;
 @property (strong, nonatomic) IBOutlet UILabel *username;
 @property (strong, nonatomic) IBOutlet UILabel *userSchool;
 @property (strong, nonatomic) IBOutlet UILabel *userMajor;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *filterSegmentCtrl;
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) NSMutableArray *onlineNotes;
+@property (strong, nonatomic) NSMutableArray *offlineNotes;
 
 @end
 
@@ -34,7 +40,8 @@
     self.userMajor.text = currentUser[@"major"];
         
 }
- 
+
+
 
 
 /*
@@ -46,5 +53,8 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+
 
 @end
