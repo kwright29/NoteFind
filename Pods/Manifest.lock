@@ -14,15 +14,7 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - AppAuth (1.5.0):
-    - AppAuth/Core (= 1.5.0)
-    - AppAuth/ExternalUserAgent (= 1.5.0)
-  - AppAuth/Core (1.5.0)
-  - AppAuth/ExternalUserAgent (1.5.0):
-    - AppAuth/Core
   - Bolts/Tasks (1.9.1)
-  - DateTools (2.0.0)
-  - NotionClient (0.2.0)
   - Parse (1.19.3):
     - Parse/Core (= 1.19.3)
   - Parse/Core (1.19.3):
@@ -32,29 +24,20 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - AppAuth
-  - DateTools
-  - NotionClient
   - Parse
   - Parse/UI
 
 SPEC REPOS:
   trunk:
     - AFNetworking
-    - AppAuth
     - Bolts
-    - DateTools
-    - NotionClient
     - Parse
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  AppAuth: 80317d99ac7ff2801a2f18ff86b48cd315ed465d
   Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
-  DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
-  NotionClient: a99e2c1c66e90257ede1040413b743ae0206eeaa
   Parse: 0abb63a0ff6fa34a3f64b81d595a294e2ece143a
 
-PODFILE CHECKSUM: c53fac9e7dfdfcdf68c1fae84c832269045301b7
+PODFILE CHECKSUM: 28b1693dbcb54262c5870383ed2434418d8d69be
 
 COCOAPODS: 1.11.3
