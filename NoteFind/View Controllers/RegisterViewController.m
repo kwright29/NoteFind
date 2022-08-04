@@ -45,25 +45,17 @@
         
         [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
               if (error != nil) {
-                  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:[NSString stringWithFormat:@"%@", error.localizedDescription] preferredStyle:(UIAlertControllerStyleAlert)];
-                  UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                  // handle response here.
-                  }];
-                  // add the OK action to the alert controller
-                  [alert addAction:okAction];
+                  [ErrorAlerts showAlertWithTitle:@"sign up failed" withMessage:@"there was a problem with our server signing you up. please resubmit!" withVC:self];
                   
-                  [self presentViewController:alert animated:YES completion:^{
-                      // optional code for what happens after the alert controller has finished presenting
-                  }];              }
+              }
               else {
-                  // TODO: manually segue to logged in view
                       [self performSegueWithIdentifier:@"registerSegue" sender:nil];
               }
           }];
         
     }   else   {
         
-        [ErrorAlerts passwordNotConfirmed:self];
+        [ErrorAlerts showAlertWithTitle:@"passwords don't match" withMessage:@"your passwords do not match. please try again" withVC:self];
     }
     
     

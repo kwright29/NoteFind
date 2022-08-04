@@ -6,10 +6,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LoginViewController.h"
-#import "FeedViewController.h"
-#import "RegisterViewController.h"
-#import "NewNoteViewController.h"
 #import <UIKit/UIKit.h>
 
 @class LoginViewController;
@@ -20,16 +16,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ErrorAlerts : NSObject
-+ (void)loginFailure:(LoginViewController *)loginVC;
-+ (void)alertVoidRequiredFields:(LoginViewController *)loginVC;
-+ (void)logoutFailure:(FeedViewController *)feedVC;
-+ (void)passwordNotConfirmed:(RegisterViewController *)regVC;
-+ (void)retrieveNotesFailure:(FeedViewController *)feedVC;
-+ (void)retrieveTagsFailure:(UIViewController *)vc;
-+ (void)retrieveBooksFailure:(UIViewController *)vc;
-+ (void)errorPostingNote:(NewNoteViewController *)newNoteVC;
-+ (void)errorDownloading:(UIViewController *)vc;
-+ (void)successDownloading:(UIViewController *)vc;
++ (void)showAlertWithTitle:(NSString *)title withMessage:(NSString *)message withVC:(UIViewController *)vc;
 @end
 
 NS_ASSUME_NONNULL_END

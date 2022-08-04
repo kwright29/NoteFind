@@ -56,7 +56,7 @@
             self.notes = (NSMutableArray *)notes;
             [self.tableView reloadData];
         } else {
-            [ErrorAlerts retrieveNotesFailure:self];
+            [ErrorAlerts showAlertWithTitle:@"couldn't load notes" withMessage:@"failure loading notes. please refresh and try again." withVC:self];
         }
     }];
 
@@ -81,7 +81,7 @@
     SceneDelegate *sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         if (error) {
-            [ErrorAlerts logoutFailure:self];
+            [ErrorAlerts showAlertWithTitle:@"logout failure" withMessage:@"user failed to logout. please try again" withVC:self];
         } else {
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             LoginViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"loginVC"];

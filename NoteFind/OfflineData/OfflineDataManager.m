@@ -37,10 +37,13 @@
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     self.context = appDelegate.persistentContainer.viewContext;
     NSData *fileData = [note.note getData];
-    if (fileData == nil || [self isNoteDownloaded:note]) {
-        UIViewController *currentVC = [appDelegate getCurrentVC];
-        [ErrorAlerts errorDownloading:currentVC];
-    } else {
+    UIViewController *currentVC = [appDelegate getCurrentVC];
+    if (fileData == nil) {
+        [ErrorAlerts showAlertWithTitle:@"error downloading note" withMessage:@"there was a problem trying download your note. please try again" withVC:currentVC];
+    } else if ([self isNoteDownloaded:note]) {
+        [ErrorAlerts showAlertWithTitle:@"duplicate!" withMessage:@"this note is already downloaded locally!" withVC:currentVC];
+    }
+    else {
         NSManagedObject *newOfflineNote = [NSEntityDescription insertNewObjectForEntityForName:@"OfflineNote" inManagedObjectContext:self.context];
         [newOfflineNote setValue:note.author.username forKey:@"username"];
         [newOfflineNote setValue:note.title forKey:@"title"];

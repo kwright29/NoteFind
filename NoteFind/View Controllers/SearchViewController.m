@@ -91,7 +91,7 @@ static int kTagsSearchDisplayLimit = 20;
     self.displayTags = [[NSMutableArray alloc] init];
     [tagQuery findObjectsInBackgroundWithBlock:^(NSArray<Tags *>*tags , NSError *error) {
         if (error) {
-            [ErrorAlerts retrieveTagsFailure:self];
+            [ErrorAlerts showAlertWithTitle:@"couldn't load tags" withMessage:@"failure loading tags. please refresh and try again." withVC:self];
         } else {
             isMoreDataLoading = false;
             
