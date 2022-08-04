@@ -8,8 +8,10 @@
 #import "AppDelegate.h"
 #import "ErrorAlerts.h"
 #import "FeedViewController.h"
-#import <Parse/Parse.h>
 #import "SceneDelegate.h"
+
+#import <CoreData/CoreData.h>
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 

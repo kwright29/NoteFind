@@ -10,6 +10,7 @@
 		22E4DC1EBE04DD7194609B0B /* Pods_NoteFind_NoteFindUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 910F4DAD409AE04503A054CC /* Pods_NoteFind_NoteFindUITests.framework */; };
 		3F682E59AD8103B7A30DBD2B /* Pods_NoteFind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2B106584A70E4BBA992621B /* Pods_NoteFind.framework */; };
 		A22A03E60D145B7928407E28 /* Pods_NoteFindTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23C73B2235FE0FD72A4CFB2 /* Pods_NoteFindTests.framework */; };
+		EE0FC737289B2878000C3C22 /* OfflineDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0FC736289B2878000C3C22 /* OfflineDataManager.m */; };
 		EE1CD28F288B6E1D00E64F2A /* CameraImport.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1CD28E288B6E1D00E64F2A /* CameraImport.m */; };
 		EE285DC028761B5100BC7FF0 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE285DBF28761B5100BC7FF0 /* ProfileViewController.m */; };
 		EE285DC328761B5C00BC7FF0 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE285DC228761B5C00BC7FF0 /* SearchViewController.m */; };
@@ -65,6 +66,8 @@
 		6631E7301B2BA5F36119E176 /* Pods-NoteFind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFind.debug.xcconfig"; path = "Target Support Files/Pods-NoteFind/Pods-NoteFind.debug.xcconfig"; sourceTree = "<group>"; };
 		910F4DAD409AE04503A054CC /* Pods_NoteFind_NoteFindUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteFind_NoteFindUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41CFF7DBE38FA618F7A6DE2 /* Pods-NoteFind-NoteFindUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFind-NoteFindUITests.debug.xcconfig"; path = "Target Support Files/Pods-NoteFind-NoteFindUITests/Pods-NoteFind-NoteFindUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EE0FC735289B2878000C3C22 /* OfflineDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OfflineDataManager.h; sourceTree = "<group>"; };
+		EE0FC736289B2878000C3C22 /* OfflineDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OfflineDataManager.m; sourceTree = "<group>"; };
 		EE1CD28D288B6E1D00E64F2A /* CameraImport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraImport.h; sourceTree = "<group>"; };
 		EE1CD28E288B6E1D00E64F2A /* CameraImport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraImport.m; sourceTree = "<group>"; };
 		EE285DBE28761B5100BC7FF0 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
@@ -331,6 +334,8 @@
 			isa = PBXGroup;
 			children = (
 				EEFBBC022894A139003388C3 /* OfflineData.xcdatamodeld */,
+				EE0FC735289B2878000C3C22 /* OfflineDataManager.h */,
+				EE0FC736289B2878000C3C22 /* OfflineDataManager.m */,
 			);
 			path = OfflineData;
 			sourceTree = "<group>";
@@ -585,6 +590,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE6E86AF2878AF200044F65F /* TagCell.m in Sources */,
+				EE0FC737289B2878000C3C22 /* OfflineDataManager.m in Sources */,
 				EEA455E42874E06F00261F9C /* RegisterViewController.m in Sources */,
 				EEA455E12874DE2300261F9C /* LoginViewController.m in Sources */,
 				EE6E869B287769AD0044F65F /* APIManager.m in Sources */,

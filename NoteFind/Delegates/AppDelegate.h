@@ -6,12 +6,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreData/CoreData.h>
+
+@class NSPersistentContainer;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-@property (nonatomic, strong) NSPersistentContainer *persistentContainer;
-
-- (void)saveContext;
-
+@property (readonly, strong) NSPersistentContainer *persistentContainer;
+- (void)saveContext; // saves entities to core data model
+- (UIViewController *)getCurrentVC; // gets current VC for case of showing alerts while not in VC file
 @end
 
