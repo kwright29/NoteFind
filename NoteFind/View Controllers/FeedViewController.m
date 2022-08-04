@@ -5,6 +5,7 @@
 //  Created by Khloe Wright on 7/6/22.
 //
 
+#import "AppDelegate.h"
 #import "FeedViewController.h"
 #import "NewNoteViewController.h"
 #import "Parse/Parse.h"
@@ -31,6 +32,7 @@
     [super viewDidLoad];
     self.tableView.dataSource = self;
     [self getNotes];
+    
 }
 
 
@@ -62,7 +64,6 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     NoteCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"NoteCell" forIndexPath:indexPath];
-    
     cell.note = self.notes[indexPath.row];
     
     return cell;
@@ -72,10 +73,6 @@
     return self.notes.count;
 }
 
-- (void)didShareNote {
-    
-    
-}
 - (IBAction)newPost:(id)sender {
     [self performSegueWithIdentifier:@"newPost" sender:nil];
 }
@@ -93,5 +90,6 @@
     }];
 
 }
+
 
 @end

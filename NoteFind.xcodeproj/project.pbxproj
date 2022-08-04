@@ -10,6 +10,7 @@
 		22E4DC1EBE04DD7194609B0B /* Pods_NoteFind_NoteFindUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 910F4DAD409AE04503A054CC /* Pods_NoteFind_NoteFindUITests.framework */; };
 		3F682E59AD8103B7A30DBD2B /* Pods_NoteFind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2B106584A70E4BBA992621B /* Pods_NoteFind.framework */; };
 		A22A03E60D145B7928407E28 /* Pods_NoteFindTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23C73B2235FE0FD72A4CFB2 /* Pods_NoteFindTests.framework */; };
+		EE0FC737289B2878000C3C22 /* OfflineDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0FC736289B2878000C3C22 /* OfflineDataManager.m */; };
 		EE1CD28F288B6E1D00E64F2A /* CameraImport.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1CD28E288B6E1D00E64F2A /* CameraImport.m */; };
 		EE285DC028761B5100BC7FF0 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE285DBF28761B5100BC7FF0 /* ProfileViewController.m */; };
 		EE285DC328761B5C00BC7FF0 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE285DC228761B5C00BC7FF0 /* SearchViewController.m */; };
@@ -38,7 +39,9 @@
 		EEA455E42874E06F00261F9C /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA455E32874E06F00261F9C /* RegisterViewController.m */; };
 		EEEAC5B1287DF57D00A8659B /* TextbookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEEAC5B0287DF57D00A8659B /* TextbookViewController.m */; };
 		EEEAC5B4287DF6C600A8659B /* BookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EEEAC5B3287DF6C600A8659B /* BookCell.m */; };
+		EEFBBC042894A139003388C3 /* OfflineData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EEFBBC022894A139003388C3 /* OfflineData.xcdatamodeld */; };
 		EEFBBBB028931710003388C3 /* InfiniteScrollActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEFBBBAF28931710003388C3 /* InfiniteScrollActivityView.m */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,8 @@
 		6631E7301B2BA5F36119E176 /* Pods-NoteFind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFind.debug.xcconfig"; path = "Target Support Files/Pods-NoteFind/Pods-NoteFind.debug.xcconfig"; sourceTree = "<group>"; };
 		910F4DAD409AE04503A054CC /* Pods_NoteFind_NoteFindUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteFind_NoteFindUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41CFF7DBE38FA618F7A6DE2 /* Pods-NoteFind-NoteFindUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFind-NoteFindUITests.debug.xcconfig"; path = "Target Support Files/Pods-NoteFind-NoteFindUITests/Pods-NoteFind-NoteFindUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EE0FC735289B2878000C3C22 /* OfflineDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OfflineDataManager.h; sourceTree = "<group>"; };
+		EE0FC736289B2878000C3C22 /* OfflineDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OfflineDataManager.m; sourceTree = "<group>"; };
 		EE1CD28D288B6E1D00E64F2A /* CameraImport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraImport.h; sourceTree = "<group>"; };
 		EE1CD28E288B6E1D00E64F2A /* CameraImport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraImport.m; sourceTree = "<group>"; };
 		EE285DBE28761B5100BC7FF0 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
@@ -120,6 +125,7 @@
 		EEEAC5B2287DF6C600A8659B /* BookCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookCell.h; sourceTree = "<group>"; };
 		EEEAC5B3287DF6C600A8659B /* BookCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookCell.m; sourceTree = "<group>"; };
 		EEEAC5B5287E315600A8659B /* TransferDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransferDelegate.h; sourceTree = "<group>"; };
+		EEFBBC032894A139003388C3 /* OfflineData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OfflineData.xcdatamodel; sourceTree = "<group>"; };
 		EEFBBBAE28931710003388C3 /* InfiniteScrollActivityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteScrollActivityView.h; sourceTree = "<group>"; };
 		EEFBBBAF28931710003388C3 /* InfiniteScrollActivityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteScrollActivityView.m; sourceTree = "<group>"; };
 		F23C73B2235FE0FD72A4CFB2 /* Pods_NoteFindTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteFindTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,6 +235,7 @@
 		EEA455A42874C79C00261F9C /* NoteFind */ = {
 			isa = PBXGroup;
 			children = (
+				EEFBBC0528985384003388C3 /* OfflineData */,
 				EE3CD922288B1BE400557839 /* Alerts */,
 				EE4FB19C2882152900B3429B /* Import-Files */,
 				EE6E86982877617C0044F65F /* API */,
@@ -328,6 +335,16 @@
 				EE4FB1A628821AF600B3429B /* ImportDelegate.h */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		EEFBBC0528985384003388C3 /* OfflineData */ = {
+			isa = PBXGroup;
+			children = (
+				EEFBBC022894A139003388C3 /* OfflineData.xcdatamodeld */,
+				EE0FC735289B2878000C3C22 /* OfflineDataManager.h */,
+				EE0FC736289B2878000C3C22 /* OfflineDataManager.m */,
+			);
+			path = OfflineData;
 			sourceTree = "<group>";
 		};
 		FC069882ECB16929915AC8C4 /* Frameworks */ = {
@@ -579,12 +596,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE6E86AF2878AF200044F65F /* TagCell.m in Sources */,
+				EE0FC737289B2878000C3C22 /* OfflineDataManager.m in Sources */,
 				EEA455E42874E06F00261F9C /* RegisterViewController.m in Sources */,
 				EEA455E12874DE2300261F9C /* LoginViewController.m in Sources */,
 				EE6E869B287769AD0044F65F /* APIManager.m in Sources */,
 				EEEAC5B4287DF6C600A8659B /* BookCell.m in Sources */,
 				EE1CD28F288B6E1D00E64F2A /* CameraImport.m in Sources */,
 				EE285DC628761B7000BC7FF0 /* FeedViewController.m in Sources */,
+				EEFBBC042894A139003388C3 /* OfflineData.xcdatamodeld in Sources */,
 				EE6E86B22878D7ED0044F65F /* Tags.m in Sources */,
 				EEFBBBB028931710003388C3 /* InfiniteScrollActivityView.m in Sources */,
 				EEEAC5B1287DF57D00A8659B /* TextbookViewController.m in Sources */,
@@ -939,6 +958,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EEFBBC022894A139003388C3 /* OfflineData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EEFBBC032894A139003388C3 /* OfflineData.xcdatamodel */,
+			);
+			currentVersion = EEFBBC032894A139003388C3 /* OfflineData.xcdatamodel */;
+			path = OfflineData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = EEA4559A2874C79C00261F9C /* Project object */;
 }

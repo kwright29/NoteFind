@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) IBOutlet UILabel *postTitle;
 @property (strong, nonatomic) Note *note;
 
+
 @end
 
 NS_ASSUME_NONNULL_END

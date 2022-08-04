@@ -6,14 +6,18 @@
 //
 
 #import "AppDelegate.h"
-#import "Parse/Parse.h"
+#import "ErrorAlerts.h"
+#import "FeedViewController.h"
+#import "SceneDelegate.h"
+
+#import <CoreData/CoreData.h>
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -29,9 +33,6 @@
     return YES;
 }
 
-//- (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-//    return YES;
-//}
 
 #pragma mark - UISceneSession lifecycle
 
@@ -49,5 +50,51 @@
     // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
 }
 
+#pragma mark - Core Data stack
 
+@synthesize persistentContainer = _persistentContainer;
+
+- (NSPersistentContainer *)persistentContainer {
+    // The persistent container for the application. This implementation creates and returns a container, having loaded the store for the application to it.
+    @synchronized (self) {
+        if (_persistentContainer == nil) {
+            _persistentContainer = [[NSPersistentContainer alloc] initWithName:@"OfflineData"];
+            [_persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *storeDescription, NSError *error) {
+                if (error != nil) {
+                    UIViewController *vc = [self getCurrentVC];
+                    [ErrorAlerts errorDownloading:vc];
+                }
+            }];
+        }
+    }
+    
+    return _persistentContainer;
+}
+
+#pragma mark - Core Data Saving support
+
+- (void)saveContext {
+    NSManagedObjectContext *context = self.persistentContainer.viewContext;
+    NSError *error = nil;
+    UIViewController *vc = [self getCurrentVC];
+    
+    if ([context hasChanges] && ![context save:&error]) {
+        [ErrorAlerts errorDownloading:vc];
+    }
+    else {
+        [ErrorAlerts successDownloading:vc];
+    
+    }
+}
+
+- (UIViewController *)getCurrentVC {
+    //getting current window to present alert
+    NSSet<UIScene *> * sceneArr = [[UIApplication sharedApplication] connectedScenes];
+    UIScene * scene = [[sceneArr allObjects] firstObject];
+    NSObject * sceneDelegate = (NSObject *)scene.delegate;
+    UIWindow *currentKeyWindow = [sceneDelegate valueForKey: @"window"];
+    UIViewController *vc = currentKeyWindow.rootViewController;
+    
+    return vc;
+}
 @end
