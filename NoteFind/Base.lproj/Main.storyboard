@@ -373,7 +373,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6cr-rD-lgx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3697" y="1130"/>
+            <point key="canvasLocation" x="4605.7971014492759" y="1129.6875"/>
         </scene>
         <!--Tags View Controller-->
         <scene sceneID="REi-rh-LHh">
@@ -454,12 +454,63 @@
                     <connections>
                         <segue destination="daS-e9-2XG" kind="relationship" relationship="viewControllers" id="L0t-nB-bk7"/>
                         <segue destination="zxf-Rg-IY6" kind="relationship" relationship="viewControllers" id="CmQ-2b-QG4"/>
-                        <segue destination="HW4-tY-n5B" kind="relationship" relationship="viewControllers" id="hVY-5D-XeR"/>
+                        <segue destination="l4a-Ee-m1r" kind="relationship" relationship="viewControllers" id="AOF-gF-8JB"/>
+
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BoX-zy-eov" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1119" y="117"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="fbV-1H-jSi">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="qBR-AP-UyR" customClass="SearchViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vnd-uJ-xOa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="esd-ds-VWS">
+                                <rect key="frame" x="0.0" y="106" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="z5L-Ui-mmy">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z5L-Ui-mmy" id="fy1-Ov-Ex0">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="c1e-SH-Muc" kind="presentation" id="fid-ra-FyZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X9T-Cc-7AT">
+                                <rect key="frame" x="0.0" y="56" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZIC-Kh-UFo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="esd-ds-VWS" secondAttribute="trailing" id="KyD-Y7-zw7"/>
+                            <constraint firstItem="ZIC-Kh-UFo" firstAttribute="bottom" secondItem="esd-ds-VWS" secondAttribute="bottom" constant="34" id="R5Y-A0-aew"/>
+                            <constraint firstItem="esd-ds-VWS" firstAttribute="top" secondItem="Vnd-uJ-xOa" secondAttribute="top" constant="106" id="Zx0-QS-Ebd"/>
+                            <constraint firstItem="esd-ds-VWS" firstAttribute="leading" secondItem="Vnd-uJ-xOa" secondAttribute="leading" id="bQO-QY-fkn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="q4z-aj-wB2"/>
+                    <connections>
+                        <outlet property="searchBar" destination="X9T-Cc-7AT" id="pAH-fC-IGb"/>
+                        <outlet property="tableView" destination="esd-ds-VWS" id="Q3L-YK-VSK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A4n-DI-P7X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2186.9565217391305" y="1307.8125"/>
         </scene>
         <!--Profile-->
         <scene sceneID="YM0-JK-f1p">
@@ -486,7 +537,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="28V-rx-aVS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2326" y="1302"/>
+            <point key="canvasLocation" x="3234.7826086956525" y="1301.7857142857142"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="CGB-e2-A0Q">
@@ -646,47 +697,7 @@
             </objects>
             <point key="canvasLocation" x="3" y="1302"/>
         </scene>
-        <!--Search-->
-        <scene sceneID="51d-dT-XDG">
-            <objects>
-                <tableViewController id="HW4-tY-n5B" customClass="SearchViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="6Fi-lm-pZq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="wdd-Gl-kTl">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="fJD-ea-Cht">
-                                <rect key="frame" x="0.0" y="88.5" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fJD-ea-Cht" id="WNq-DP-SSM">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="c1e-SH-Muc" kind="show" id="Ac5-Yw-6Eh"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="HW4-tY-n5B" id="JeO-na-2BW"/>
-                            <outlet property="delegate" destination="HW4-tY-n5B" id="z0Q-p6-PTX"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="xeA-jm-iQe"/>
-                    <connections>
-                        <outlet property="searchBar" destination="wdd-Gl-kTl" id="suu-Ta-QWJ"/>
-                        <outlet property="tableView" destination="6Fi-lm-pZq" id="it6-Jb-iqw"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7p1-tV-4GD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1228.985507246377" y="1301.7857142857142"/>
-        </scene>
+
         <!--Search Details Table View Controller-->
         <scene sceneID="ld5-gH-vMl">
             <objects>
@@ -765,7 +776,8 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u0U-bX-Ned" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1228.985507246377" y="2184.375"/>
+            <point key="canvasLocation" x="1287" y="2190"/>
+
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4ZB-MS-f0S">
@@ -803,6 +815,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qan-yf-ilt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2008.6956521739132" y="-506.25"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="pkW-oO-Ef2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="l4a-Ee-m1r" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="mGU-qN-oca"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Eig-vo-dZx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qBR-AP-UyR" kind="relationship" relationship="rootViewController" id="C42-hp-ccu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IEe-eM-Sxa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1276.8115942028987" y="1307.8125"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

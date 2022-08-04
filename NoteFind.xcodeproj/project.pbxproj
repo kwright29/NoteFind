@@ -40,6 +40,8 @@
 		EEEAC5B1287DF57D00A8659B /* TextbookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEEAC5B0287DF57D00A8659B /* TextbookViewController.m */; };
 		EEEAC5B4287DF6C600A8659B /* BookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EEEAC5B3287DF6C600A8659B /* BookCell.m */; };
 		EEFBBC042894A139003388C3 /* OfflineData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EEFBBC022894A139003388C3 /* OfflineData.xcdatamodeld */; };
+		EEFBBBB028931710003388C3 /* InfiniteScrollActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEFBBBAF28931710003388C3 /* InfiniteScrollActivityView.m */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +126,8 @@
 		EEEAC5B3287DF6C600A8659B /* BookCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookCell.m; sourceTree = "<group>"; };
 		EEEAC5B5287E315600A8659B /* TransferDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransferDelegate.h; sourceTree = "<group>"; };
 		EEFBBC032894A139003388C3 /* OfflineData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OfflineData.xcdatamodel; sourceTree = "<group>"; };
+		EEFBBBAE28931710003388C3 /* InfiniteScrollActivityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteScrollActivityView.h; sourceTree = "<group>"; };
+		EEFBBBAF28931710003388C3 /* InfiniteScrollActivityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteScrollActivityView.m; sourceTree = "<group>"; };
 		F23C73B2235FE0FD72A4CFB2 /* Pods_NoteFindTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteFindTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B106584A70E4BBA992621B /* Pods_NoteFind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteFind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F37D7FE5DC035AC93D161E51 /* Pods-NoteFind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteFind.release.xcconfig"; path = "Target Support Files/Pods-NoteFind/Pods-NoteFind.release.xcconfig"; sourceTree = "<group>"; };
@@ -197,7 +201,8 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		EE75E38F289204430096A96F /* Recovered References */ = {
+
+		EE75E38E2891F15A0096A96F /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -213,7 +218,7 @@
 				EEA455A32874C79C00261F9C /* Products */,
 				604A2B50AECA52F139379FD0 /* Pods */,
 				FC069882ECB16929915AC8C4 /* Frameworks */,
-				EE75E38F289204430096A96F /* Recovered References */,
+				EE75E38E2891F15A0096A96F /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -312,6 +317,8 @@
 				EE6E86AE2878AF200044F65F /* TagCell.m */,
 				EEEAC5B2287DF6C600A8659B /* BookCell.h */,
 				EEEAC5B3287DF6C600A8659B /* BookCell.m */,
+				EEFBBBAE28931710003388C3 /* InfiniteScrollActivityView.h */,
+				EEFBBBAF28931710003388C3 /* InfiniteScrollActivityView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -484,7 +491,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		1FC12517804C9423885F5DE9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -497,7 +504,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NoteFind/Pods-NoteFind-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		227D2B53EBC2F3B07F61F631 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -599,6 +605,7 @@
 				EE285DC628761B7000BC7FF0 /* FeedViewController.m in Sources */,
 				EEFBBC042894A139003388C3 /* OfflineData.xcdatamodeld in Sources */,
 				EE6E86B22878D7ED0044F65F /* Tags.m in Sources */,
+				EEFBBBB028931710003388C3 /* InfiniteScrollActivityView.m in Sources */,
 				EEEAC5B1287DF57D00A8659B /* TextbookViewController.m in Sources */,
 				EE3CD928288B1C6E00557839 /* ErrorAlerts.m in Sources */,
 				EE6E86AC2878AEFE0044F65F /* TagsViewController.m in Sources */,
