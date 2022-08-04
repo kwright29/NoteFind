@@ -7,7 +7,8 @@
 #import "AppDelegate.h"
 #import "ErrorAlerts.h"
 #import "OfflineDataManager.h"
-#import "PFFileObject.h"
+
+#import <CoreData/CoreData.h>
 #import <Parse/Parse.h>
 
 @interface OfflineDataManager()

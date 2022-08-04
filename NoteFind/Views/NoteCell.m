@@ -9,11 +9,6 @@
 #import "OfflineDataManager.h"
 #import "NoteCell.h"
 
-
-@interface NoteCell ()
-   
-@end
-
 @implementation NoteCell
 
 - (void)awakeFromNib {
