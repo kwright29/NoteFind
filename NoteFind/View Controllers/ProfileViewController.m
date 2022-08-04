@@ -5,10 +5,16 @@
 //  Created by Khloe Wright on 7/6/22.
 //
 
+#import <Parse/Parse.h>
 #import "ProfileViewController.h"
 
 @interface ProfileViewController ()
-@property (nonatomic) BOOL notion;
+@property (strong, nonatomic) IBOutlet UIImageView *userProfilePic;
+@property (strong, nonatomic) IBOutlet UILabel *userFullName;
+@property (strong, nonatomic) IBOutlet UILabel *username;
+@property (strong, nonatomic) IBOutlet UILabel *userSchool;
+@property (strong, nonatomic) IBOutlet UILabel *userMajor;
+
 @end
 
 @implementation ProfileViewController
@@ -16,38 +22,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self setUpUserInfo];
 }
-- (IBAction)didTapLink:(id)sender {
-   
+
+- (void)setUpUserInfo {
+    PFUser *currentUser = PFUser.currentUser;
+    self.userFullName.text = currentUser[@"fullName"];
+    self.username.text = [NSString stringWithFormat:@"@%@",currentUser[@"username"]];
+    self.userSchool.text = currentUser[@"school"];
+    self.userMajor.text = currentUser[@"major"];
+    
     
 }
-
-- (void)selectApp {
-  
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Select Third Party App" message:@"Please select the app you want to link to your NoteFind account" preferredStyle:(UIAlertControllerStyleAlert)];
-        UIAlertAction *notion = [UIAlertAction actionWithTitle:@"Notion" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            self.notion = YES;
-        }];
-        // add the OK action to the alert controller
-        [alert addAction:notion];
-        
-        [self presentViewController:alert animated:YES completion:^{
-            /*optional code for what happens after the alert controller has finished presenting*/
-        }];
-
-}
-
-- (void)notionLink {
-    UIApplication *application = [UIApplication sharedApplication];
-    NSURL *url = [NSURL URLWithString:@"https://api.notion.com/v1/oauth/authorize?owner=user&client_id=463558a3-725e-4f37-b6d3-0889894f68de&redirect_uri=https%3A%2F%2Fexample.com%2Fauth%2Fnotion%2Fcallback&response_type=code"];
-    
-//    [application openURL:url options:@{} completionHandler:<#^(BOOL success)completion#>]
-//
-//
-//
-//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://api.notion.com/v1/oauth/authorize?owner=user&client_id=463558a3-725e-4f37-b6d3-0889894f68de&redirect_uri=https%3A%2F%2Fexample.com%2Fauth%2Fnotion%2Fcallback&response_type=code"]];
-
-}
+ 
 
 
 /*
