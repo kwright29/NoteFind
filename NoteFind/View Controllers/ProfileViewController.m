@@ -5,6 +5,9 @@
 //  Created by Khloe Wright on 7/6/22.
 //
 
+#import "AppDelegate.h"
+#import "OfflineDataManager.h"
+#import "OnlineGridCell.h"
 #import "ErrorAlerts.h"
 #import "Note.h"
 #import "ProfileViewController.h"
@@ -28,8 +31,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.collectionView.dataSource = self;
+    self.collectionView.delegate = self;
     [self setUpUserInfo];
+    [self getOnlineNotes];
 }
 
 - (void)setUpUserInfo {
@@ -41,6 +46,42 @@
         
 }
 
+- (void)getOnlineNotes {
+    PFQuery *noteQuery = [Note query];
+    [noteQuery orderByDescending:@"createdAt"];
+    [noteQuery includeKey:@"author"];
+    
+    [noteQuery findObjectsInBackgroundWithBlock:^(NSArray<Note *> *notes, NSError *error) {
+        if (notes) {
+            self.onlineNotes = (NSMutableArray *)notes;
+            [self.collectionView reloadData];
+        } else {
+            [ErrorAlerts showAlertWithTitle:@"couldn't load notes" withMessage:@"failure loading notes. please refresh and try again." withVC:self];
+        }
+    }];
+}
+
+- (void)getOfflineNotes {
+    OfflineDataManager *dataManager = [[OfflineDataManager alloc]init];
+    self.offlineNotes = (NSMutableArray *)[dataManager getOfflineNotes];
+}
+
+
+- (UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    if (self.filterSegmentCtrl.selectedSegmentIndex == 0) {
+        OnlineGridCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"OnlineGridCell" forIndexPath:indexPath];
+        Note *note = self.onlineNotes[indexPath.row];
+        cell.notePost.file = note.note;
+        [cell.notePost loadInBackground];
+        
+        return cell;
+    }
+    return nil;
+}
+
+- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.onlineNotes.count;
+}
 
 
 
@@ -53,6 +94,10 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+
+
 
 
 
