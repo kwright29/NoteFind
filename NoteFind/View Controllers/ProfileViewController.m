@@ -75,8 +75,8 @@
 - (UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     if (self.filterSegmentCtrl.selectedSegmentIndex == 0) {
         OnlineGridCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"OnlineGridCell" forIndexPath:indexPath];
-        Note *note = self.onlineNotes[indexPath.row];
-        cell.notePost.file = note.note;
+        cell.gridNote = self.onlineNotes[indexPath.row];
+        cell.notePost.file = cell.gridNote.note;
         [cell.notePost loadInBackground];
         
         return cell;

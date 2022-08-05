@@ -8,12 +8,13 @@
 #import "Parse/PFImageView.h"
 #import <UIKit/UIKit.h>
 
+@class Note;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface OnlineGridCell : UICollectionViewCell
+@interface OnlineGridCell : UICollectionViewCell <UIGestureRecognizerDelegate>
 @property (strong, nonatomic) IBOutlet PFImageView *notePost;
-
+@property (strong, nonatomic) Note *gridNote;
 @end
 
 NS_ASSUME_NONNULL_END
