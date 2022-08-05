@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6F4EEC164B8AC155109315A8631533A6"
-               BuildableName = "Pods_NoteFind_NoteFindUITests.framework"
-               BlueprintName = "Pods-NoteFind-NoteFindUITests"
+               BlueprintIdentifier = "CE3774A41C0BF2BDF93D3484B60028D9"
+               BuildableName = "Shimmer.framework"
+               BlueprintName = "Shimmer"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

@@ -6,14 +6,19 @@
 //
 
 #import "LoginViewController.h"
-#import "Parse/Parse.h"
 #import "ErrorAlerts.h"
-#import <Parse/Parse.h>
 #import "SceneDelegate.h"
+
+#import <Shimmer/FBShimmeringView.h>
+#import <Parse/Parse.h>
 
 @interface LoginViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (strong, nonatomic) IBOutlet FBShimmeringView *shimmerView;
+@property (strong, nonatomic) IBOutlet UILabel *noteFindLabel;
+
+
 
 @end
 
@@ -22,6 +27,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+//    UILabel *noteFindLabel = [[UILabel alloc] initWithFrame:self.shimmerView.bounds];
+//    noteFindLabel.textAlignment = NSTextAlignmentCenter;
+//    noteFindLabel.text = @"NoteFind";
+    self.shimmerView.contentView = self.noteFindLabel;
+    self.shimmerView.shimmering = YES;
+    
 }
 - (IBAction)didTapLogin:(id)sender {
     NSString *username = self.usernameTextField.text;
