@@ -70,4 +70,9 @@
     
 }
 
++ (UIImage *)getImageFromData:(NSData *)data {
+    UIImage *image = [UIImage imageWithData:data];
+    return image;
+}
+
 @end

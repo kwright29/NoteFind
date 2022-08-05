@@ -6,13 +6,17 @@
 //
 
 #import "AppDelegate.h"
+#import "OfflineNote+CoreDataClass.h"
 #import "OfflineDataManager.h"
+#import "OfflineGridCell.h"
 #import "OnlineGridCell.h"
 #import "ErrorAlerts.h"
 #import "Note.h"
 #import "ProfileViewController.h"
 
 #import <Parse/Parse.h>
+
+
 
 @interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (strong, nonatomic) IBOutlet UIImageView *userProfilePic;
@@ -23,7 +27,7 @@
 @property (strong, nonatomic) IBOutlet UISegmentedControl *filterSegmentCtrl;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSMutableArray *onlineNotes;
-@property (strong, nonatomic) NSMutableArray *offlineNotes;
+@property (strong, nonatomic) NSMutableArray<OfflineNote *> *offlineNotes;
 
 @end
 
@@ -64,6 +68,7 @@
 - (void)getOfflineNotes {
     OfflineDataManager *dataManager = [[OfflineDataManager alloc]init];
     self.offlineNotes = (NSMutableArray *)[dataManager getOfflineNotes];
+    [self.collectionView reloadData];
 }
 
 
@@ -76,13 +81,36 @@
         
         return cell;
     }
+    if (self.filterSegmentCtrl.selectedSegmentIndex == 1) {
+        OfflineGridCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"OfflineGridCell" forIndexPath:indexPath];
+        OfflineNote *offlineNote = self.offlineNotes[indexPath.row];
+        NSData *imageData = offlineNote.noteFileData;
+        UIImage *img = [OfflineDataManager getImageFromData:imageData];
+        [cell.notePost setImage:img];
+        
+        return cell;
+        
+    }
+    
+   
     return nil;
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.onlineNotes.count;
+    if (self.filterSegmentCtrl.selectedSegmentIndex == 0) {
+        return self.onlineNotes.count;
+    }
+    return self.offlineNotes.count;
 }
 
+- (IBAction)didChangeSegment:(id)sender {
+    if (self.filterSegmentCtrl.selectedSegmentIndex == 0) {
+        [self getOnlineNotes];
+    }
+    if (self.filterSegmentCtrl.selectedSegmentIndex == 1) {
+        [self getOfflineNotes];
+    }
+}
 
 
 /*

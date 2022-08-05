@@ -17,6 +17,7 @@
 		EE285DC628761B7000BC7FF0 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE285DC528761B7000BC7FF0 /* FeedViewController.m */; };
 		EE3CD928288B1C6E00557839 /* ErrorAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3CD927288B1C6E00557839 /* ErrorAlerts.m */; };
 		EE4277A5289C928F00594543 /* OnlineGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4277A4289C928F00594543 /* OnlineGridCell.m */; };
+		EE4277A8289CBF3000594543 /* OfflineGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4277A7289CBF3000594543 /* OfflineGridCell.m */; };
 		EE6E4BC7287CEF3200FC068D /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6E4BC6287CEF3200FC068D /* Book.m */; };
 		EE6E869B287769AD0044F65F /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6E869A287769AD0044F65F /* APIManager.m */; };
 		EE6E869D287780AD0044F65F /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE6E869C287780AD0044F65F /* keys.plist */; };
@@ -82,6 +83,8 @@
 		EE3CD927288B1C6E00557839 /* ErrorAlerts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ErrorAlerts.m; sourceTree = "<group>"; };
 		EE4277A3289C928F00594543 /* OnlineGridCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnlineGridCell.h; sourceTree = "<group>"; };
 		EE4277A4289C928F00594543 /* OnlineGridCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnlineGridCell.m; sourceTree = "<group>"; };
+		EE4277A6289CBF3000594543 /* OfflineGridCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OfflineGridCell.h; sourceTree = "<group>"; };
+		EE4277A7289CBF3000594543 /* OfflineGridCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OfflineGridCell.m; sourceTree = "<group>"; };
 		EE4FB1A628821AF600B3429B /* ImportDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImportDelegate.h; sourceTree = "<group>"; };
 		EE6E4BC5287CEF3200FC068D /* Book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
 		EE6E4BC6287CEF3200FC068D /* Book.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
@@ -322,6 +325,8 @@
 				EEFBBBAF28931710003388C3 /* InfiniteScrollActivityView.m */,
 				EE4277A3289C928F00594543 /* OnlineGridCell.h */,
 				EE4277A4289C928F00594543 /* OnlineGridCell.m */,
+				EE4277A6289CBF3000594543 /* OfflineGridCell.h */,
+				EE4277A7289CBF3000594543 /* OfflineGridCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -605,6 +610,7 @@
 				EE6E869B287769AD0044F65F /* APIManager.m in Sources */,
 				EEEAC5B4287DF6C600A8659B /* BookCell.m in Sources */,
 				EE1CD28F288B6E1D00E64F2A /* CameraImport.m in Sources */,
+				EE4277A8289CBF3000594543 /* OfflineGridCell.m in Sources */,
 				EE285DC628761B7000BC7FF0 /* FeedViewController.m in Sources */,
 				EEFBBC042894A139003388C3 /* OfflineData.xcdatamodeld in Sources */,
 				EE6E86B22878D7ED0044F65F /* Tags.m in Sources */,
