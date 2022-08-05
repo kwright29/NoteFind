@@ -183,13 +183,13 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="new note" image="square.text.square.fill" catalog="system" id="CGN-JQ-wsZ">
                             <connections>
-                                <action selector="newPost:" destination="cIS-RF-6ba" id="coV-7j-xTf"/>
-                                <segue destination="Aka-fv-94f" kind="presentation" identifier="newPost" id="Bcr-XQ-ARx"/>
+                                <action selector="didTapPost:" destination="cIS-RF-6ba" id="7pH-5i-v2z"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="NDS-U5-UVF" id="Bux-m3-idi"/>
+                        <segue destination="G9B-o8-RQW" kind="presentation" identifier="newPost" modalPresentationStyle="automatic" id="QGY-tz-rMh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5jA-mB-57y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -199,7 +199,7 @@
         <!--New Note View Controller-->
         <scene sceneID="h2o-Ed-hpW">
             <objects>
-                <viewController id="G9B-o8-RQW" customClass="NewNoteViewController" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="G9B-o8-RQW" customClass="NewNoteViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5GY-MQ-oi1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -261,17 +261,22 @@
                                     <segue destination="S61-vh-O8t" kind="show" identifier="textbookSegue" id="HXY-QC-LQc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USm-Wq-cYe">
+                                <rect key="frame" x="310" y="13" width="84" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Post"/>
+                                <connections>
+                                    <action selector="didTapPost:" destination="XIO-OU-SPB" eventType="touchUpInside" id="WvX-v3-cJ2"/>
+                                    <action selector="didTapPost:" destination="G9B-o8-RQW" eventType="touchUpInside" id="lre-DQ-1Be"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WIw-jv-BWC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="OuG-ZT-uur">
-                        <barButtonItem key="leftBarButtonItem" title="Close" id="WZX-AZ-STq"/>
-                        <barButtonItem key="rightBarButtonItem" title="Post" id="Ne6-kP-L9p">
-                            <connections>
-                                <action selector="didTapPost:" destination="G9B-o8-RQW" id="TBF-f7-0Nf"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="Ne6-kP-L9p"/>
                     </navigationItem>
                     <connections>
                         <outlet property="addNoteButton" destination="Tny-PO-k1F" id="1cz-G4-4IZ"/>
@@ -281,6 +286,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0wR-Dw-t4E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="XIO-OU-SPB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3695.652173913044" y="276.5625"/>
         </scene>
@@ -924,24 +930,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u0U-bX-Ned" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1287" y="2190"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="4ZB-MS-f0S">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Aka-fv-94f" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Erh-jj-wHM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="G9B-o8-RQW" kind="relationship" relationship="rootViewController" id="QKN-zk-UPy"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="piT-3R-6ID" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3697.1014492753625" y="-506.25"/>
         </scene>
         <!--Home-->
         <scene sceneID="R4p-j5-i9N">

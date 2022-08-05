@@ -9,11 +9,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol PostDelegate
+- (void)didSharePost;
+@end
 
 @interface NewNoteViewController : UIViewController
-
-
-
+@property (nonatomic, weak) id <PostDelegate> postDelegate;
 @end
 
 NS_ASSUME_NONNULL_END

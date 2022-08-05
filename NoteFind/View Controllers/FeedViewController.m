@@ -20,9 +20,10 @@
 
 
 
-@interface FeedViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface FeedViewController () <UITableViewDataSource, UITableViewDelegate, PostDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *notes;
+@property (strong, nonatomic) Note *latestNote;
 
 @end
 
@@ -37,14 +38,19 @@
 
 
 #pragma mark - Navigation
-/*
+
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    
+    if ([[segue identifier] isEqualToString:@"newPost"]) {
+        NewNoteViewController *newNoteVC = [segue destinationViewController];
+        newNoteVC.postDelegate = self;
+    }
 }
- */
+- (IBAction)didTapPost:(id)sender {
+    [self performSegueWithIdentifier:@"newPost" sender:nil];
+}
 
 - (void) getNotes {
     PFQuery *noteQuery = [Note query];
@@ -73,10 +79,6 @@
     return self.notes.count;
 }
 
-- (IBAction)newPost:(id)sender {
-    [self performSegueWithIdentifier:@"newPost" sender:nil];
-}
-
 - (IBAction)didTapLogout:(id)sender {
     SceneDelegate *sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
@@ -89,6 +91,21 @@
         }
     }];
 
+}
+
+- (void)didSharePost {
+    PFQuery *noteQuery = [Note query];
+    [noteQuery orderByDescending:@"createdAt"];
+    [noteQuery includeKey:@"author"];
+    [noteQuery getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        self.latestNote = (Note *)object;
+        [self.notes insertObject:self.latestNote atIndex:0];
+        [self.tableView beginUpdates];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView endUpdates];
+    }];
+  
 }
 
 
