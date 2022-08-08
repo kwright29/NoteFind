@@ -26,10 +26,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-//    UILabel *noteFindLabel = [[UILabel alloc] initWithFrame:self.shimmerView.bounds];
-//    noteFindLabel.textAlignment = NSTextAlignmentCenter;
-//    noteFindLabel.text = @"NoteFind";
     self.shimmerView.contentView = self.noteFindLabel;
     self.shimmerView.shimmering = YES;
     
