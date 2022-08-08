@@ -63,8 +63,13 @@
 }
 
 - (NSArray *)getOfflineNotes {
+    UIViewController *currentVC = [self.appDelegate getCurrentVC];
+    NSError *error = nil;
     NSFetchRequest *offlineRequest = [NSFetchRequest fetchRequestWithEntityName:@"OfflineNote"];
-    NSArray *results = [self.context executeFetchRequest:offlineRequest error:nil];
+    NSArray *results = [self.context executeFetchRequest:offlineRequest error:&error];
+    if (error != nil) {
+        [ErrorAlerts showAlertWithTitle:@"failure getting offline notes" withMessage:@"there was a problem retrieving your notes from the local datastore" withVC:currentVC];
+    }
     
     return results;
     

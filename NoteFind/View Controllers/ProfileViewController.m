@@ -32,6 +32,8 @@
 @end
 
 @implementation ProfileViewController
+static int kOnlineNoteIndex = 0;
+static int kOfflineNoteIndex = 1;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -73,20 +75,20 @@
 
 
 - (UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    if (self.filterSegmentCtrl.selectedSegmentIndex == 0) {
+    if (self.filterSegmentCtrl.selectedSegmentIndex == kOnlineNoteIndex) {
         OnlineGridCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"OnlineGridCell" forIndexPath:indexPath];
         cell.gridNote = self.onlineNotes[indexPath.row];
-        cell.notePost.file = cell.gridNote.note;
-        [cell.notePost loadInBackground];
+        cell.notePostImage.file = cell.gridNote.note;
+        [cell.notePostImage loadInBackground];
         
         return cell;
     }
-    if (self.filterSegmentCtrl.selectedSegmentIndex == 1) {
+    if (self.filterSegmentCtrl.selectedSegmentIndex == kOfflineNoteIndex) {
         OfflineGridCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"OfflineGridCell" forIndexPath:indexPath];
         OfflineNote *offlineNote = self.offlineNotes[indexPath.row];
         NSData *imageData = offlineNote.noteFileData;
         UIImage *img = [OfflineDataManager getImageFromData:imageData];
-        [cell.notePost setImage:img];
+        [cell.notePostImage setImage:img];
         
         return cell;
         
@@ -97,35 +99,20 @@
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if (self.filterSegmentCtrl.selectedSegmentIndex == 0) {
+    if (self.filterSegmentCtrl.selectedSegmentIndex == kOnlineNoteIndex) {
         return self.onlineNotes.count;
     }
     return self.offlineNotes.count;
 }
 
 - (IBAction)didChangeSegment:(id)sender {
-    if (self.filterSegmentCtrl.selectedSegmentIndex == 0) {
+    if (self.filterSegmentCtrl.selectedSegmentIndex == kOnlineNoteIndex) {
         [self getOnlineNotes];
     }
-    if (self.filterSegmentCtrl.selectedSegmentIndex == 1) {
+    if (self.filterSegmentCtrl.selectedSegmentIndex == kOfflineNoteIndex) {
         [self getOfflineNotes];
     }
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-
-
-
 
 
 

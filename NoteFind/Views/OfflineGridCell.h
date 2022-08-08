@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface OfflineGridCell : UICollectionViewCell
-@property (strong, nonatomic) IBOutlet UIImageView *notePost;
+@property (strong, nonatomic) IBOutlet UIImageView *notePostImage;
 @end
 
 NS_ASSUME_NONNULL_END
