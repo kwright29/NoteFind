@@ -120,6 +120,8 @@
         if (succeeded) {
             [self dismissViewControllerAnimated:YES completion:nil];
             [Note addNewNoteToTags];
+            [self.postDelegate didSharePost];
+            
         } else {
             [ErrorAlerts showAlertWithTitle:@"error posting note" withMessage:@"there was a problem trying to post your note to the feed. please try again." withVC:self];
         }
