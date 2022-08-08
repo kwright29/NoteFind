@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -564,28 +565,117 @@
                                 <color key="textColor" systemColor="systemGray2Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="roP-EK-P8d">
+                                <rect key="frame" x="12" y="208" width="382" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="382" id="1up-ec-Vg9"/>
+                                    <constraint firstAttribute="height" constant="30" id="b7b-hR-7FO"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="All Notes"/>
+                                    <segment title="Downloaded Notes"/>
+                                </segments>
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <connections>
+                                    <action selector="didChangeSegment:" destination="zxf-Rg-IY6" eventType="valueChanged" id="rRf-nH-VXn"/>
+                                </connections>
+                            </segmentedControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xLP-Ov-7US">
+                                <rect key="frame" x="5" y="255" width="404" height="491"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tzq-Z0-1Io">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OnlineGridCell" id="Qir-l7-iUo" customClass="OnlineGridCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QF0-jS-O1l">
+                                            <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v4P-Oc-8le" customClass="PFImageView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
+                                                    <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="115" id="C8k-yY-mle"/>
+                                                        <constraint firstAttribute="height" constant="115" id="G72-f2-GuD"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="v4P-Oc-8le" secondAttribute="bottom" id="57L-BQ-dS1"/>
+                                                <constraint firstItem="v4P-Oc-8le" firstAttribute="top" secondItem="QF0-jS-O1l" secondAttribute="top" id="R09-bc-ohL"/>
+                                                <constraint firstAttribute="trailing" secondItem="v4P-Oc-8le" secondAttribute="trailing" id="j53-A1-V0K"/>
+                                                <constraint firstItem="v4P-Oc-8le" firstAttribute="leading" secondItem="QF0-jS-O1l" secondAttribute="leading" id="tSd-Fk-5sB"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="notePost" destination="v4P-Oc-8le" id="Wtq-Zg-E7h"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OfflineGridCell" id="v3g-fu-pvu" customClass="OfflineGridCell">
+                                        <rect key="frame" x="144.5" y="0.0" width="115" height="115"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Iu3-z0-4KK">
+                                            <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lux-w4-eLe">
+                                                    <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="115" id="M2C-JV-2xk"/>
+                                                        <constraint firstAttribute="height" constant="115" id="zHV-gq-3fY"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Lux-w4-eLe" firstAttribute="leading" secondItem="Iu3-z0-4KK" secondAttribute="leading" id="3eg-rG-Y38"/>
+                                                <constraint firstAttribute="trailing" secondItem="Lux-w4-eLe" secondAttribute="trailing" id="6LN-HS-yQ5"/>
+                                                <constraint firstItem="Lux-w4-eLe" firstAttribute="top" secondItem="Iu3-z0-4KK" secondAttribute="top" id="8Nf-Z6-Fv4"/>
+                                                <constraint firstAttribute="bottom" secondItem="Lux-w4-eLe" secondAttribute="bottom" id="w0J-O6-lHj"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="notePost" destination="Lux-w4-eLe" id="Mmo-al-Gwk"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="I8v-a0-Kbv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="I8v-a0-Kbv" firstAttribute="trailing" secondItem="xLP-Ov-7US" secondAttribute="trailing" constant="5" id="2gT-OZ-3qp"/>
                             <constraint firstItem="I8v-a0-Kbv" firstAttribute="trailing" secondItem="CfZ-MS-1Y0" secondAttribute="trailing" constant="20" id="2xW-rS-Mdg"/>
+                            <constraint firstItem="xLP-Ov-7US" firstAttribute="top" secondItem="roP-EK-P8d" secondAttribute="bottom" constant="17" id="JGU-K0-CIR"/>
+                            <constraint firstItem="roP-EK-P8d" firstAttribute="leading" secondItem="nwF-9i-eOe" secondAttribute="leading" constant="12" id="Rse-Ui-cZi"/>
                             <constraint firstItem="y7l-X8-9QQ" firstAttribute="top" secondItem="xSL-f0-LRH" secondAttribute="bottom" constant="2.5" id="STc-hJ-8hh"/>
                             <constraint firstItem="Ur4-dG-Iz5" firstAttribute="top" secondItem="CfZ-MS-1Y0" secondAttribute="bottom" constant="4" id="VEa-PJ-NYa"/>
                             <constraint firstItem="ZHf-Ej-RLs" firstAttribute="top" secondItem="I8v-a0-Kbv" secondAttribute="top" constant="18.5" id="Vp8-li-51G"/>
                             <constraint firstItem="CfZ-MS-1Y0" firstAttribute="top" secondItem="y7l-X8-9QQ" secondAttribute="bottom" constant="3" id="W58-Ge-IXh"/>
+                            <constraint firstItem="xLP-Ov-7US" firstAttribute="leading" secondItem="I8v-a0-Kbv" secondAttribute="leading" constant="5" id="ZHF-4H-PFW"/>
                             <constraint firstItem="I8v-a0-Kbv" firstAttribute="trailing" secondItem="Ur4-dG-Iz5" secondAttribute="trailing" constant="20" id="ZpH-Pu-dOI"/>
                             <constraint firstItem="xSL-f0-LRH" firstAttribute="leading" secondItem="ZHf-Ej-RLs" secondAttribute="trailing" constant="8" symbolic="YES" id="amW-GV-z0K"/>
                             <constraint firstItem="Ur4-dG-Iz5" firstAttribute="centerX" secondItem="CfZ-MS-1Y0" secondAttribute="centerX" id="bFr-gX-dRg"/>
+                            <constraint firstAttribute="trailing" secondItem="roP-EK-P8d" secondAttribute="trailing" constant="20" id="ciS-Dj-uxk"/>
                             <constraint firstItem="y7l-X8-9QQ" firstAttribute="leading" secondItem="xSL-f0-LRH" secondAttribute="leading" id="cpI-As-6XI"/>
                             <constraint firstItem="ZHf-Ej-RLs" firstAttribute="leading" secondItem="I8v-a0-Kbv" secondAttribute="leading" constant="12" id="d6H-xg-DzB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xSL-f0-LRH" secondAttribute="trailing" id="gIh-Re-smb"/>
                             <constraint firstItem="I8v-a0-Kbv" firstAttribute="trailing" secondItem="y7l-X8-9QQ" secondAttribute="trailing" constant="20" id="hTl-lB-Eel"/>
+                            <constraint firstItem="I8v-a0-Kbv" firstAttribute="bottom" secondItem="xLP-Ov-7US" secondAttribute="bottom" constant="47" id="ili-CA-ZtJ"/>
                             <constraint firstItem="CfZ-MS-1Y0" firstAttribute="leading" secondItem="y7l-X8-9QQ" secondAttribute="leading" id="n3z-hP-8qR"/>
                             <constraint firstItem="xSL-f0-LRH" firstAttribute="top" secondItem="ZHf-Ej-RLs" secondAttribute="top" id="pBf-DS-1fZ"/>
+                            <constraint firstItem="roP-EK-P8d" firstAttribute="top" secondItem="ZHf-Ej-RLs" secondAttribute="bottom" constant="19.5" id="yQ6-l6-8JU"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="Xer-bU-kOx"/>
                     <connections>
+                        <outlet property="collectionView" destination="xLP-Ov-7US" id="lLx-m8-Okn"/>
+                        <outlet property="filterSegmentCtrl" destination="roP-EK-P8d" id="cpK-RK-Ngv"/>
                         <outlet property="userFullName" destination="xSL-f0-LRH" id="HSB-XH-NYr"/>
                         <outlet property="userMajor" destination="Ur4-dG-Iz5" id="HCr-HU-vX7"/>
                         <outlet property="userProfilePic" destination="ZHf-Ej-RLs" id="DcL-do-HNy"/>
@@ -595,7 +685,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="28V-rx-aVS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3300" y="1302"/>
+            <point key="canvasLocation" x="3300.0000000000005" y="1301.7857142857142"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="CGB-e2-A0Q">
@@ -893,7 +983,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="U4o-9B-Hs0"/>
+        <segue reference="ghy-Lc-j7c"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="checkmark" catalog="system" width="128" height="114"/>
@@ -904,6 +994,9 @@
         <image name="square.text.square.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

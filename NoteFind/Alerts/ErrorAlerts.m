@@ -6,6 +6,7 @@
 //
 
 #import "ErrorAlerts.h"
+#import "OfflineDataManager.h"
 
 @implementation ErrorAlerts
 
@@ -21,4 +22,21 @@
     [vc presentViewController:alert animated:YES completion:nil];
 }
 
++ (void)confirmingDownload:(UIViewController *)vc withNote:(Note *)note {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"downloading your note locally" message:@"are you sure you want to download this note?" preferredStyle:(UIAlertControllerStyleAlert)];
+    
+    UIAlertAction *no = [UIAlertAction actionWithTitle:@"no" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [vc dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    UIAlertAction *yes = [UIAlertAction actionWithTitle:@"yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        OfflineDataManager *dataManager = [[OfflineDataManager alloc] init];
+        [dataManager downloadNote:note];
+    }];
+    
+    [alert addAction:no];
+    [alert addAction:yes];
+    
+    [vc presentViewController:alert animated:YES completion:nil];
+}
 @end

@@ -9,7 +9,7 @@ target 'NoteFind' do
 pod 'Parse'
 pod 'Parse/UI'
 pod 'AFNetworking'
-
+pod 'Shimmer'
 
 
 

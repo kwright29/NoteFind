@@ -14,10 +14,18 @@
 @interface OfflineDataManager()
 
 @property (nonatomic, weak) NSManagedObjectContext *context;
+@property (nonatomic, weak) AppDelegate *appDelegate;
 
 @end
 
 @implementation OfflineDataManager
+
+- (instancetype)init {
+    self.appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    self.context = self.appDelegate.persistentContainer.viewContext;
+    
+    return self;
+}
 
 - (BOOL)isNoteDownloaded:(Note *)note {
     NSString *currentNoteID = note.objectId;
@@ -34,10 +42,8 @@
 }
 
 - (void)downloadNote:(Note *)note {
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    self.context = appDelegate.persistentContainer.viewContext;
     NSData *fileData = [note.note getData];
-    UIViewController *currentVC = [appDelegate getCurrentVC];
+    UIViewController *currentVC = [self.appDelegate getCurrentVC];
     if (fileData == nil) {
         [ErrorAlerts showAlertWithTitle:@"error downloading note" withMessage:@"there was a problem trying download your note. please try again" withVC:currentVC];
     } else if ([self isNoteDownloaded:note]) {
@@ -51,9 +57,27 @@
         [newOfflineNote setValue:fileData forKey:@"noteFileData"];
         [newOfflineNote setValue:note.note.name forKey:@"noteFileName"];
         [newOfflineNote setValue:note.objectId forKey:@"noteID"];
-        [appDelegate saveContext];
+        [self.appDelegate saveContext];
         
     }
+}
+
+- (NSArray *)getOfflineNotes {
+    UIViewController *currentVC = [self.appDelegate getCurrentVC];
+    NSError *error = nil;
+    NSFetchRequest *offlineRequest = [NSFetchRequest fetchRequestWithEntityName:@"OfflineNote"];
+    NSArray *results = [self.context executeFetchRequest:offlineRequest error:&error];
+    if (error != nil) {
+        [ErrorAlerts showAlertWithTitle:@"failure getting offline notes" withMessage:@"there was a problem retrieving your notes from the local datastore" withVC:currentVC];
+    }
+    
+    return results;
+    
+}
+
++ (UIImage *)getImageFromData:(NSData *)data {
+    UIImage *image = [UIImage imageWithData:data];
+    return image;
 }
 
 @end
