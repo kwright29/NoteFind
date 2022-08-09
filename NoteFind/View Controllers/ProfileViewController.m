@@ -6,12 +6,13 @@
 //
 
 #import "AppDelegate.h"
+#import "DetailsViewController.h"
+#import "ErrorAlerts.h"
+#import "Note.h"
 #import "OfflineNote+CoreDataClass.h"
 #import "OfflineDataManager.h"
 #import "OfflineGridCell.h"
 #import "OnlineGridCell.h"
-#import "ErrorAlerts.h"
-#import "Note.h"
 #import "ProfileViewController.h"
 
 #import <Parse/Parse.h>
@@ -76,7 +77,7 @@ static int kOfflineNoteIndex = 1;
 
 - (UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     if (self.filterSegmentCtrl.selectedSegmentIndex == kOnlineNoteIndex) {
-        OnlineGridCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"OnlineGridCell" forIndexPath:indexPath];
+        OnlineGridCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"OnlineGridCell" forIndexPath:indexPath];
         cell.gridNote = self.onlineNotes[indexPath.row];
         cell.notePostImage.file = cell.gridNote.note;
         [cell.notePostImage loadInBackground];
@@ -84,7 +85,7 @@ static int kOfflineNoteIndex = 1;
         return cell;
     }
     if (self.filterSegmentCtrl.selectedSegmentIndex == kOfflineNoteIndex) {
-        OfflineGridCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"OfflineGridCell" forIndexPath:indexPath];
+        OfflineGridCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"OfflineGridCell" forIndexPath:indexPath];
         OfflineNote *offlineNote = self.offlineNotes[indexPath.row];
         NSData *imageData = offlineNote.noteFileData;
         UIImage *img = [OfflineDataManager getImageFromData:imageData];
@@ -114,7 +115,19 @@ static int kOfflineNoteIndex = 1;
     }
 }
 
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    DetailsViewController *detailsVC = [segue destinationViewController];
+    NSIndexPath *indexPath = [self.collectionView indexPathForCell:sender];
+    if ([sender isKindOfClass:[OfflineGridCell class]]) {
+        OfflineNote *offlineNoteExpand = self.offlineNotes[indexPath.row];
+        detailsVC.offlineNote = offlineNoteExpand;
+        detailsVC.isOffline = YES;
+    } else {
+        Note *onlineNoteExpand = self.onlineNotes[indexPath.row];
+        detailsVC.onlineNote = onlineNoteExpand;
+        detailsVC.isOffline = NO;
+    }
+}
 
 
 @end
