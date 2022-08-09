@@ -170,6 +170,7 @@
                                             <outlet property="postNote" destination="SJY-Us-fMQ" id="S2K-QP-RIA"/>
                                             <outlet property="postTitle" destination="qdz-uo-zL2" id="Jjd-oU-ax9"/>
                                             <outlet property="postUsername" destination="byR-tr-4TM" id="Hb0-XH-TQS"/>
+                                            <segue destination="eQY-FS-bdw" kind="presentation" identifier="detailsView" id="wtJ-ca-x6Q"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -735,7 +736,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wAY-KE-VqT">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wAY-KE-VqT">
                                 <rect key="frame" x="20" y="190" width="374" height="495"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="495" id="FHc-Xa-YIi"/>
@@ -794,7 +795,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jBz-c8-NAk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3279.7101449275365" y="2189.7321428571427"/>
+            <point key="canvasLocation" x="3300" y="2190"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="CGB-e2-A0Q">
@@ -1074,7 +1075,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IbC-GE-v4S"/>
+        <segue reference="wtJ-ca-x6Q"/>
         <segue reference="ghy-Lc-j7c"/>
     </inferredMetricsTieBreakers>
     <resources>

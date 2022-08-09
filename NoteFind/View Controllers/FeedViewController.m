@@ -6,18 +6,16 @@
 //
 
 #import "AppDelegate.h"
+#import "DetailsViewController.h"
+#import "ErrorAlerts.h"
 #import "FeedViewController.h"
+#import "LoginViewController.h"
 #import "NewNoteViewController.h"
-#import "Parse/Parse.h"
-#import "SceneDelegate.h"
-#import "LoginViewController.h"
-#import <Parse/Parse.h>
-#import "SceneDelegate.h"
-#import "LoginViewController.h"
 #import "Note.h"
 #import "NoteCell.h"
-#import "ErrorAlerts.h"
+#import "SceneDelegate.h"
 
+#import <Parse/Parse.h>
 
 
 @interface FeedViewController () <UITableViewDataSource, UITableViewDelegate, PostDelegate>
@@ -36,18 +34,6 @@
     
 }
 
-
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    if ([[segue identifier] isEqualToString:@"newPost"]) {
-        NewNoteViewController *newNoteVC = [segue destinationViewController];
-        newNoteVC.postDelegate = self;
-    }
-}
 - (IBAction)didTapPost:(id)sender {
     [self performSegueWithIdentifier:@"newPost" sender:nil];
 }
@@ -108,5 +94,20 @@
   
 }
 
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+
+    if ([[segue identifier] isEqualToString:@"newPost"]) {
+        NewNoteViewController *newNoteVC = [segue destinationViewController];
+        newNoteVC.postDelegate = self;
+    }
+    if ([[segue identifier] isEqualToString:@"detailsView"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        DetailsViewController *detailsVC = [segue destinationViewController];
+        detailsVC.onlineNote = self.notes[indexPath.row];
+        detailsVC.isOffline = NO;
+    }
+}
 
 @end
