@@ -9,7 +9,7 @@
 #import "OfflineDataManager.h"
 #import "OfflineNote+CoreDataClass.h"
 
-@interface DetailsViewController ()
+@interface DetailsViewController () <UIGestureRecognizerDelegate>
 
 @end
 
@@ -19,6 +19,8 @@
     [super viewDidLoad];
     if (self.isOffline) {
         [self setUpOfflineNote];
+    } else {
+        [self setUpOnlineNote];
     }
 }
 
@@ -26,9 +28,16 @@
     [self.detailsNoteImage setImage:[OfflineDataManager getImageFromData:self.offlineNote.noteFileData]];
     self.detailsNoteTitle.text = self.offlineNote.title;
     self.detailsNoteDescription.text = self.offlineNote.caption;
-    self.detailsNoteUsername.text = [NSString stringWithFormat:@"updated by: @%@", self.offlineNote.username];
+    self.detailsNoteUsername.text = [NSString stringWithFormat:@"uploaded by: @%@", self.offlineNote.username];
 }
 
+- (void)setUpOnlineNote {
+    NSData *imageData = [self.onlineNote.note getData];
+    [self.detailsNoteImage setImage:[OfflineDataManager getImageFromData:imageData]];
+    self.detailsNoteTitle.text = self.onlineNote.title;
+    self.detailsNoteDescription.text = self.onlineNote.noteDescription;
+    self.detailsNoteUsername.text = [NSString stringWithFormat:@"uploaded by: @%@", self.onlineNote.author.username];
 
+}
 
 @end
