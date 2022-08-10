@@ -39,6 +39,7 @@
 		EEA455CE2874C79C00261F9C /* NoteFindUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA455CD2874C79C00261F9C /* NoteFindUITestsLaunchTests.m */; };
 		EEA455E12874DE2300261F9C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA455E02874DE2300261F9C /* LoginViewController.m */; };
 		EEA455E42874E06F00261F9C /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA455E32874E06F00261F9C /* RegisterViewController.m */; };
+		EEBE420A28A1C09E00E14942 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEBE420928A1C09E00E14942 /* DetailsViewController.m */; };
 		EEEAC5B1287DF57D00A8659B /* TextbookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEEAC5B0287DF57D00A8659B /* TextbookViewController.m */; };
 		EEEAC5B4287DF6C600A8659B /* BookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EEEAC5B3287DF6C600A8659B /* BookCell.m */; };
 		EEFBBBB028931710003388C3 /* InfiniteScrollActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEFBBBAF28931710003388C3 /* InfiniteScrollActivityView.m */; };
@@ -125,6 +126,8 @@
 		EEA455E22874E06F00261F9C /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		EEA455E32874E06F00261F9C /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		EEBC2106288B6C1D00D203A2 /* ImportDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImportDelegate.h; sourceTree = "<group>"; };
+		EEBE420828A1C09E00E14942 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		EEBE420928A1C09E00E14942 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		EEEAC5AF287DF57D00A8659B /* TextbookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextbookViewController.h; sourceTree = "<group>"; };
 		EEEAC5B0287DF57D00A8659B /* TextbookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextbookViewController.m; sourceTree = "<group>"; };
 		EEEAC5B2287DF6C600A8659B /* BookCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookCell.h; sourceTree = "<group>"; };
@@ -295,6 +298,8 @@
 				EEEAC5B0287DF57D00A8659B /* TextbookViewController.m */,
 				EE6F511E288F541400079382 /* SearchDetailsTableViewController.h */,
 				EE6F511F288F541400079382 /* SearchDetailsTableViewController.m */,
+				EEBE420828A1C09E00E14942 /* DetailsViewController.h */,
+				EEBE420928A1C09E00E14942 /* DetailsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -627,6 +632,7 @@
 				EEA455B82874C79C00261F9C /* main.m in Sources */,
 				EE6E4BC7287CEF3200FC068D /* Book.m in Sources */,
 				EE285DC028761B5100BC7FF0 /* ProfileViewController.m in Sources */,
+				EEBE420A28A1C09E00E14942 /* DetailsViewController.m in Sources */,
 				EEA455AA2874C79C00261F9C /* SceneDelegate.m in Sources */,
 				EE285DC328761B5C00BC7FF0 /* SearchViewController.m in Sources */,
 			);
