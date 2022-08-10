@@ -14,24 +14,7 @@
 
 @end
 
-//static NSString * const baseURLString = @"https://api.notion.com";
-
 @implementation APIManager
-
-//- (instancetype)init {
-//    NSString *path = [ [NSBundle mainBundle] pathForResource:@"keys" ofType:@"plist"];
-//    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
-//
-//    //NSString *identification = [dict objectForKey:@"client_ID"];
-//    NSString *secret = [dict objectForKey:@"client_Secret"];
-//
-//    self.client = [NotionClient clientWithToken:[NSString stringWithFormat:@"%@", secret]];
-//
-//    return self;
-//}
-
-
-
 
 - (id)init {
     self = [super init];
@@ -40,8 +23,6 @@
     
     return self;
 }
-
-
 
 - (void)getTextbooks:(void(^)(NSArray *books, NSError *error))completion {
     NSURL *url = [NSURL URLWithString:@"https://www.googleapis.com/books/v1/volumes?q=textbook&key=AIzaSyCIdqm294VSsSXMxeP-xAudVh2oOGn2zV0"];
