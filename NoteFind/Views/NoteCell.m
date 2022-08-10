@@ -25,7 +25,7 @@
     _note = note;
     _postTitle.text = _note.title;
     _postCaption.text = _note.noteDescription;
-    _postUsername.text = _note.author.username;
+    _postUsername.text = [NSString stringWithFormat:@"@%@", _note.author.username];
     _postNote.file = _note.note;
     [_postNote loadInBackground];
     

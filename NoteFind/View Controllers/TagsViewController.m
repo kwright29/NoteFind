@@ -32,7 +32,6 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     [self getTags];
-//    [self.tableView reloadData];
    
     
 }
@@ -81,19 +80,6 @@
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.allTags.count;
 }
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 
 - (void)didTapTag:(nonnull NSIndexPath *)indexPath {
     Tags *tag = self.allTags[indexPath.row];
