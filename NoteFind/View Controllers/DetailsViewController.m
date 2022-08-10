@@ -9,7 +9,7 @@
 #import "OfflineDataManager.h"
 #import "OfflineNote+CoreDataClass.h"
 
-@interface DetailsViewController () <UIGestureRecognizerDelegate>
+@interface DetailsViewController ()
 
 @end
 
