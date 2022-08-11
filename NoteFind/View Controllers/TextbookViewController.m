@@ -10,10 +10,14 @@
 #import "BookCell.h"
 #import "ErrorAlerts.h"
 
-@interface TextbookViewController () <UITableViewDataSource, UITableViewDelegate, TextbookDelegate>
+@interface TextbookViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, TextbookDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *allBooks;
 @property (strong, nonatomic) NSMutableArray *associatedTextbooks;
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (copy, nonatomic) NSString *textToSearch;
+@property (assign, nonatomic) int setsLoaded;
+@property (assign, nonatomic) int startIndex;
 
 @end
 
@@ -23,19 +27,20 @@
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.searchBar.delegate = self;
+    self.setsLoaded = 0;
+    self.startIndex = 0;
     self.allBooks = [NSMutableArray array];
     self.associatedTextbooks = [NSMutableArray array];
-    [self loadBooks];
 
 }
 
 - (void)loadBooks {
     APIManager *manager = [APIManager new];
-    [manager getTextbooks:^(NSArray * _Nonnull books, NSError * _Nonnull error) {
+    [manager getTextbooksWithSearchText:self.textToSearch withStartIndex:self.startIndex withCompletion:^(NSArray * _Nonnull books, NSError * _Nonnull error) {
         if (books) {
             self.allBooks = (NSMutableArray *)books;
-        }
-        else {
+        } else {
             [ErrorAlerts showAlertWithTitle:@"couldn't load books" withMessage:@"failure loading books. please refresh and try again." withVC:self];
         }
         [self.tableView reloadData];
@@ -66,6 +71,10 @@
     [self.transferDelegate addBooks:self.associatedTextbooks];
 }
 
-
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    self.textToSearch = [searchText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    self.setsLoaded = 0;
+    [self loadBooks];
+}
 
 @end
