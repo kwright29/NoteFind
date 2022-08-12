@@ -20,7 +20,7 @@
 
 
 @interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
-@property (strong, nonatomic) IBOutlet UIImageView *userProfilePic;
+@property (strong, nonatomic) IBOutlet PFImageView *userProfilePic;
 @property (strong, nonatomic) IBOutlet UILabel *userFullName;
 @property (strong, nonatomic) IBOutlet UILabel *username;
 @property (strong, nonatomic) IBOutlet UILabel *userSchool;
@@ -50,13 +50,15 @@ static int kOfflineNoteIndex = 1;
     self.username.text = [NSString stringWithFormat:@"@%@",currentUser[@"username"]];
     self.userSchool.text = currentUser[@"school"];
     self.userMajor.text = currentUser[@"major"];
-        
+    self.userProfilePic.file = currentUser[@"profilePicture"];
+    [self.userProfilePic loadInBackground];
 }
 
 - (void)getOnlineNotes {
     PFQuery *noteQuery = [Note query];
     [noteQuery orderByDescending:@"createdAt"];
     [noteQuery includeKey:@"author"];
+    [noteQuery whereKey:@"author" equalTo:[PFUser currentUser]];
     
     [noteQuery findObjectsInBackgroundWithBlock:^(NSArray<Note *> *notes, NSError *error) {
         if (notes) {

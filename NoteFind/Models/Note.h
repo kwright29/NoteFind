@@ -32,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void) postUserNote: (UIImage * _Nullable)image withDescription: (NSString * _Nullable)description withTitle: (NSString * _Nullable)title withTags: (NSMutableArray *)tags withBooks: (NSMutableArray *)textbooks withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 + (void)addNewNoteToTags;
++ (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image;
 @end
 
 NS_ASSUME_NONNULL_END

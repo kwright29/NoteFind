@@ -12,7 +12,7 @@
 
 @property (nonatomic, weak) UIImage *image;
 
-@property (nonatomic) NewNoteViewController *noteVC;
+@property (nonatomic) UIViewController *noteVC;
 
 
 
@@ -21,7 +21,7 @@
 
 @implementation CameraImport
 
-- (void)showCamera:(NewNoteViewController *)vc {
+- (void)showCamera:(UIViewController *)vc {
     self.noteVC = vc;
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
@@ -40,7 +40,7 @@
 }
 
 
-- (void)showGallery:(NewNoteViewController *)vc {
+- (void)showGallery:(UIViewController *)vc {
     self.noteVC = vc;
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;

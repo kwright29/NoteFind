@@ -20,9 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id <ImportDelegate> delegate;
 
-- (void)showCamera:(NewNoteViewController *)vc;
+- (void)showCamera:(UIViewController *)vc;
 
-- (void)showGallery:(NewNoteViewController *)vc;
+- (void)showGallery:(UIViewController *)vc;
 
 
 @end
