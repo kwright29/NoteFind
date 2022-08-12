@@ -158,16 +158,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4v-MH-11L">
-                                                    <rect key="frame" x="26" y="501" width="363" height="114"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="114" id="NnP-Mt-MBg"/>
-                                                        <constraint firstAttribute="width" constant="363" id="gMy-HL-5JG"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdz-uo-zL2">
                                                     <rect key="frame" x="26" y="22" width="56" height="27"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
@@ -187,6 +177,15 @@
                                                         <action selector="didTapDownload:" destination="dMh-Yr-rkA" eventType="touchUpInside" id="hGD-Tp-KHT"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4v-MH-11L">
+                                                    <rect key="frame" x="26" y="501" width="363" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="363" id="gMy-HL-5JG"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="byR-tr-4TM" firstAttribute="trailing" secondItem="SJY-Us-fMQ" secondAttribute="trailing" id="7yn-8m-4Ki"/>
@@ -202,7 +201,7 @@
                                                 <constraint firstItem="SJY-Us-fMQ" firstAttribute="top" secondItem="qdz-uo-zL2" secondAttribute="bottom" constant="2" id="lfT-tw-dB6"/>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="qdz-uo-zL2" secondAttribute="trailing" constant="20" id="mH3-Rl-y2l"/>
                                                 <constraint firstItem="a4v-MH-11L" firstAttribute="trailing" secondItem="byR-tr-4TM" secondAttribute="trailing" id="tep-Lj-En6"/>
-                                                <constraint firstItem="c8Z-3M-nu6" firstAttribute="top" secondItem="a4v-MH-11L" secondAttribute="bottom" constant="8" symbolic="YES" id="tig-qT-T7V"/>
+                                                <constraint firstItem="c8Z-3M-nu6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="a4v-MH-11L" secondAttribute="bottom" id="tig-qT-T7V"/>
                                                 <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="qdz-uo-zL2" secondAttribute="trailing" constant="316" id="uB6-Zv-nKE"/>
                                                 <constraint firstItem="byR-tr-4TM" firstAttribute="leading" secondItem="SJY-Us-fMQ" secondAttribute="leading" id="vK0-sh-gKO"/>
                                                 <constraint firstItem="a4v-MH-11L" firstAttribute="top" secondItem="byR-tr-4TM" secondAttribute="bottom" constant="7.5" id="xdh-Gk-bvj"/>
