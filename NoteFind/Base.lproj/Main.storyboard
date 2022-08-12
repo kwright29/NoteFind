@@ -258,119 +258,171 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c4U-D2-KPe">
-                                <rect key="frame" x="40" y="73" width="258" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="input your title" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="c4U-D2-KPe">
+                                <rect key="frame" x="26" y="79" width="362" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="362" id="6zn-R9-eNR"/>
+                                    <constraint firstAttribute="height" constant="34" id="fgY-9d-h6T"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LQf-4t-t5T">
-                                <rect key="frame" x="40" y="149" width="258" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="what's the title of your note?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nl9-xZ-fcF">
-                                <rect key="frame" x="40" y="44" width="217" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="what's the title of your note?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="nl9-xZ-fcF">
+                                <rect key="frame" x="91" y="44" width="233" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Noq-VI-U7P"/>
+                                    <constraint firstAttribute="width" constant="233" id="lb9-An-HuQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="what's your note about?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvZ-Or-ibD">
-                                <rect key="frame" x="40" y="128" width="183" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vE-fm-TrZ">
-                                <rect key="frame" x="40" y="680" width="258" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tny-PO-k1F">
+                                <rect key="frame" x="20" y="158" width="152" height="204"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="204" id="7P8-BC-xS9"/>
+                                    <constraint firstAttribute="width" constant="152" id="UlO-3n-qQ0"/>
+                                </constraints>
                                 <color key="tintColor" systemColor="systemIndigoColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="add tags to your note">
-                                    <attributedString key="attributedSubtitle">
-                                        <fragment content="add tags so other users know what subject this note falls under!">
-                                            <attributes>
-                                                <font key="NSFont" size="6" name="Helvetica"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="Z3H-dD-R9L" kind="presentation" identifier="tagSegue" id="qB0-86-TOL"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tny-PO-k1F">
-                                <rect key="frame" x="40" y="201" width="139" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="systemIndigoColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="import your note"/>
+                                <buttonConfiguration key="configuration" style="plain" title=""/>
                                 <connections>
                                     <action selector="importNote:" destination="G9B-o8-RQW" eventType="touchUpInside" id="BF9-2E-gog"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FDd-xe-Y9E">
-                                <rect key="frame" x="40" y="240" width="325" height="428"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_your_note" translatesAutoresizingMaskIntoConstraints="NO" id="FDd-xe-Y9E">
+                                <rect key="frame" x="20" y="158" width="152" height="204"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="152" id="hPn-7p-hS3"/>
+                                    <constraint firstAttribute="height" constant="204" id="wSx-uR-WTm"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USm-Wq-cYe">
-                                <rect key="frame" x="327" y="12" width="67" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="systemIndigoColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="share">
-                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="15"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="didTapPost:" destination="XIO-OU-SPB" eventType="touchUpInside" id="WvX-v3-cJ2"/>
-                                    <action selector="didTapPost:" destination="G9B-o8-RQW" eventType="touchUpInside" id="lre-DQ-1Be"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="once your note is successfully imported, it will appear below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbV-99-EO0">
-                                <rect key="frame" x="169" y="212" width="213" height="9"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="once your note is successfully imported, it will appear above" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbV-99-EO0">
+                                <rect key="frame" x="20" y="370" width="213" height="8.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="213" id="hdF-m9-MEh"/>
+                                    <constraint firstAttribute="height" constant="8.5" id="uRm-je-HTt"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="7"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5B1-eL-V9t">
-                                <rect key="frame" x="40" y="711" width="206" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5B1-eL-V9t">
+                                <rect key="frame" x="10" y="467" width="296" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="296" id="aaP-kw-QhQ"/>
+                                    <constraint firstAttribute="height" constant="39" id="rEd-PS-B3N"/>
+                                </constraints>
                                 <color key="tintColor" systemColor="systemIndigoColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="link textbook(s) to your note">
-                                    <attributedString key="attributedSubtitle">
-                                        <fragment content="link a textbook so other users know where you took notes from!">
-                                            <attributes>
-                                                <font key="NSFont" size="6" name="Helvetica"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                <buttonConfiguration key="configuration" style="plain" title="link textbook(s) to your note"/>
+                                <connections>
+                                    <segue destination="S61-vh-O8t" kind="presentation" identifier="textbookSegue" id="HXY-QC-LQc"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="type your description here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bXx-1s-SEj">
+                                <rect key="frame" x="186" y="183" width="202" height="171"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="202" id="W5j-cf-b9b"/>
+                                    <constraint firstAttribute="height" constant="171" id="y0a-I5-mKo"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="what's your note about?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="UvZ-Or-ibD">
+                                <rect key="frame" x="186" y="158" width="197" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="EMT-Ff-IG6"/>
+                                    <constraint firstAttribute="width" constant="197" id="EbB-EN-OKx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcD-Lb-f27">
+                                <rect key="frame" x="286" y="546" width="96" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="P95-Ge-8sp"/>
+                                    <constraint firstAttribute="width" constant="96" id="Ws4-1m-BlF"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="share">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="S61-vh-O8t" kind="show" identifier="textbookSegue" id="HXY-QC-LQc"/>
+                                    <action selector="didTapPost:" destination="G9B-o8-RQW" eventType="touchUpInside" id="ght-M0-EIK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vE-fm-TrZ">
+                                <rect key="frame" x="10" y="420" width="296" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="296" id="Eir-uh-qw3"/>
+                                    <constraint firstAttribute="height" constant="39" id="KaC-zy-SX5"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="add tags to your note"/>
+                                <connections>
+                                    <segue destination="Z3H-dD-R9L" kind="presentation" identifier="tagSegue" id="qB0-86-TOL"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WIw-jv-BWC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xbV-99-EO0" firstAttribute="top" secondItem="bXx-1s-SEj" secondAttribute="bottom" constant="16" id="2ji-nD-RI6"/>
+                            <constraint firstItem="UvZ-Or-ibD" firstAttribute="leading" secondItem="Tny-PO-k1F" secondAttribute="trailing" constant="14" id="7Ax-CK-Htu"/>
+                            <constraint firstItem="bXx-1s-SEj" firstAttribute="leading" secondItem="Tny-PO-k1F" secondAttribute="trailing" constant="14" id="EIx-sW-Lz5"/>
+                            <constraint firstItem="xbV-99-EO0" firstAttribute="leading" secondItem="5GY-MQ-oi1" secondAttribute="leading" constant="20" id="K2X-Z3-OhW"/>
+                            <constraint firstAttribute="trailing" secondItem="c4U-D2-KPe" secondAttribute="trailing" constant="26" id="KCu-Bz-kkT"/>
+                            <constraint firstAttribute="trailing" secondItem="2vE-fm-TrZ" secondAttribute="trailing" constant="108" id="MO6-5h-ISF"/>
+                            <constraint firstItem="2vE-fm-TrZ" firstAttribute="top" secondItem="xbV-99-EO0" secondAttribute="bottom" constant="41.5" id="RD8-HZ-sea"/>
+                            <constraint firstAttribute="trailing" secondItem="bXx-1s-SEj" secondAttribute="trailing" constant="26" id="UIN-R8-Ja9"/>
+                            <constraint firstItem="xbV-99-EO0" firstAttribute="top" secondItem="Tny-PO-k1F" secondAttribute="bottom" constant="8" id="Y3i-YL-hqE"/>
+                            <constraint firstItem="hcD-Lb-f27" firstAttribute="top" secondItem="5B1-eL-V9t" secondAttribute="bottom" constant="40" id="Ym7-sX-JT2"/>
+                            <constraint firstItem="Tny-PO-k1F" firstAttribute="top" secondItem="c4U-D2-KPe" secondAttribute="bottom" constant="45" id="e1V-xv-nfW"/>
+                            <constraint firstAttribute="trailing" secondItem="xbV-99-EO0" secondAttribute="trailing" constant="181" id="e5X-Wr-na9"/>
+                            <constraint firstAttribute="trailing" secondItem="nl9-xZ-fcF" secondAttribute="trailing" constant="90" id="edj-mS-qhr"/>
+                            <constraint firstItem="FDd-xe-Y9E" firstAttribute="leading" secondItem="5GY-MQ-oi1" secondAttribute="leading" constant="20" id="eul-oG-GbW"/>
+                            <constraint firstItem="nl9-xZ-fcF" firstAttribute="top" secondItem="5GY-MQ-oi1" secondAttribute="top" constant="44" id="f8q-sj-I3U"/>
+                            <constraint firstItem="nl9-xZ-fcF" firstAttribute="leading" secondItem="5GY-MQ-oi1" secondAttribute="leading" constant="91" id="fQW-NY-U39"/>
+                            <constraint firstItem="c4U-D2-KPe" firstAttribute="top" secondItem="nl9-xZ-fcF" secondAttribute="bottom" constant="14" id="fl9-Be-maY"/>
+                            <constraint firstItem="5B1-eL-V9t" firstAttribute="leading" secondItem="5GY-MQ-oi1" secondAttribute="leading" constant="10" id="gRt-VH-4gy"/>
+                            <constraint firstAttribute="trailing" secondItem="5B1-eL-V9t" secondAttribute="trailing" constant="108" id="ic4-jg-8Xm"/>
+                            <constraint firstItem="2vE-fm-TrZ" firstAttribute="leading" secondItem="5GY-MQ-oi1" secondAttribute="leading" constant="10" id="kDb-ck-e0i"/>
+                            <constraint firstItem="FDd-xe-Y9E" firstAttribute="top" secondItem="c4U-D2-KPe" secondAttribute="bottom" constant="45" id="mue-Sb-Xxq"/>
+                            <constraint firstItem="2vE-fm-TrZ" firstAttribute="top" secondItem="xbV-99-EO0" secondAttribute="bottom" constant="41.5" id="nQU-VE-p5k"/>
+                            <constraint firstItem="hcD-Lb-f27" firstAttribute="leading" secondItem="5GY-MQ-oi1" secondAttribute="leading" constant="286" id="nRg-no-09Y"/>
+                            <constraint firstItem="bXx-1s-SEj" firstAttribute="leading" secondItem="FDd-xe-Y9E" secondAttribute="trailing" constant="14" id="nqq-tk-bpp"/>
+                            <constraint firstAttribute="trailing" secondItem="hcD-Lb-f27" secondAttribute="trailing" constant="32" id="oWd-rb-SM1"/>
+                            <constraint firstAttribute="bottom" secondItem="hcD-Lb-f27" secondAttribute="bottom" constant="267" id="p3v-dS-thg"/>
+                            <constraint firstItem="UvZ-Or-ibD" firstAttribute="top" secondItem="c4U-D2-KPe" secondAttribute="bottom" constant="45" id="qim-jh-RIf"/>
+                            <constraint firstItem="c4U-D2-KPe" firstAttribute="leading" secondItem="5GY-MQ-oi1" secondAttribute="leading" constant="26" id="sMU-jB-qpe"/>
+                            <constraint firstItem="bXx-1s-SEj" firstAttribute="leading" secondItem="Tny-PO-k1F" secondAttribute="trailing" constant="14" id="sV7-A5-qYM"/>
+                            <constraint firstItem="5B1-eL-V9t" firstAttribute="top" secondItem="2vE-fm-TrZ" secondAttribute="bottom" constant="8" id="uUM-Is-qmF"/>
+                            <constraint firstAttribute="trailing" secondItem="UvZ-Or-ibD" secondAttribute="trailing" constant="31" id="v00-aX-XNC"/>
+                            <constraint firstItem="Tny-PO-k1F" firstAttribute="leading" secondItem="5GY-MQ-oi1" secondAttribute="leading" constant="20" id="w75-rI-I1Y"/>
+                            <constraint firstItem="xbV-99-EO0" firstAttribute="top" secondItem="FDd-xe-Y9E" secondAttribute="bottom" constant="8" id="wWI-be-dT5"/>
+                            <constraint firstItem="bXx-1s-SEj" firstAttribute="top" secondItem="UvZ-Or-ibD" secondAttribute="bottom" constant="4" id="y5k-Wc-Dxy"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OuG-ZT-uur">
-                        <barButtonItem key="rightBarButtonItem" title="Post" id="Ne6-kP-L9p"/>
+                        <barButtonItem key="rightBarButtonItem" title="share" id="wqL-Rt-5jl">
+                            <color key="tintColor" systemColor="systemIndigoColor"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addNoteButton" destination="Tny-PO-k1F" id="1cz-G4-4IZ"/>
-                        <outlet property="descriptionTextField" destination="LQf-4t-t5T" id="2V2-da-Z5S"/>
+                        <outlet property="descriptionTextField" destination="bXx-1s-SEj" id="CwH-SI-ukp"/>
                         <outlet property="noteImageView" destination="FDd-xe-Y9E" id="cKD-8T-Kzx"/>
                         <outlet property="titleTextField" destination="c4U-D2-KPe" id="8RI-49-iNP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0wR-Dw-t4E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="XIO-OU-SPB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3695.652173913044" y="276.5625"/>
         </scene>
@@ -1175,6 +1227,7 @@
     <resources>
         <image name="Logo" width="510" height="384"/>
         <image name="Screen Shot 2022-08-10 at 10.46.39 AM" width="870" height="266"/>
+        <image name="add_your_note" width="1668" height="2157"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="logo1" width="1168" height="956"/>
@@ -1183,6 +1236,9 @@
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
         <image name="square.text.square.fill" catalog="system" width="128" height="114"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
