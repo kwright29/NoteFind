@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface APIManager : NSObject
 
-- (void)getTextbooks:(void(^)(NSArray *books, NSError *error))completion;
+- (void)getTextbooksWithSearchText:(NSString *)searchText withStartIndex:(NSInteger)startIndex withCompletion: (void(^)(NSArray *books, NSError *error))completion;
 - (id)init;
 
 @end

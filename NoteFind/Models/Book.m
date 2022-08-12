@@ -17,8 +17,10 @@
     
     self.title = volumeInfo[@"title"];
     NSString *urlString = volumeInfo[@"imageLinks"][@"smallThumbnail"];
-    NSURL *url = [[NSURL alloc] initWithString:urlString];
-    self.bookCoverURL = url;
+    if (urlString != nil ) {
+        NSURL *url = [[NSURL alloc] initWithString:urlString];
+        self.bookCoverURL = url;
+    }
     self.synposis = volumeInfo[@"description"];
     self.authors = volumeInfo[@"authors"];
     

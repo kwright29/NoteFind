@@ -36,13 +36,15 @@
     NSString *authorsList = [[authors valueForKey:@"description"] componentsJoinedByString:@", "];
 
     self.bookAuthors.text = authorsList;
-    
-    self.coverImageView.image = nil;
-    if (self.book.bookCoverURL != nil) {
-        [self.coverImageView setImageWithURL:self.book.bookCoverURL];
+    self.coverImageView.layer.cornerRadius = 5.0;
+    self.coverImageView.clipsToBounds = YES;
+    self.checkbox.layer.cornerRadius = 5.0;
+    self.checkbox.clipsToBounds = YES;
+    if (self.book.bookCoverURL){
+        self.coverImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.book.bookCoverURL]];
     }
-    
 }
+
 - (IBAction)didTapBook:(id)sender {
     if (self.checked) {
         self.checked = NO;

@@ -24,14 +24,11 @@
     return self;
 }
 
-- (void)getTextbooks:(void(^)(NSArray *books, NSError *error))completion {
-    NSURL *url = [NSURL URLWithString:@"https://www.googleapis.com/books/v1/volumes?q=textbook&key=AIzaSyCIdqm294VSsSXMxeP-xAudVh2oOGn2zV0"];
+- (void)getTextbooksWithSearchText:(NSString *)searchText withStartIndex:(NSInteger)startIndex withCompletion: (void(^)(NSArray *books, NSError *error))completion{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@%ld", @"https://www.googleapis.com/books/v1/volumes?q=textbook+intitle:" , searchText, @"&key=AIzaSyCIdqm294VSsSXMxeP-xAudVh2oOGn2zV0&maxResults=40&startIndex=", (long)startIndex]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     NSURLSessionDataTask *task = [self.session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error != nil) {
-            // The network request has completed, but failed.
-            // Invoke the completion block with an error.
-            // Think of invoking a block like calling a function with parameters
             completion(nil, error);
         }
         else {
@@ -39,10 +36,6 @@
 
             NSArray *dictionaries = dataDictionary[@"items"];
             NSMutableArray *books = [Book booksWithDictionaries:dictionaries];
-
-            // The network request has completed, and succeeded.
-            // Invoke the completion block with the movies array.
-            // Think of invoking a block like calling a function with parameters
             completion(books, nil);
         }
     }];
