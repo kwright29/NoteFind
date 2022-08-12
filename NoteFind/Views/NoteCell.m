@@ -26,6 +26,8 @@
     _postTitle.text = _note.title;
     _postCaption.text = _note.noteDescription;
     _postUsername.text = [NSString stringWithFormat:@"@%@", _note.author.username];
+    _postNote.layer.cornerRadius = 7.5;
+    _postNote.clipsToBounds = YES;
     _postNote.file = _note.note;
     [_postNote loadInBackground];
     
