@@ -32,6 +32,12 @@ static int kTagsSearchDisplayLimit = 20;
     self.searchBar.delegate = self;
     self.setsLoaded = 0;
     
+    //dismissing keyboard
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self.view action:@selector(endEditing:)];
+    [tapRecognizer setCancelsTouchesInView:NO];
+    [self.view addGestureRecognizer:tapRecognizer];
+    self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    
     // Set up Infinite Scroll loading indicator
     CGRect frame = CGRectMake(0, self.tableView.contentSize.height, self.tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
     loadingMoreView = [[InfiniteScrollActivityView alloc] initWithFrame:frame];
@@ -46,8 +52,10 @@ static int kTagsSearchDisplayLimit = 20;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    Tags *tag = self.displayTags[indexPath.row];
-    cell.textLabel.text = tag.title;
+    if (self.displayTags.count > indexPath.row){
+        Tags *tag = self.displayTags[indexPath.row];
+        cell.textLabel.text = tag.title;
+    }
     return cell;
     
 }
@@ -71,7 +79,6 @@ static int kTagsSearchDisplayLimit = 20;
         if (scrollView.contentOffset.y > scrollOffsetThreshold && self.tableView.isDragging) {
             isMoreDataLoading = true;
             self.setsLoaded += 1;
-            
             // Update position of loadingMoreView, and start loading indicator
             CGRect frame = CGRectMake(0, self.tableView.contentSize.height, self.tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
             loadingMoreView.frame = frame;
@@ -88,13 +95,15 @@ static int kTagsSearchDisplayLimit = 20;
     tagQuery.skip = self.setsLoaded * kTagsSearchDisplayLimit;
     [tagQuery whereKey:@"title" matchesRegex:searchText modifiers:@"i"];
     [tagQuery orderByAscending:@"title"];
-    self.displayTags = [[NSMutableArray alloc] init];
+    if (self.setsLoaded == 0) {
+        self.displayTags = [[NSMutableArray alloc] init];
+    }
     [tagQuery findObjectsInBackgroundWithBlock:^(NSArray<Tags *>*tags , NSError *error) {
         if (error) {
             [ErrorAlerts showAlertWithTitle:@"couldn't load tags" withMessage:@"failure loading tags. please refresh and try again." withVC:self];
         } else {
             isMoreDataLoading = false;
-            
+
             [loadingMoreView stopAnimating];
             
             for (Tags *tag in tags) {

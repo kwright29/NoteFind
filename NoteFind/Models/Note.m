@@ -57,7 +57,7 @@
     if (!imageData) {
         return nil;
     } else {
-        CGSize size = CGSizeMake(300.0, 300.0);
+        CGSize size = CGSizeMake(600.0, 600.0);
         image = [self resizeImage:image withSize:size];
     }
     imageData = UIImagePNGRepresentation(image);

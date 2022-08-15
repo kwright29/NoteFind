@@ -8,9 +8,11 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
+@class OfflineNote;
 
-@interface OfflineGridCell : UICollectionViewCell
+@interface OfflineGridCell : UICollectionViewCell <UIGestureRecognizerDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *notePostImage;
+@property (strong, nonatomic) OfflineNote *currentOfflineNote;
 @end
 
 NS_ASSUME_NONNULL_END

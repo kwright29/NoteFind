@@ -79,10 +79,10 @@
     UIViewController *vc = [self getCurrentVC];
     
     if ([context hasChanges] && ![context save:&error]) {
-        [ErrorAlerts showAlertWithTitle:@"error downloading note" withMessage:@"there was a problem trying download your note. please try again" withVC:vc];
+        [ErrorAlerts showAlertWithTitle:@"error saving changes" withMessage:@"there was a problem trying download/delete your note. please try again" withVC:vc];
     }
     else {
-        [ErrorAlerts showAlertWithTitle:@"success!" withMessage:@"this note was successfully downloaded! check your profile for all of your downloaded notes." withVC:vc];
+        [ErrorAlerts showAlertWithTitle:@"success!" withMessage:@"your changes were successfully saved! check your profile for all of your downloaded notes." withVC:vc];
     
     }
 }

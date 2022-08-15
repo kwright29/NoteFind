@@ -44,6 +44,12 @@
     [self setImportMenu:self.importMenu];
     [[self.descriptionTextField layer] setBorderColor:[[UIColor systemIndigoColor] CGColor]];
     [[self.descriptionTextField layer] setBorderWidth:3.0];
+    
+    //dismissing keyboard
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self.view action:@selector(endEditing:)];
+    [tapRecognizer setCancelsTouchesInView:NO];
+    [self.view addGestureRecognizer:tapRecognizer];
+    self.descriptionTextField.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
 }
 - (void)setImportMenu:(UIMenu *)importMenu {
     //setting options for menu

@@ -19,7 +19,7 @@
 
 
 
-@interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource, DeleteDelegate>
 @property (strong, nonatomic) IBOutlet PFImageView *userProfilePic;
 @property (strong, nonatomic) IBOutlet UILabel *userFullName;
 @property (strong, nonatomic) IBOutlet UILabel *username;
@@ -29,6 +29,7 @@
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSMutableArray *onlineNotes;
 @property (strong, nonatomic) NSMutableArray<OfflineNote *> *offlineNotes;
+@property (strong, nonatomic) OfflineDataManager *dataManager;
 
 @end
 
@@ -40,6 +41,8 @@ static int kOfflineNoteIndex = 1;
     [super viewDidLoad];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
+    self.dataManager = [[OfflineDataManager alloc]init];
+    self.dataManager.deleteDelegate = self;
     [self setUpUserInfo];
     [self getOnlineNotes];
 }
@@ -71,8 +74,7 @@ static int kOfflineNoteIndex = 1;
 }
 
 - (void)getOfflineNotes {
-    OfflineDataManager *dataManager = [[OfflineDataManager alloc]init];
-    self.offlineNotes = (NSMutableArray *)[dataManager getOfflineNotes];
+    self.offlineNotes = (NSMutableArray *)[self.dataManager getOfflineNotes];
     [self.collectionView reloadData];
 }
 
@@ -88,8 +90,8 @@ static int kOfflineNoteIndex = 1;
     }
     if (self.filterSegmentCtrl.selectedSegmentIndex == kOfflineNoteIndex) {
         OfflineGridCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"OfflineGridCell" forIndexPath:indexPath];
-        OfflineNote *offlineNote = self.offlineNotes[indexPath.row];
-        NSData *imageData = offlineNote.noteFileData;
+        cell.currentOfflineNote = self.offlineNotes[indexPath.row];
+        NSData *imageData = cell.currentOfflineNote.noteFileData;
         UIImage *img = [OfflineDataManager getImageFromData:imageData];
         [cell.notePostImage setImage:img];
         
@@ -129,6 +131,11 @@ static int kOfflineNoteIndex = 1;
         detailsVC.onlineNote = onlineNoteExpand;
         detailsVC.isOffline = NO;
     }
+}
+
+
+- (void)refreshAfterDeletion {
+    [self getOfflineNotes];
 }
 
 

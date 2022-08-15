@@ -8,7 +8,7 @@
 #import "ErrorAlerts.h"
 #import "OfflineDataManager.h"
 
-#import <CoreData/CoreData.h>
+
 #import <Parse/Parse.h>
 
 @interface OfflineDataManager()
@@ -78,6 +78,13 @@
 + (UIImage *)getImageFromData:(NSData *)data {
     UIImage *image = [UIImage imageWithData:data];
     return image;
+}
+
+- (void)deleteNote:(OfflineNote *)offlineNote {
+    [self.context deleteObject:offlineNote];
+    [self.appDelegate saveContext];
+    [self.deleteDelegate refreshAfterDeletion];
+    
 }
 
 @end

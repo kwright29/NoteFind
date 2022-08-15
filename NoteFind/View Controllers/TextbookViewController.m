@@ -32,6 +32,11 @@
     self.startIndex = 0;
     self.allBooks = [NSMutableArray array];
     self.associatedTextbooks = [NSMutableArray array];
+    //dismissing keyboard
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self.view action:@selector(endEditing:)];
+    [tapRecognizer setCancelsTouchesInView:NO];
+    [self.view addGestureRecognizer:tapRecognizer];
+    self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
 
 }
 

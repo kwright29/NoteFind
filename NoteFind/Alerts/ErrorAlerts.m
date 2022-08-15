@@ -39,4 +39,22 @@
     
     [vc presentViewController:alert animated:YES completion:nil];
 }
+
++ (void)confirmingDeletion:(UIViewController *)vc withOfflineNote:(OfflineNote *)offlineNote {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"deleting your note from local datastore" message:@"are you sure you want to delete this note?" preferredStyle:(UIAlertControllerStyleAlert)];
+    
+    UIAlertAction *no = [UIAlertAction actionWithTitle:@"no" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [vc dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    UIAlertAction *yes = [UIAlertAction actionWithTitle:@"yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        OfflineDataManager *dataManager = [[OfflineDataManager alloc] init];
+        [dataManager deleteNote:offlineNote];
+    }];
+    
+    [alert addAction:no];
+    [alert addAction:yes];
+    
+    [vc presentViewController:alert animated:YES completion:nil];
+}
 @end
